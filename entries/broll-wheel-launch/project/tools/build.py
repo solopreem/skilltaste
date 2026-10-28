@@ -53,12 +53,12 @@ BASE = """
     #root .bg { left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }"""
 
 MODE = {
-    # light: the accent is thot's acid marker swept behind ink
+    # light: the accent is a marker swept behind ink
     "light": """
     #root { background: radial-gradient(ellipse 75% 70% at 50% 42%, #fffdf3 0%, #f7f4e5 55%, #ece7d2 100%); color: #192219; }
     #root em { font-style: normal; background: linear-gradient(#d7ff00, #d7ff00) no-repeat 0 88% / 100% 40%; }""",
-    # moss: the accent is an acid block with ink type
-    # footage: real-world b-roll under cream type, the accent is the acid block
+    # dark: the accent is a block with ink type
+    # footage: real-world b-roll under cream type, the accent is the block
     "film": """
     #root { background: #192219; color: #f7f4e5; }
     #root .st, #root .hl, #root .wi, #root .sub { text-shadow: 0 2px 30px rgba(10,16,10,.55); }
@@ -178,7 +178,7 @@ def wheel(cid, start, f0, f1):
 
 wheel("wheel1", 6.06, -0.8, 0)
 
-# ---------- 8.06 the site's feast illustration: the problem ----------
+# ---------- 8.06 the brand's wide illustration: the problem ----------
 add("feast", 8.06, 4.04, "light", """
     #fv { left: 0; top: 120px; width: 1920px; height: 640px; overflow: hidden; }
     #fv img { position: absolute; left: -126px; top: 0; width: 2172px; height: 724px; transform-origin: 50% 70%; }
@@ -296,8 +296,8 @@ split_card("tools", 26.06, 6.04, C["tools_head"],
            C["tools_label"], bg="tools")
 
 # ---------- 32.06 the burst: the world cuts on every beat (then every half beat) behind one locked caption, ----------
-# ---------- and lands on the site's brain with its receipt ----------
-MONTAGE = [0, 0.5, 1.0, 1.5, 2.0, 2.25, 2.5, 2.75, 3.0]  # cut times; m0..m7, then the brain on paper
+# ---------- and lands on the brand's mascot ----------
+MONTAGE = [0, 0.5, 1.0, 1.5, 2.0, 2.25, 2.5, 2.75, 3.0]  # cut times; m0..m7, then the mascot on paper
 add("brain", 32.06, 4.04, "film", """
     #pp { left: 0; top: 0; width: 1920px; height: 1080px; background: radial-gradient(ellipse 75% 70% at 50% 42%, #fffdf3 0%, #f7f4e5 55%, #ece7d2 100%); z-index: 1; }
     #br { left: 230px; top: 250px; width: 520px; height: 520px; border-radius: 40px; box-shadow: 0 30px 70px -30px rgba(25,34,25,.35); z-index: 2; }
@@ -318,7 +318,7 @@ add("brain", 32.06, 4.04, "film", """
       tl.to('#p0', { opacity: 0, filter: 'blur(6px)', duration: 0.18 }, 1.38);
       tl.set('#p1', { opacity: 1 }, 1.5);
       wIn('#p1 .w', 1.5, 0.06);
-      // 35.06: hard cut to paper, the brain slams in, the caption rides up beside it
+      // 35.06: hard cut to paper, the mascot slams in, the caption rides up beside it
       tl.set('#pp', { opacity: 1 }, 3.0);
       tl.fromTo('#br', { opacity: 0, scale: 0.5, rotation: -14 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.55, ease: 'back.out(2)' }, 3.0);
       tl.to('#cp', { x: 360, y: -420, scale: 0.92, boxShadow: '0 0 0 0 rgba(0,0,0,0)', duration: 0.5, ease: 'expo.out' }, 3.0);
@@ -446,7 +446,7 @@ add("one", 64.06, 2.04, "light", """
       wIn('#fin .w', 0.8, 0.12);
       wOut('#fin .w', 1.84);""")
 
-# ---------- 66.06 referrals: pill -> acid 20% (site copy), brains float in ----------
+# ---------- 66.06 one more thing: the pill floods the accent and becomes refer_to, a number or word lands, mascots float in ----------
 # refer_number: a number counts up 0 -> N with refer_unit after it (default %); text is shown as it is
 REFER_COUNT = isinstance(C["refer_number"], (int, float))
 REFER_TXT = f"{C['refer_number']}{C.get('refer_unit', '%')}" if REFER_COUNT else C["refer_number"]
@@ -473,7 +473,7 @@ add("refer", 66.06, 6.04, "light", """
     """      tl.set(['#pt2', '#pc', '#pd'], { opacity: 0 }, 0);
       tl.fromTo('#pl', { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.6, ease: 'back.out(1.8)' }, 0.05);
       tl.fromTo('#dot', { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.4, ease: 'back.out(2)' }, 0.9);
-      // 68.06: the pill turns acid, the dot becomes the number, brains drift in
+      // 68.06: the pill turns accent, the dot becomes the number, mascots drift in
       tl.to('#dot', { scale: 0, opacity: 0, duration: 0.3, ease: 'power3.in' }, 1.7);
       tl.to('#pl', { backgroundColor: '#d7ff00', scale: 1.15, duration: 0.5, ease: 'expo.inOut' }, 1.9);
       tl.to('#pt1', { opacity: 0, filter: 'blur(6px)', duration: 0.2 }, 1.95);
@@ -490,7 +490,7 @@ add("refer", 66.06, 6.04, "light", """
       mark('#gm em', 3.6);
       tl.to('#root > *', { opacity: 0, filter: 'blur(8px)', duration: 0.25, ease: 'power2.in' }, 5.78);""")
 
-# ---------- 72.06 referral detail over the feast, panned to the right-hand brains ----------
+# ---------- 72.06 a detail panel over the illustration, panned ----------
 add("invite", 72.06, 4.04, "light", """
     #fv { left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; }
     #fv img { position: absolute; left: -2400px; top: -380px; width: 4344px; height: 1448px; }
@@ -543,7 +543,7 @@ add("keep", 80.06, 4.04, "film", """
       tl.to('#cc', { strokeDashoffset: 0, duration: 0.6, ease: 'power2.inOut' }, 1.44);
       wOut(['#k1 .w', '#k2 .w'], 3.8);""")
 
-# ---------- 84.06 end on moss: dot -> logo -> lockup ----------
+# ---------- 84.06 end on the ground colour: dot -> logo -> lockup (+ optional disclaimer) ----------
 URL_W = max(400, len(B['url']) * 27 + 90)  # the URL pill grows with the domain
 add("end", 84.06, 5.94, "dark", """
     #dt { left: 948px; top: 418px; width: 24px; height: 24px; border-radius: 12px; background: #d7ff00; }
