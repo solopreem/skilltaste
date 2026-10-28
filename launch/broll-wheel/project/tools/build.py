@@ -1,4 +1,4 @@
-"""Writes index.html and compositions/*.html for the broll-wheel-launch film (90 s, 16:9, 30 fps, 120 BPM).
+"""Writes index.html and compositions/*.html for the broll-wheel film (90 s, 16:9, 30 fps, 120 BPM).
 
 Product content (copy, images, card geometry, palette, fonts, music) comes from film.json; change that, not this file.
 This file holds what makes the film look like the reference: scene order and lengths, eases, holds, the beat grid,
@@ -135,11 +135,13 @@ def video(cut, dur, start=0, vid="v", z=0):
 add("open", 0, 6.06, "film", """
     #mk { left: 120px; top: 110px; width: 92px; height: 92px; }
     #a { left: 120px; top: 640px; text-align: left; width: auto; font-size: 92px; }
-    #b { left: 120px; top: 640px; text-align: left; width: auto; font-size: 92px; }""",
+    #b { left: 120px; top: 640px; text-align: left; width: auto; font-size: 92px; }
+    #cr { left: 0; top: 140px; width: 1800px; text-align: right; color: #f7f4e5; }""",
     video("open", 6.06) + f"""
     <div id="mk" class="abs tile"><img src="{LOGO}" alt="{B['logo_alt']}" /></div>
     <div id="a" class="abs st"><span class="w ast">✳</span>{words(C['open_a'])}</div>
-    <div id="b" class="abs st">{words(C['open_b'])}</div>""",
+    <div id="b" class="abs st">{words(C['open_b'])}</div>""" + (f"""
+    <div id="cr" class="abs lab">{C['credit']}</div>""" if C.get('credit') else ""),
     """      // footage is already moving at frame 0; the first words land on the first beat
       tl.fromTo('#v', { scale: 1.12 }, { scale: 1, duration: 6.06, ease: 'power1.out' }, 0);
       tl.fromTo('#mk', { opacity: 0, scale: 0.6, rotation: -12 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.6, ease: 'back.out(2)' }, 0.06);
@@ -148,7 +150,10 @@ add("open", 0, 6.06, "film", """
       wOut('#a .w', 2.82);
       wIn('#b .w', 3.06, 0.08);
       mark('#b em', 3.6);
-      wOut(['#b .w', '#mk'], 5.82);""")
+      wOut(['#b .w', '#mk'], 5.82);""" + ("""
+      // the maker's credit, opposite the logo, for the length of the open
+      tl.fromTo('#cr', { opacity: 0, y: -8 }, { opacity: 1, y: 0, duration: 0.5, ease: 'expo.out' }, 0.3);
+      tl.to('#cr', { opacity: 0, duration: 0.24, ease: 'power2.in' }, 5.82);""" if C.get('credit') else ""))
 
 WHEEL = C["wheel"]
 

@@ -4,18 +4,18 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 rows = []
-for e in sorted(p for p in (ROOT / "entries").iterdir() if (p / "taste.json").exists()):
+for e in sorted(p.parent for p in ROOT.glob("*/*/taste.json")):  # <category>/<id>/
     t = json.loads((e / "taste.json").read_text())
     m = json.loads((e / "result/metrics.json").read_text()) if (e / "result/metrics.json").exists() else {}
     rows.append({"id": t["id"], "title": t["title"], "summary": t["summary"], "category": t["layers"]["category"],
                  "method": t["layers"]["method"], "duration_s": t["spec"]["duration_s"], "ratio": t["spec"]["ratio"],
                  "events_per_10s": m.get("events_per_10s"), "still_share": m.get("still_share"), "shots": m.get("shots"),
-                 "needs": t["needs"], "fits": t["fits"], "avoid": t["avoid"], "poster": f"entries/{t['id']}/result/poster.jpg",
-                 "preview": f"entries/{t['id']}/result/preview.gif", "video": f"entries/{t['id']}/result/result.mp4"})
+                 "needs": t["needs"], "fits": t["fits"], "avoid": t["avoid"], "path": f"{e.parent.name}/{t['id']}", "poster": f"{e.parent.name}/{t['id']}/result/poster.jpg",
+                 "preview": f"{e.parent.name}/{t['id']}/result/preview.gif", "video": f"{e.parent.name}/{t['id']}/result/result.mp4"})
 (ROOT / "catalog.json").write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n")
 
 table = "| Preview | Entry | Category · method | Length | Events / 10 s |\n|---|---|---|---|---|\n" + "".join(
-    f"| <img src=\"{r['preview']}\" width=\"240\"> | [**{r['id']}**](entries/{r['id']}/) {r['title']} | {r['category']} · {r['method']} | {r['duration_s']} s {r['ratio']} | {r['events_per_10s']} |\n"
+    f"| <img src=\"{r['preview']}\" width=\"240\"> | [**{r['id']}**]({r['path']}/) {r['title']} | {r['category']} · {r['method']} | {r['duration_s']} s {r['ratio']} | {r['events_per_10s']} |\n"
     for r in rows)
 for name in ["README.md", "README_CN.md"]:
     p = ROOT / name

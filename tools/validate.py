@@ -1,4 +1,4 @@
-"""Check that every entry follows spec/ENTRY.md. Exit 1 on any problem. Usage: python3 tools/validate.py [entry-id ...]"""
+"""Check that every entry follows spec/ENTRY.md. Exit 1 on any problem. Entries live in <category>/<id>/. Usage: python3 tools/validate.py [entry-id ...]"""
 import json, sys
 from pathlib import Path
 
@@ -11,9 +11,10 @@ KEYS = ["id", "title", "summary", "version", "requires", "layers", "spec", "refe
 METRICS = ["duration", "shots", "events_per_10s", "still_share", "lufs", "true_peak_dbfs"]
 
 problems = []
-ids = sys.argv[1:] or sorted(p.name for p in (ROOT / "entries").iterdir() if p.is_dir())
+ENTRIES = {p.parent.name: p.parent for p in sorted(ROOT.glob("*/*/taste.json"))}  # <category>/<id>/
+ids = sys.argv[1:] or list(ENTRIES)
 for eid in ids:
-    e = ROOT / "entries" / eid
+    e = ENTRIES.get(eid, ROOT / eid)
     bad = lambda m: problems.append(f"{eid}: {m}")
     for f in FILES:
         if not (e / f).exists():
@@ -30,6 +31,8 @@ for eid in ids:
                          ("tools/events.py", "scripts/events.py"), ("tools/setup.sh", "scripts/setup.sh")]:
         if (e / copy).exists() and (e / copy).read_bytes() != (ROOT / shared).read_bytes():
             bad(f"{copy} differs from {shared}: copy it again")
+    if t.get("layers", {}).get("category") != e.parent.name:
+        bad(f"taste.json layers.category '{t.get('layers', {}).get('category')}' != category folder '{e.parent.name}'")
     if t.get("id") != eid:
         bad(f"taste.json id '{t.get('id')}' != folder name")
     for k in LAYERS:

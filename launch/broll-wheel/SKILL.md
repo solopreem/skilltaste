@@ -1,9 +1,9 @@
 ---
-name: broll-wheel-launch
+name: broll-wheel
 description: Make a 90 s keynote-style product launch film (16:9, 120 BPM) in the "b-roll wheel" style - real-world b-roll under kinetic type, a "Your [ ]" wheel between chapters, the product's real screens floating over footage, an eight-shot beat montage at 35 %, One More Thing, dot-to-logo end. Use when the user asks for this entry by name, picks it from the video-skills gallery, or wants a film that looks like its result/result.mp4. Ships a complete HyperFrames project that renders the example film as is.
 ---
 
-# broll-wheel-launch
+# broll-wheel
 
 This folder reproduces one film. `result/result.mp4` is what you will get; `project/` renders it unchanged. To make it for
 another product you change `project/film.json`, the assets and the b-roll subjects, and nothing else.

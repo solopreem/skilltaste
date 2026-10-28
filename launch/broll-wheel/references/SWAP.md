@@ -19,6 +19,7 @@ The shortest path to the same film for a different product. Everything you chang
 | `images.flow` | a five-stage diagram (how it works, a pipeline, a journey) | SVG at 1600×620; `stages_x` = left edge of each stage | proof (54 s) |
 | `copy.*` | about twenty lines from the product's own site. Keep each line to the length of the line it replaces (headlines ≤ 32 characters, chips ≤ 18) | | everywhere |
 | `copy.refer_number` | the One More Thing payoff: a number from the site (counts up 0→N with `refer_unit`, default %) or a short word shown as it is | number or ≤ 8 characters | refer (66 s) |
+| `copy.credit` | optional maker's credit, top right of the open (e.g. BUILT BY YOURNAME) | ≤ 40 characters | open |
 | `copy.disclaimer` | optional end-card line, e.g. for an unofficial or spec film | ≤ 90 characters | end |
 | `copy.wheel` | six chapter words that finish "Your …" (`wheel_lead`), in film order | one word each | the six wheels |
 | `music` | 90 s, 120 BPM, first downbeat ≈ 0.056 s, continuous | see `tools/music.md` | |

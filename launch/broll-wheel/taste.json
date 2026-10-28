@@ -1,5 +1,5 @@
 {
-  "id": "broll-wheel-launch",
+  "id": "broll-wheel",
   "title": "B-roll wheel launch",
   "summary": "A 90 s keynote-style launch: real-world b-roll under kinetic type, a 'Your [ ]' wheel between chapters, the product's real screens floating over footage, a beat montage at 35 %, One More Thing, dot-to-logo end.",
   "version": "1.0.0",
@@ -20,7 +20,7 @@
   },
   "layers": {
     "floor": "references/floor.md",
-    "category": "launch-film",
+    "category": "launch",
     "method": "broll-under-type",
     "moves": [
       "word-blur-in",

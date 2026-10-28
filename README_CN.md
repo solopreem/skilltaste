@@ -11,14 +11,14 @@
 </div>
 
 ```bash
-npx skills add solopreem/video-skills                            # 整个库（agent 帮你挑条目）
-npx skills add solopreem/video-skills/entries/broll-wheel-launch   # 只要这一支
+npx skills add sonnyproto/video-skills                            # 整个库（agent 帮你挑条目）
+npx skills add sonnyproto/video-skills/launch/broll-wheel   # 只要这一支
 ```
 
 然后在 Claude Code 或 Codex 里说：
 
 ```text
-用 broll-wheel-launch 给 https://your-product.com 做一支发布片。
+用 broll-wheel 给 https://your-product.com 做一支发布片。
 ```
 
 不用手动装别的：agent 会自己运行条目里的 `scripts/setup.sh`，检查 Node 20+、ffmpeg 和 Python 3，缺 HyperFrames skill 就自动装上。渲染器由 `npx` 按固定版本自动下载。
@@ -39,13 +39,13 @@ video-skills 是前一种的开源平铺版：
 <!-- CATALOG -->
 | Preview | Entry | Category · method | Length | Events / 10 s |
 |---|---|---|---|---|
-| <img src="entries/broll-wheel-launch/result/preview.gif" width="240"> | [**broll-wheel-launch**](entries/broll-wheel-launch/) B-roll wheel launch | launch-film · broll-under-type | 90 s 16:9 | 8.8 |
+| <img src="launch/broll-wheel/result/preview.gif" width="240"> | [**broll-wheel**](launch/broll-wheel/) B-roll wheel launch | launch · broll-under-type | 90 s 16:9 | 8.8 |
 <!-- /CATALOG -->
 
 ## 一个条目长什么样
 
 ```
-entries/<id>/
+<category>/<id>/
 ├── SKILL.md       加载它就能做片
 ├── taste.json     卡片：依赖、七层归属、规格、实测数据、需要什么、适合什么
 ├── references/    floor.md（共享底线）、RECIPE.md（逐镜头配方）、SWAP.md（换产品）、REFERENCE.md（参考拆解）
@@ -74,4 +74,4 @@ entries/<id>/
 
 见 [README.md](README.md) 对应章节。代码 MIT；成片和生成素材 CC BY 4.0；示例产品素材归原主所有。
 
-broll-wheel-launch 的示例片是给 Meta 的 Muse 做的非官方提案片，与 Meta 无关，未获其认可或赞助；Muse 及其素材归 Meta 所有，不在本仓库中。
+broll-wheel 的示例片是给 Meta 的 Muse 做的非官方提案片，与 Meta 无关，未获其认可或赞助；Muse 及其素材归 Meta 所有，不在本仓库中。

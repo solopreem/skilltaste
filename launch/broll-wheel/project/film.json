@@ -25,6 +25,7 @@
   "copy": {
     "open_a": "Your personal AI agent.",
     "open_b": "AI that *gets it done.*",
+    "credit": "BUILT BY SONNYPROTO",
     "wheel_lead": "Your",
     "wheel": [
       "Busywork",

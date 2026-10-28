@@ -1,9 +1,9 @@
 [
   {
-    "id": "broll-wheel-launch",
+    "id": "broll-wheel",
     "title": "B-roll wheel launch",
     "summary": "A 90 s keynote-style launch: real-world b-roll under kinetic type, a 'Your [ ]' wheel between chapters, the product's real screens floating over footage, a beat montage at 35 %, One More Thing, dot-to-logo end.",
-    "category": "launch-film",
+    "category": "launch",
     "method": "broll-under-type",
     "duration_s": 90,
     "ratio": "16:9",
@@ -38,8 +38,9 @@
       "under 30 s (use a cut-down: open, one chapter, montage, end)",
       "brands that ban real-world imagery"
     ],
-    "poster": "entries/broll-wheel-launch/result/poster.jpg",
-    "preview": "entries/broll-wheel-launch/result/preview.gif",
-    "video": "entries/broll-wheel-launch/result/result.mp4"
+    "path": "launch/broll-wheel",
+    "poster": "launch/broll-wheel/result/poster.jpg",
+    "preview": "launch/broll-wheel/result/preview.gif",
+    "video": "launch/broll-wheel/result/result.mp4"
   }
 ]

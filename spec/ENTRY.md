@@ -1,12 +1,12 @@
 # The entry format
 
-Every entry in `entries/<id>/` has the same files, so you can load any one of them on its own and reproduce its film,
+Every entry in `<category>/<id>/` has the same files, so you can load any one of them on its own and reproduce its film,
 and so entries can be compared and combined. `python3 tools/validate.py` checks this.
 
 Entries follow the Agent Skills layout (`SKILL.md` plus `references/`, `scripts/`, assets), so each one installs as a skill.
 
 ```
-entries/<id>/
+<category>/<id>/   # e.g. launch/broll-wheel; the folder is the taste.json layers.category
 ├── SKILL.md          # the agent's instructions: load this folder and make the film
 ├── taste.json        # machine-readable card: requirements, the seven layers, specs, metrics, what it needs (spec/taste.schema.json)
 ├── references/

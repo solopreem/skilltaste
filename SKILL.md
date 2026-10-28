@@ -1,11 +1,11 @@
 ---
 name: video-skills
-description: Pick and reproduce a reference film from the video-skills library. Every entry in entries/ is a self-contained skill with a finished result.mp4 and a project that renders it; load one entry and you can remake that exact film for another product. Use when the user asks for a video "like" a video-skills entry, names an entry, or wants a launch/promo film and is happy to choose a style from the gallery.
+description: Pick and reproduce a reference film from the video-skills library. Every entry (<category>/<id>/, e.g. launch/broll-wheel) is a self-contained skill with a finished result.mp4 and a project that renders it; load one entry and you can remake that exact film for another product. Use when the user asks for a video "like" a video-skills entry, names an entry, or wants a launch/promo film and is happy to choose a style from the gallery.
 ---
 
 # video-skills
 
-A flat library of films. Each entry under `entries/<id>/` is one film you can reproduce almost exactly. Entries share one
+A library of films, one folder per category (`launch/`, later `explainer/`, `social/`...). Each entry under `<category>/<id>/` is one film you can reproduce almost exactly. Entries share one
 format (`spec/ENTRY.md`) and one card (`taste.json`), so they can be compared and combined.
 
 ## Choosing an entry
@@ -17,7 +17,7 @@ format (`spec/ENTRY.md`) and one card (`taste.json`), so they can be compared an
 
 ## Using an entry
 
-Open `entries/<id>/SKILL.md` and follow it. Its first step is `bash scripts/setup.sh`, which you run yourself: it checks
+Open `<category>/<id>/SKILL.md` and follow it. Its first step is `bash scripts/setup.sh`, which you run yourself: it checks
 the tools and installs the HyperFrames skills if they are missing. The entry is complete on its own: it runs its example, swaps the product through
 `film.json`, regenerates any media and renders.
 

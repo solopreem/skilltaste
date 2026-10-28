@@ -30,12 +30,14 @@
     #mk { left: 120px; top: 110px; width: 92px; height: 92px; }
     #a { left: 120px; top: 640px; text-align: left; width: auto; font-size: 92px; }
     #b { left: 120px; top: 640px; text-align: left; width: auto; font-size: 92px; }
+    #cr { left: 0; top: 140px; width: 1800px; text-align: right; color: #f4f7fb; }
   </style>
   <div id="root" data-composition-id="open" data-width="1920" data-height="1080">
     <video id="v" class="abs bg clip" src="assets/cuts/open.mp4" data-start="0" data-duration="6.06" data-track-index="0" muted playsinline></video>
     <div id="mk" class="abs tile"><img src="assets/muse-logo.png" alt="Muse app icon" /></div>
     <div id="a" class="abs st"><span class="w ast">✳</span><span class="w">Your</span><span class="w">personal</span><span class="w">AI</span><span class="w">agent.</span></div>
     <div id="b" class="abs st"><span class="w">AI</span><span class="w">that</span><em class="w">gets it done.</em></div>
+    <div id="cr" class="abs lab">BUILT BY SONNYPROTO</div>
   </div>
   <script>
     (function () {
@@ -52,6 +54,9 @@
       wIn('#b .w', 3.06, 0.08);
       mark('#b em', 3.6);
       wOut(['#b .w', '#mk'], 5.82);
+      // the maker's credit, opposite the logo, for the length of the open
+      tl.fromTo('#cr', { opacity: 0, y: -8 }, { opacity: 1, y: 0, duration: 0.5, ease: 'expo.out' }, 0.3);
+      tl.to('#cr', { opacity: 0, duration: 0.24, ease: 'power2.in' }, 5.82);
       tl.set({}, {}, 6.06);
       window.__timelines['open'] = tl;
     })();

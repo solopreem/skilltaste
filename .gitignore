@@ -11,9 +11,9 @@ node_modules/
 **/project/assets/broll/*.mp4
 **/project/film.mp4
 # third-party product assets for the example film: not redistributed, see each entry's project/assets/THIRD_PARTY.md
-entries/broll-wheel-launch/project/assets/muse-logo.png
-entries/broll-wheel-launch/project/assets/img/muse-mac.png
-entries/broll-wheel-launch/project/assets/img/muse-browser.png
-entries/broll-wheel-launch/project/assets/img/muse-approve.png
-entries/broll-wheel-launch/project/assets/img/muse-props.jpg
-entries/broll-wheel-launch/project/assets/img/muse-mascot.png
+launch/broll-wheel/project/assets/muse-logo.png
+launch/broll-wheel/project/assets/img/muse-mac.png
+launch/broll-wheel/project/assets/img/muse-browser.png
+launch/broll-wheel/project/assets/img/muse-approve.png
+launch/broll-wheel/project/assets/img/muse-props.jpg
+launch/broll-wheel/project/assets/img/muse-mascot.png

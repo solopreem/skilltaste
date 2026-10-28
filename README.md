@@ -11,14 +11,14 @@ Load one entry, and your agent can make the same film for your product.
 </div>
 
 ```bash
-npx skills add solopreem/video-skills                       # the whole library (the agent picks an entry)
-npx skills add solopreem/video-skills/entries/broll-wheel-launch   # just one film
+npx skills add sonnyproto/video-skills                       # the whole library (the agent picks an entry)
+npx skills add sonnyproto/video-skills/launch/broll-wheel   # just one film
 ```
 
 Then, in Claude Code or Codex:
 
 ```text
-Make a launch film for https://your-product.com with broll-wheel-launch.
+Make a launch film for https://your-product.com with broll-wheel.
 ```
 
 Nothing else to install by hand: the agent runs the entry's `scripts/setup.sh`, which checks Node 20+, ffmpeg and Python 3
@@ -42,17 +42,17 @@ video-skills is the flat version of the first, done in the open:
 <!-- CATALOG -->
 | Preview | Entry | Category · method | Length | Events / 10 s |
 |---|---|---|---|---|
-| <img src="entries/broll-wheel-launch/result/preview.gif" width="240"> | [**broll-wheel-launch**](entries/broll-wheel-launch/) B-roll wheel launch | launch-film · broll-under-type | 90 s 16:9 | 8.8 |
+| <img src="launch/broll-wheel/result/preview.gif" width="240"> | [**broll-wheel**](launch/broll-wheel/) B-roll wheel launch | launch · broll-under-type | 90 s 16:9 | 8.8 |
 <!-- /CATALOG -->
 
 ## How an entry is built
 
 ```
-entries/<id>/
+<category>/<id>/
 ├── SKILL.md       load this and make the film
 ├── taste.json     the card: requirements, seven layers, specs, metrics, what it needs, what it fits
 ├── references/    floor.md (shared rules), RECIPE.md (shot by shot), SWAP.md (your product in), REFERENCE.md
-├── scripts/       measuring and generation scripts
+├── scripts/       setup.sh (installs what is missing) and the measuring scripts
 ├── result/        result.mp4, poster, contact sheet, preview, metrics.json
 └── project/       a renderable project: film.json, tools/, assets/
 ```
@@ -102,7 +102,7 @@ Ideas and rules borrowed, with thanks, from [HyperFrames](https://hyperframes.he
 
 ## Licence
 
-The broll-wheel-launch example is an unofficial spec film for Muse, Meta's personal AI agent. It is not affiliated with,
+The broll-wheel example is an unofficial spec film for Muse, Meta's personal AI agent. It is not affiliated with,
 endorsed or sponsored by Meta; Muse and its assets are Meta's and are not in this repo.
 
 Code: MIT. Result films and generated media: CC BY 4.0. Example product assets belong to their owners; each entry's
