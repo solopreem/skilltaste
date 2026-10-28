@@ -27,7 +27,7 @@ for eid in ids:
             bad(f"taste.json has no '{k}'")
     # shared files are copied into every entry (each entry must install on its own); the copies must match tools/
     for shared, copy in [("tools/floor.md", "references/floor.md"), ("tools/analyze.py", "scripts/analyze.py"),
-                         ("tools/events.py", "scripts/events.py")]:
+                         ("tools/events.py", "scripts/events.py"), ("tools/setup.sh", "scripts/setup.sh")]:
         if (e / copy).exists() and (e / copy).read_bytes() != (ROOT / shared).read_bytes():
             bad(f"{copy} differs from {shared}: copy it again")
     if t.get("id") != eid:

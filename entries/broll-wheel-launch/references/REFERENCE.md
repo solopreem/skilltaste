@@ -30,9 +30,9 @@ assets are not in this repo (`project/assets/THIRD_PARTY.md`).
 | | Reference | This entry (result.mp4) |
 |---|---|---|
 | Length | 94 s | 90 s |
-| Shots (cuts + 1) | 20 | 25 |
-| Visual events per 10 s | 6.1 | 6.2 |
-| Still share | 0.71 | 0.68 |
+| Shots (cuts + 1) | 20 | 26 |
+| Visual events per 10 s | 6.1 | 8.8 |
+| Still share | 0.71 | 0.54 |
 | Loudness | -15.4 LUFS | -14.4 LUFS |
 | True peak | | -1.9 dBTP |
 | Tempo | | 120 BPM grid (the detector reads 80.7 on this mix) |
@@ -43,6 +43,7 @@ Measured with `tools/analyze.py` and `tools/events.py` at the repo root.
 
 The film was first built for thot market (thot.market). Its v1 used only paper and moss grounds and the brand's illustrations (3.2 events per 10 s, still share 0.86).
 The note that produced v2: the reference's backgrounds look better. v2 added the b-roll and the burst. v2 was cut from
-generated clips (9.0 events per 10 s, still share 0.55); this entry swaps them for locked-off Pexels stock, so the grounds
-behind the two cards stay calm and the measured motion drops while every scene, cue and cut time stays the same. Rhythm rules
+generated clips (9.0 events per 10 s, still share 0.55); this entry uses bright Pexels stock chosen and graded for the example brand (8.8, 0.54), with every
+scene, cue and cut time unchanged. A first stock pass with dark, locked-off clips measured 6.2 and 0.68 and looked flat:
+the footage, not the timing, carries most of this film's energy. Rhythm rules
 (poster frame, hook, burst position, locked anchor over a changing world) follow huashu-motion's director notes.

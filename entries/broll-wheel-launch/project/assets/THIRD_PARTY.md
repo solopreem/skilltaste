@@ -13,9 +13,9 @@ npx --yes hyperframes@0.8.191 capture https://ai.meta.com/muse/ --json -o /tmp/m
 | film.json path | Made from (in the capture) |
 |---|---|
 | `assets/muse-logo.png` | `assets/muse-nrp-blog-thumbnail.webp`, as PNG |
-| `assets/img/muse-mac.png` | `assets/muse-desktop-mac-app.webp`, crop (110, 162, 1290, 826), resized to 1500×844 |
-| `assets/img/muse-features.png` | `screenshots/scroll-010.png` crop (220, 586, 956, 1033) above `scroll-019.png` crop (220, 278, 956, 373) |
-| `assets/img/muse-approve.png` | `screenshots/scroll-019.png` crop (976, 655, 1680, 945) |
+| `assets/img/muse-mac.png` | `assets/muse-desktop-mac-app.webp`, crop (0, 100, 1400, 888), resized to 1500×844 |
+| `assets/img/muse-browser.png` | `assets/muse-finding-movie-tickets-for-you.webp` crop (330, 610, 1030, 1070) |
+| `assets/img/muse-approve.png` | `assets/muse-finding-movie-tickets-for-you.webp` crop (330, 290, 960, 600) |
 | `assets/img/muse-props.jpg` | `assets/image-19.webp`, edge-extended to 3:1 (2904×968) |
 | `assets/img/muse-mascot.png` | `assets/image-19.webp` crop (230, 330, 560, 660), background keyed out, 512×512 |
 

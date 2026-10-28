@@ -7,9 +7,9 @@
     "method": "broll-under-type",
     "duration_s": 90,
     "ratio": "16:9",
-    "events_per_10s": 6.3,
-    "still_share": 0.68,
-    "shots": 25,
+    "events_per_10s": 8.8,
+    "still_share": 0.54,
+    "shots": 26,
     "needs": {
       "from_product": [
         "logo (square tile)",

@@ -14,13 +14,13 @@
     .sub { font-size: 36px; line-height: 1.35; color: #5d6c7b; }
     .card { border-radius: 28px; overflow: hidden; background: #ffffff; border: 2px solid #d5dde7; box-shadow: 0 30px 70px -30px rgba(25,34,25,.35); }
     .card img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: left top; }
-    .bar { left: 0; top: 0; width: 100%; height: 44px; background: #f2efdd; border-bottom: 2px solid #e2e0cc; z-index: 3; }
+    .bar { left: 0; top: 0; width: 100%; height: 44px; background: #e3eaf3; border-bottom: 2px solid #d5dde7; z-index: 3; }
     .bar i { position: absolute; top: 15px; width: 12px; height: 12px; border-radius: 6px; background: #d5dde7; }
-    .chip { right: 16px; top: 8px; height: 28px; padding: 0 14px; border-radius: 14px; background: #e9ecd8; font-family: 'JetBrains Mono', monospace;
-      font-size: 19px; line-height: 28px; color: #49513f; white-space: nowrap; }
+    .chip { right: 16px; top: 8px; height: 28px; padding: 0 14px; border-radius: 14px; background: #f4f7fb; font-family: 'JetBrains Mono', monospace;
+      font-size: 19px; line-height: 28px; color: #5d6c7b; white-space: nowrap; }
     .scr { left: 0; top: 44px; width: 100%; overflow: hidden; }
     .ring { border: 6px solid #0a1317; border-radius: 14px; z-index: 4; box-shadow: 0 0 0 6px #a9d4ff; }
-    .tile { border-radius: 26%; overflow: hidden; background: #f5f0d9; }
+    .tile { border-radius: 26%; overflow: hidden; background: #ffffff; }
     .tile img { width: 100%; height: 100%; object-fit: cover; }
     #root .bg { left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
     #root { background: #0a1317; color: #f4f7fb; }
@@ -32,15 +32,15 @@
     #root .sub { color: #f4f7fb; }
     #cd { box-shadow: 0 50px 120px -30px rgba(10,16,10,.6); }
     #sb { left: 120px; top: 640px; width: 640px; }
-    #cd { left: 800px; top: 300px; width: 1021px; height: 420px; }
-    #lb { left: 800px; top: 746px; }
+    #cd { left: 820px; top: 300px; width: 914px; height: 450px; }
+    #lb { left: 820px; top: 776px; }
   </style>
   <div id="root" data-composition-id="terms" data-width="1920" data-height="1080">
     <video id="v" class="abs bg clip" src="assets/cuts/terms.mp4" data-start="0" data-duration="6.04" data-track-index="0" muted playsinline></video>
     <div id="hd" class="abs hl"><span class="w">Approve</span><em class="w">critical actions.</em></div>
-    <div id="sb" class="abs sub">Emails and purchases wait for your OK.</div>
-    <div id="cd" class="abs card"><img src="assets/img/muse-approve.png" alt="Muse site card: Approve critical actions from your agent" /><div id="r0" class="abs ring" style="left:10px;top:193px;width:977px;height:69px"></div><div id="r1" class="abs ring" style="left:10px;top:239px;width:977px;height:104px"></div></div>
-    <div id="lb" class="abs lab">AI.META.COM/MUSE · SECURE AND IN CONTROL</div>
+    <div id="sb" class="abs sub">Muse checks with you before it books or buys.</div>
+    <div id="cd" class="abs card"><img src="assets/img/muse-approve.png" alt="Muse asks: Tickets just opened, 4:30 PM or 7:30 PM. Interested? The reply: Yeah, book for 2" /><div id="r0" class="abs ring" style="left:7px;top:16px;width:725px;height:162px"></div><div id="r1" class="abs ring" style="left:521px;top:212px;width:330px;height:111px"></div></div>
+    <div id="lb" class="abs lab">AI.META.COM/MUSE · PRODUCT IMAGE</div>
   </div>
   <script>
     (function () {

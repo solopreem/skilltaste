@@ -45,8 +45,8 @@ cd project
 python3 tools/cuts.py              # cut + grade into assets/graded/, then all-intra into assets/cuts/
 ```
 
-Move the in-points in `tools/cuts.py` to each clip's best moment. Pull the grade (`GRADE`, `DARK`) toward the new `ground`
-colour if the brand is not green. Segments under type get a slow 6 % push there, so locked-off stock still moves.
+Move the in-points in `tools/cuts.py` to each clip's best moment. Set the grade in `film.json` `grade` (`all`: the look of
+every clip; `under_type`: what is added under type, darker for bright footage), as ffmpeg filters. Segments under type get a slow 6 % push there, so locked-off stock still moves.
 
 ## 3. Build, look, render
 

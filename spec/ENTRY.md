@@ -14,7 +14,7 @@ entries/<id>/
 │   ├── RECIPE.md     # the film shot by shot: time, scene, move, sound. The part you do not change
 │   ├── SWAP.md       # how to put another product in: the slots, what never changes
 │   └── REFERENCE.md  # what it reproduces: the reference's moves and measured numbers (never the reference footage)
-├── scripts/          # analyze.py, events.py (copies of tools/)
+├── scripts/          # setup.sh, analyze.py, events.py (copies of tools/)
 ├── result/
 │   ├── result.mp4    # the film this entry produced (released under the entry's licence)
 │   ├── poster.jpg    # one frame, 1280 wide
@@ -47,7 +47,7 @@ the order is floor > category > method > moves > craft > style.
 ## Shared files: copied, not linked
 
 Each entry must work when it is installed on its own, so nothing in it points outside its folder (no `../../`, no symlinks).
-Our own shared files (`tools/floor.md`, `tools/analyze.py`, `tools/events.py`) are copied into every
+Our own shared files (`tools/floor.md`, `tools/analyze.py`, `tools/events.py`, `tools/setup.sh`) are copied into every
 entry; `tools/validate.py` fails when a copy drifts from `tools/`. Edit the file in `tools/`, then copy it again.
 Anthropic's own skills repo does the same: docx, pptx and xlsx each carry an identical `scripts/office/`.
 

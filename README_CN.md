@@ -21,6 +21,8 @@ npx skills add solopreem/video-skills/entries/broll-wheel-launch   # 只要这�
 用 broll-wheel-launch 给 https://your-product.com 做一支发布片。
 ```
 
+不用手动装别的：agent 会自己运行条目里的 `scripts/setup.sh`，检查 Node 20+、ffmpeg 和 Python 3，缺 HyperFrames skill 就自动装上。渲染器由 `npx` 按固定版本自动下载。
+
 ## 为什么做这个
 
 现在的视频 skill 大致两种。一种是闭源整包：一个风格一个价，快，但看不到里面，也没法混用。另一种是很深的开源工具箱，各自一套格式，彼此对不上。
@@ -37,7 +39,7 @@ video-skills 是前一种的开源平铺版：
 <!-- CATALOG -->
 | Preview | Entry | Category · method | Length | Events / 10 s |
 |---|---|---|---|---|
-| <img src="entries/broll-wheel-launch/result/preview.gif" width="240"> | [**broll-wheel-launch**](entries/broll-wheel-launch/) B-roll wheel launch | launch-film · broll-under-type | 90 s 16:9 | 6.3 |
+| <img src="entries/broll-wheel-launch/result/preview.gif" width="240"> | [**broll-wheel-launch**](entries/broll-wheel-launch/) B-roll wheel launch | launch-film · broll-under-type | 90 s 16:9 | 8.8 |
 <!-- /CATALOG -->
 
 ## 一个条目长什么样

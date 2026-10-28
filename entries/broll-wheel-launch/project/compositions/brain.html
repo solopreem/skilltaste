@@ -14,13 +14,13 @@
     .sub { font-size: 36px; line-height: 1.35; color: #5d6c7b; }
     .card { border-radius: 28px; overflow: hidden; background: #ffffff; border: 2px solid #d5dde7; box-shadow: 0 30px 70px -30px rgba(25,34,25,.35); }
     .card img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: left top; }
-    .bar { left: 0; top: 0; width: 100%; height: 44px; background: #f2efdd; border-bottom: 2px solid #e2e0cc; z-index: 3; }
+    .bar { left: 0; top: 0; width: 100%; height: 44px; background: #e3eaf3; border-bottom: 2px solid #d5dde7; z-index: 3; }
     .bar i { position: absolute; top: 15px; width: 12px; height: 12px; border-radius: 6px; background: #d5dde7; }
-    .chip { right: 16px; top: 8px; height: 28px; padding: 0 14px; border-radius: 14px; background: #e9ecd8; font-family: 'JetBrains Mono', monospace;
-      font-size: 19px; line-height: 28px; color: #49513f; white-space: nowrap; }
+    .chip { right: 16px; top: 8px; height: 28px; padding: 0 14px; border-radius: 14px; background: #f4f7fb; font-family: 'JetBrains Mono', monospace;
+      font-size: 19px; line-height: 28px; color: #5d6c7b; white-space: nowrap; }
     .scr { left: 0; top: 44px; width: 100%; overflow: hidden; }
     .ring { border: 6px solid #0a1317; border-radius: 14px; z-index: 4; box-shadow: 0 0 0 6px #a9d4ff; }
-    .tile { border-radius: 26%; overflow: hidden; background: #f5f0d9; }
+    .tile { border-radius: 26%; overflow: hidden; background: #ffffff; }
     .tile img { width: 100%; height: 100%; object-fit: cover; }
     #root .bg { left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
     #root { background: #0a1317; color: #f4f7fb; }
@@ -65,7 +65,7 @@
       // 35.06: hard cut to paper, the brain slams in, the caption rides up beside it
       tl.set('#pp', { opacity: 1 }, 3.0);
       tl.fromTo('#br', { opacity: 0, scale: 0.5, rotation: -14 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.55, ease: 'back.out(2)' }, 3.0);
-      tl.to('#cp', { x: 420, y: -420, scale: 0.92, boxShadow: '0 0 0 0 rgba(0,0,0,0)', duration: 0.5, ease: 'expo.out' }, 3.0);
+      tl.to('#cp', { x: 360, y: -420, scale: 0.92, boxShadow: '0 0 0 0 rgba(0,0,0,0)', duration: 0.5, ease: 'expo.out' }, 3.0);
       mark('#bt em', 3.3);
       tl.to(['#br', '#cp'], { opacity: 0, filter: 'blur(8px)', duration: 0.22, ease: 'power2.in' }, 3.8);
       tl.set({}, {}, 4.04);

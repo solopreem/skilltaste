@@ -16,9 +16,13 @@ Read before you start, in this order:
 
 ## 0. Requirements and fit
 
-- Node 20+, ffmpeg, Python 3. The renderer is pinned and fetched by npx: `hyperframes@0.8.191`.
-- The HyperFrames skills (`hyperframes`, `hyperframes-cli`) should be installed for the render contract. If they are missing,
-  tell the user to run `npx hyperframes skills update` and restart the agent.
+- Run `bash scripts/setup.sh` first, yourself; do not hand it to the user. It checks Node 20+, ffmpeg and Python 3 (and says
+  how to install any that are missing) and installs the HyperFrames agent skills (`npx skills add heygen-com/hyperframes`)
+  if they are not there. Re-running it is safe.
+- Freshly installed skills load in the next session. Do not stop for that: read `~/.claude/skills/hyperframes/SKILL.md`
+  (or `~/.agents/skills/hyperframes/`) directly for the render contract. This entry's own generator already follows it,
+  so swapping and rendering work even without the skills.
+- The renderer is pinned and fetched by npx: `hyperframes@0.8.191`.
 - No keys needed to render: the graded footage ships in `project/assets/graded/`. To regrade it, `project/tools/stock.sh`
   fetches the Pexels originals. To regenerate music: see `project/tools/music.md`.
 - Read `taste.json` `fits` / `avoid` against the product. This film needs a real product screen, two real cards worth

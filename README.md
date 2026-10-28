@@ -21,6 +21,9 @@ Then, in Claude Code or Codex:
 Make a launch film for https://your-product.com with broll-wheel-launch.
 ```
 
+Nothing else to install by hand: the agent runs the entry's `scripts/setup.sh`, which checks Node 20+, ffmpeg and Python 3
+and installs the HyperFrames skills if they are missing. The renderer is fetched by `npx` at a pinned version.
+
 ## Why this exists
 
 Video skills today come in two shapes. Some are closed bundles: one style per purchase, fast, but you cannot see inside
@@ -39,7 +42,7 @@ video-skills is the flat version of the first, done in the open:
 <!-- CATALOG -->
 | Preview | Entry | Category · method | Length | Events / 10 s |
 |---|---|---|---|---|
-| <img src="entries/broll-wheel-launch/result/preview.gif" width="240"> | [**broll-wheel-launch**](entries/broll-wheel-launch/) B-roll wheel launch | launch-film · broll-under-type | 90 s 16:9 | 6.3 |
+| <img src="entries/broll-wheel-launch/result/preview.gif" width="240"> | [**broll-wheel-launch**](entries/broll-wheel-launch/) B-roll wheel launch | launch-film · broll-under-type | 90 s 16:9 | 8.8 |
 <!-- /CATALOG -->
 
 ## How an entry is built

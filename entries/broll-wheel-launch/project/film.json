@@ -46,7 +46,7 @@
     "same_2": "On mobile, Mac, or *WhatsApp.*",
     "tools_head": "A secure computer *with a browser.*",
     "tools_sub": "Muse Secure VM: a persistent, isolated Linux computer you and your agent share.",
-    "tools_label": "AI.META.COM/MUSE · FEATURES",
+    "tools_label": "AI.META.COM/MUSE · PRODUCT IMAGE",
     "montage_a": "Muse does birthday shopping",
     "montage_b": "while you *do you.*",
     "vault_head": "Your logins *stay locked.*",
@@ -65,8 +65,8 @@
     "vault_sub": "A one-time card number is generated at checkout.",
     "vault_label": "ILLUSTRATIVE TASK",
     "terms_head": "Approve *critical actions.*",
-    "terms_sub": "Emails and purchases wait for your OK.",
-    "terms_label": "AI.META.COM/MUSE · SECURE AND IN CONTROL",
+    "terms_sub": "Muse checks with you before it books or buys.",
+    "terms_label": "AI.META.COM/MUSE · PRODUCT IMAGE",
     "proof_head": "See *every step.*",
     "proof_sub": "A complete audit trail of everything your agent has done.",
     "steps_head": "Give it *a goal.*",
@@ -120,86 +120,86 @@
       "chip": "Muse for Mac",
       "_geometry": "card is 1500x844 below a 44 px bar; numbers are card px",
       "ring": [
-        385,
-        610,
-        812,
-        173
+        442,
+        587,
+        685,
+        146
       ],
       "cursor_tabs_x": [
-        919,
-        919,
-        793,
-        669
+        926,
+        926,
+        820,
+        715
       ],
-      "cursor_tabs_y": 845,
+      "cursor_tabs_y": 801,
       "push_focus": [
-        791,
-        696
+        784,
+        660
       ],
-      "push_zoom": 1.75
+      "push_zoom": 1.35
     },
     "tools_card": {
-      "src": "muse-features.png",
-      "alt": "Muse site features: conversation, secure computer with a browser, works with your apps",
+      "src": "muse-browser.png",
+      "alt": "Muse's browser card: Selecting seats, a seat map with two seats chosen, Open browser",
       "_geometry": "crop size in px, display scale, left/top in frame; rings [x, y, w, h, time] in crop px",
       "size": [
-        736,
-        542
+        700,
+        460
       ],
       "scale": 1.25,
       "pos": [
-        860,
-        170
+        880,
+        230
       ],
       "rings": [
         [
-          14,
-          24,
-          440,
-          50,
+          30,
+          30,
+          240,
+          60,
           1.94
         ],
         [
-          14,
-          255,
-          690,
-          70,
+          215,
+          205,
+          75,
+          42,
           3.06
         ],
         [
-          14,
-          469,
-          540,
-          48,
+          32,
+          375,
+          443,
+          52,
           4.06
         ]
       ]
     },
     "terms_card": {
       "src": "muse-approve.png",
-      "alt": "Muse site card: Approve critical actions from your agent",
+      "alt": "Muse asks: Tickets just opened, 4:30 PM or 7:30 PM. Interested? The reply: Yeah, book for 2",
       "size": [
-        704,
-        290
+        630,
+        310
       ],
       "scale": 1.45,
       "pos": [
-        800,
+        820,
         300
       ],
       "rings": [
         [
-          14,
-          140,
-          660,
-          34,
+          12,
+          18,
+          486,
+          98,
           1.94
         ],
         [
-          14,
-          172,
-          660,
-          58,
+          366,
+          153,
+          214,
+          63,
           3.06
         ]
       ]
@@ -216,5 +216,9 @@
         1391
       ]
     }
+  },
+  "grade": {
+    "all": "eq=contrast=1.03:saturation=0.92:gamma=1.04,colorbalance=rs=-0.02:bs=0.03:rm=-0.01:bm=0.02",
+    "under_type": "eq=brightness=-0.13:gamma=0.9"
   }
 }

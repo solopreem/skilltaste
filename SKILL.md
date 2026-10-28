@@ -17,7 +17,8 @@ format (`spec/ENTRY.md`) and one card (`taste.json`), so they can be compared an
 
 ## Using an entry
 
-Open `entries/<id>/SKILL.md` and follow it. It is complete on its own: it runs its example, swaps the product through
+Open `entries/<id>/SKILL.md` and follow it. Its first step is `bash scripts/setup.sh`, which you run yourself: it checks
+the tools and installs the HyperFrames skills if they are missing. The entry is complete on its own: it runs its example, swaps the product through
 `film.json`, regenerates any media and renders.
 
 ## Combining entries
