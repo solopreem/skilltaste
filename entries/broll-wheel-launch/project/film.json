@@ -1,0 +1,220 @@
+{
+  "_about": "Everything that is this product. build.py reads it; timing, eases, holds and the SFX grid live in build.py and should not change. *word* = the accent unit.",
+  "brand": {
+    "name": "Muse",
+    "url": "ai.meta.com/muse",
+    "logo": "assets/muse-logo.png",
+    "logo_alt": "Muse app icon"
+  },
+  "palette": {
+    "paper": "#f4f7fb",
+    "paper_light": "#ffffff",
+    "paper_edge": "#e3eaf3",
+    "ink": "#0a1317",
+    "ground": "#0457cb",
+    "ground_light": "#4ba9fe",
+    "accent": "#a9d4ff",
+    "muted": "#5d6c7b",
+    "line": "#d5dde7"
+  },
+  "fonts": {
+    "display": "assets/fonts/dm-sans.woff2",
+    "body": "assets/fonts/dm-sans.woff2"
+  },
+  "music": "assets/music_mix.mp3",
+  "copy": {
+    "open_a": "Your personal AI agent.",
+    "open_b": "AI that *gets it done.*",
+    "wheel_lead": "Your",
+    "wheel": [
+      "Busywork",
+      "Computer",
+      "Logins",
+      "Approval",
+      "Goals",
+      "Mac"
+    ],
+    "problem": "Take the busywork *off your plate.*",
+    "sell_head": "Muse handles it all.",
+    "sell_chips": [
+      "Email",
+      "Calendar",
+      "Shopping"
+    ],
+    "sell_sub": "Just tell Muse what you want to get done.",
+    "same_1": "Chat like you message people.",
+    "same_2": "On mobile, Mac, or *WhatsApp.*",
+    "tools_head": "A secure computer *with a browser.*",
+    "tools_sub": "Muse Secure VM: a persistent, isolated Linux computer you and your agent share.",
+    "tools_label": "AI.META.COM/MUSE · FEATURES",
+    "montage_a": "Muse does birthday shopping",
+    "montage_b": "while you *do you.*",
+    "vault_head": "Your logins *stay locked.*",
+    "vault_title": "Muse · booking movie tickets",
+    "vault_lines": [
+      "› book two seats for 7:30 PM",
+      "sign in to the cinema account",
+      "pay at checkout"
+    ],
+    "vault_hashes": [
+      "seats held · waiting for you",
+      "•••••••• · credential store",
+      "one-time card · •••• ••••"
+    ],
+    "vault_private": "your agent can't read it",
+    "vault_sub": "A one-time card number is generated at checkout.",
+    "vault_label": "ILLUSTRATIVE TASK",
+    "terms_head": "Approve *critical actions.*",
+    "terms_sub": "Emails and purchases wait for your OK.",
+    "terms_label": "AI.META.COM/MUSE · SECURE AND IN CONTROL",
+    "proof_head": "See *every step.*",
+    "proof_sub": "A complete audit trail of everything your agent has done.",
+    "steps_head": "Give it *a goal.*",
+    "steps": [
+      [
+        "Tell Muse a goal.",
+        "It builds an action plan and tracks progress."
+      ],
+      [
+        "It works ahead.",
+        "It takes tasks off your plate along the way."
+      ],
+      [
+        "You stay in charge.",
+        "It acts on ideas under your direction."
+      ]
+    ],
+    "refer_from": "Muse",
+    "refer_to": "Muse for Mac",
+    "refer_number": "macOS",
+    "refer_sub": "Muse works with your desktop computer files, apps and browser tabs.",
+    "refer_line": "Now on *your desktop.*",
+    "invite_1": "Connect your email, calendar,",
+    "invite_2": "Instagram and *more.*",
+    "invite_sub": "If a task needs a tool that doesn't exist, Muse builds it for you.",
+    "trust_1": "Your personal data",
+    "trust_2": "is *safe and secure.*",
+    "trust_rows": [
+      "Is Muse safe?",
+      "Is Muse free?",
+      "Does Muse ask before it acts?"
+    ],
+    "keep_1": "Get on with life.",
+    "keep_2_lead": "Muse",
+    "keep_2_circled": "gets it done.",
+    "end_tagline": "Your personal AI agent.",
+    "disclaimer": "UNOFFICIAL SPEC FILM · NOT AFFILIATED WITH META · MUSE IS A TRADEMARK OF META"
+  },
+  "images": {
+    "illustration": {
+      "src": "assets/img/muse-props.jpg",
+      "alt": "Muse's mascot among floating everyday props"
+    },
+    "mascot": {
+      "src": "assets/img/muse-mascot.png",
+      "alt": "Muse's fluffy mascot"
+    },
+    "app": {
+      "src": "assets/img/muse-mac.png",
+      "alt": "Muse for Mac asking: Allow Muse to move files to Trash?",
+      "chip": "Muse for Mac",
+      "_geometry": "card is 1500x844 below a 44 px bar; numbers are card px",
+      "ring": [
+        385,
+        610,
+        812,
+        173
+      ],
+      "cursor_tabs_x": [
+        919,
+        919,
+        793,
+        669
+      ],
+      "cursor_tabs_y": 845,
+      "push_focus": [
+        791,
+        696
+      ],
+      "push_zoom": 1.75
+    },
+    "tools_card": {
+      "src": "muse-features.png",
+      "alt": "Muse site features: conversation, secure computer with a browser, works with your apps",
+      "_geometry": "crop size in px, display scale, left/top in frame; rings [x, y, w, h, time] in crop px",
+      "size": [
+        736,
+        542
+      ],
+      "scale": 1.25,
+      "pos": [
+        860,
+        170
+      ],
+      "rings": [
+        [
+          14,
+          24,
+          440,
+          50,
+          1.94
+        ],
+        [
+          14,
+          255,
+          690,
+          70,
+          3.06
+        ],
+        [
+          14,
+          469,
+          540,
+          48,
+          4.06
+        ]
+      ]
+    },
+    "terms_card": {
+      "src": "muse-approve.png",
+      "alt": "Muse site card: Approve critical actions from your agent",
+      "size": [
+        704,
+        290
+      ],
+      "scale": 1.45,
+      "pos": [
+        800,
+        300
+      ],
+      "rings": [
+        [
+          14,
+          140,
+          660,
+          34,
+          1.94
+        ],
+        [
+          14,
+          172,
+          660,
+          58,
+          3.06
+        ]
+      ]
+    },
+    "flow": {
+      "src": "assets/img/muse-flow.svg",
+      "alt": "How Muse works: you ask, it plans, Secure VM, you approve, audit trail",
+      "_geometry": "SVG drawn at 1600x620; x of each of the 5 stages",
+      "stages_x": [
+        74,
+        388,
+        724,
+        1066,
+        1391
+      ]
+    }
+  }
+}

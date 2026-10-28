@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "video-skills entry card",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "summary",
+    "version",
+    "requires",
+    "layers",
+    "spec",
+    "reference",
+    "result",
+    "needs",
+    "fits",
+    "avoid",
+    "licence"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "layers": {
+      "type": "object",
+      "required": [
+        "floor",
+        "category",
+        "method",
+        "moves",
+        "craft",
+        "style",
+        "tool"
+      ],
+      "properties": {
+        "floor": {
+          "type": "string",
+          "description": "path to the entry's copy of floor.md"
+        },
+        "category": {
+          "enum": [
+            "launch-film",
+            "feature-film",
+            "explainer",
+            "tutorial",
+            "data-story",
+            "social-cut",
+            "sting",
+            "brand-film"
+          ]
+        },
+        "method": {
+          "type": "string"
+        },
+        "moves": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "craft": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "style": {
+          "type": "object"
+        },
+        "tool": {
+          "type": "object",
+          "required": [
+            "renderer"
+          ]
+        }
+      }
+    },
+    "spec": {
+      "type": "object",
+      "required": [
+        "duration_s",
+        "ratio",
+        "fps"
+      ]
+    },
+    "reference": {
+      "type": "object"
+    },
+    "result": {
+      "type": "object",
+      "required": [
+        "video",
+        "poster",
+        "metrics"
+      ]
+    },
+    "needs": {
+      "type": "object",
+      "required": [
+        "from_product",
+        "generated"
+      ]
+    },
+    "fits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "avoid": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "combines_with": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conflicts_with": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cost": {
+      "type": "object"
+    },
+    "licence": {
+      "type": "object"
+    },
+    "requires": {
+      "type": "object",
+      "required": [
+        "renderer"
+      ],
+      "properties": {
+        "renderer": {
+          "type": "string"
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bins": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "optional": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

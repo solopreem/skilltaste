@@ -1,0 +1,85 @@
+<template>
+  <style>
+    @font-face { font-family: 'Bricolage'; src: url('assets/fonts/dm-sans.woff2') format('woff2'); font-weight: 200 800; }
+    @font-face { font-family: 'DM Sans'; src: url('assets/fonts/dm-sans.woff2') format('woff2'); font-weight: 100 1000; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'DM Sans', sans-serif; font-weight: 500; }
+    #root .abs { position: absolute; }
+    .st { left: 0; width: 1920px; text-align: center; font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 84px; line-height: 1.12;
+      letter-spacing: -0.03em; white-space: nowrap; }
+    .st .w, .hl .w { display: inline-block; margin: 0 0.1em; }
+    .hl { font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 76px; line-height: 1.08; letter-spacing: -0.03em; }
+    .hl .w { margin: 0 0.22em 0 0; }
+    .mono { font-family: 'JetBrains Mono', monospace; font-weight: 500; }
+    .lab { font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 28px; letter-spacing: .02em; color: #5d6c7b; }
+    .sub { font-size: 36px; line-height: 1.35; color: #5d6c7b; }
+    .card { border-radius: 28px; overflow: hidden; background: #ffffff; border: 2px solid #d5dde7; box-shadow: 0 30px 70px -30px rgba(25,34,25,.35); }
+    .card img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+    .bar { left: 0; top: 0; width: 100%; height: 44px; background: #f2efdd; border-bottom: 2px solid #e2e0cc; z-index: 3; }
+    .bar i { position: absolute; top: 15px; width: 12px; height: 12px; border-radius: 6px; background: #d5dde7; }
+    .chip { right: 16px; top: 8px; height: 28px; padding: 0 14px; border-radius: 14px; background: #e9ecd8; font-family: 'JetBrains Mono', monospace;
+      font-size: 19px; line-height: 28px; color: #49513f; white-space: nowrap; }
+    .scr { left: 0; top: 44px; width: 100%; overflow: hidden; }
+    .ring { border: 6px solid #0a1317; border-radius: 14px; z-index: 4; box-shadow: 0 0 0 6px #a9d4ff; }
+    .tile { border-radius: 26%; overflow: hidden; background: #f5f0d9; }
+    .tile img { width: 100%; height: 100%; object-fit: cover; }
+    #root .bg { left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+    #root { background: radial-gradient(ellipse 75% 70% at 50% 42%, #ffffff 0%, #f4f7fb 55%, #e3eaf3 100%); color: #0a1317; }
+    #root em { font-style: normal; background: linear-gradient(#a9d4ff, #a9d4ff) no-repeat 0 88% / 100% 40%; }
+
+    #hd { top: 110px; }
+    #vt { left: 560px; top: 330px; width: 800px; height: 470px; border-radius: 30px; background: #0457cb; }
+    #ss { left: 610px; top: 300px; width: 700px; height: 400px; z-index: 2; }
+    #ss .h { left: 40px; top: 32px; font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 40px; letter-spacing: -0.02em; }
+    .ln { left: 40px; width: 620px; font-size: 30px; line-height: 44px; color: #0a1317; white-space: nowrap; }
+    .hx { left: 40px; width: 620px; font-size: 30px; line-height: 44px; color: #4ba9fe; white-space: nowrap; }
+    #l1, #x1 { top: 120px; } #l2, #x2 { top: 180px; } #l3, #x3 { top: 240px; }
+    #lk { left: 1210px; top: 270px; width: 120px; height: 120px; border-radius: 26px; background: #0a1317; z-index: 3; display: flex; align-items: center; justify-content: center; }
+    #lk svg { width: 64px; height: 64px; }
+    #pv { left: 640px; top: 728px; z-index: 3; font-family: 'JetBrains Mono', monospace; font-size: 28px; color: #f4f7fb; }
+    #sb { left: 0; top: 860px; width: 1920px; text-align: center; }
+    #il { right: 60px; bottom: 40px; font-size: 22px; }
+    #x1, #x2, #x3, #lk, #pv, #vt { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="vault" data-width="1920" data-height="1080">
+    <div id="hd" class="abs st"><span class="w">Your</span><span class="w">logins</span><em class="w">stay locked.</em></div>
+    <div id="vt" class="abs"></div>
+    <div id="ss" class="abs card" style="overflow:hidden">
+      <div class="abs h">Muse · booking movie tickets</div>
+      <div id="l1" class="abs ln mono">› book two seats for 7:30 PM</div>
+      <div id="l2" class="abs ln mono">sign in to the cinema account</div>
+      <div id="l3" class="abs ln mono">pay at checkout</div>
+      <div id="x1" class="abs hx mono">seats held · waiting for you</div>
+      <div id="x2" class="abs hx mono">•••••••• · credential store</div>
+      <div id="x3" class="abs hx mono">one-time card · •••• ••••</div>
+    </div>
+    <div id="lk" class="abs"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.2" fill="#a9d4ff"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="#a9d4ff" stroke-width="2.4"/></svg></div>
+    <div id="pv" class="abs">your agent can't read it</div>
+    <div id="sb" class="abs sub">A one-time card number is generated at checkout.</div>
+    <div id="il" class="abs lab" data-layout-ignore>ILLUSTRATIVE TASK</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const wIn = (s, t, st) => tl.fromTo(s, { opacity: 0, x: 26, filter: 'blur(10px)' }, { opacity: 1, x: 0, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out', stagger: st === undefined ? 0.08 : st }, t);
+      const wOut = (s, t) => tl.to(s, { opacity: 0, filter: 'blur(8px)', duration: 0.24, ease: 'power2.in', stagger: 0.015 }, t);
+      const mark = (s, t) => tl.fromTo(s, { backgroundSize: '0% 40%' }, { backgroundSize: '100% 40%', duration: 0.5, ease: 'power2.inOut', stagger: 0.12 }, t);
+      wIn('#hd .w', 0.04, 0.08);
+      tl.fromTo('#ss', { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: 'expo.out' }, 0.3);
+      ['#l1', '#l2', '#l3'].forEach((s, i) => tl.fromTo(s, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: 'expo.out' }, 0.7 + i * 0.25));
+      mark('#hd em', 1.2);
+      // 40.06: the vault slides in behind, the lock lands, each line turns into its hash
+      tl.fromTo('#vt', { opacity: 0, y: 300, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: 'expo.out' }, 1.94);
+      tl.fromTo('#lk', { opacity: 0, y: -140, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: 'back.out(2.2)' }, 2.44);
+      [['#l1', '#x1'], ['#l2', '#x2'], ['#l3', '#x3']].forEach(([a, b], i) => {
+        tl.to(a, { opacity: 0, filter: 'blur(6px)', duration: 0.2 }, 2.94 + i * 0.12);
+        tl.fromTo(b, { opacity: 0, filter: 'blur(6px)' }, { opacity: 1, filter: 'blur(0px)', duration: 0.3 }, 3.04 + i * 0.12);
+      });
+      tl.to('#ss', { y: -40, duration: 0.6, ease: 'power3.inOut' }, 3.0);
+      tl.fromTo('#pv', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 }, 3.5);
+      tl.fromTo('#sb', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: 'expo.out' }, 3.9);
+      tl.to('#root > *', { opacity: 0, filter: 'blur(8px)', duration: 0.24, ease: 'power2.in' }, 5.78);
+      tl.set({}, {}, 6.04);
+      window.__timelines['vault'] = tl;
+    })();
+  </script>
+</template>

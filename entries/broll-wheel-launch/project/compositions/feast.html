@@ -1,0 +1,52 @@
+<template>
+  <style>
+    @font-face { font-family: 'Bricolage'; src: url('assets/fonts/dm-sans.woff2') format('woff2'); font-weight: 200 800; }
+    @font-face { font-family: 'DM Sans'; src: url('assets/fonts/dm-sans.woff2') format('woff2'); font-weight: 100 1000; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'DM Sans', sans-serif; font-weight: 500; }
+    #root .abs { position: absolute; }
+    .st { left: 0; width: 1920px; text-align: center; font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 84px; line-height: 1.12;
+      letter-spacing: -0.03em; white-space: nowrap; }
+    .st .w, .hl .w { display: inline-block; margin: 0 0.1em; }
+    .hl { font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 76px; line-height: 1.08; letter-spacing: -0.03em; }
+    .hl .w { margin: 0 0.22em 0 0; }
+    .mono { font-family: 'JetBrains Mono', monospace; font-weight: 500; }
+    .lab { font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 28px; letter-spacing: .02em; color: #5d6c7b; }
+    .sub { font-size: 36px; line-height: 1.35; color: #5d6c7b; }
+    .card { border-radius: 28px; overflow: hidden; background: #ffffff; border: 2px solid #d5dde7; box-shadow: 0 30px 70px -30px rgba(25,34,25,.35); }
+    .card img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+    .bar { left: 0; top: 0; width: 100%; height: 44px; background: #f2efdd; border-bottom: 2px solid #e2e0cc; z-index: 3; }
+    .bar i { position: absolute; top: 15px; width: 12px; height: 12px; border-radius: 6px; background: #d5dde7; }
+    .chip { right: 16px; top: 8px; height: 28px; padding: 0 14px; border-radius: 14px; background: #e9ecd8; font-family: 'JetBrains Mono', monospace;
+      font-size: 19px; line-height: 28px; color: #49513f; white-space: nowrap; }
+    .scr { left: 0; top: 44px; width: 100%; overflow: hidden; }
+    .ring { border: 6px solid #0a1317; border-radius: 14px; z-index: 4; box-shadow: 0 0 0 6px #a9d4ff; }
+    .tile { border-radius: 26%; overflow: hidden; background: #f5f0d9; }
+    .tile img { width: 100%; height: 100%; object-fit: cover; }
+    #root .bg { left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+    #root { background: radial-gradient(ellipse 75% 70% at 50% 42%, #ffffff 0%, #f4f7fb 55%, #e3eaf3 100%); color: #0a1317; }
+    #root em { font-style: normal; background: linear-gradient(#a9d4ff, #a9d4ff) no-repeat 0 88% / 100% 40%; }
+
+    #fv { left: 0; top: 120px; width: 1920px; height: 640px; overflow: hidden; }
+    #fv img { position: absolute; left: -126px; top: 0; width: 2172px; height: 724px; transform-origin: 50% 70%; }
+    #cap { top: 820px; }
+  </style>
+  <div id="root" data-composition-id="feast" data-width="1920" data-height="1080">
+    <div id="fv" class="abs"><img id="fi" src="assets/img/muse-props.jpg" alt="Muse's mascot among floating everyday props" /></div>
+    <div id="cap" class="abs st"><span class="w">Take</span><span class="w">the</span><span class="w">busywork</span><em class="w">off your plate.</em></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const wIn = (s, t, st) => tl.fromTo(s, { opacity: 0, x: 26, filter: 'blur(10px)' }, { opacity: 1, x: 0, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out', stagger: st === undefined ? 0.08 : st }, t);
+      const wOut = (s, t) => tl.to(s, { opacity: 0, filter: 'blur(8px)', duration: 0.24, ease: 'power2.in', stagger: 0.015 }, t);
+      const mark = (s, t) => tl.fromTo(s, { backgroundSize: '0% 40%' }, { backgroundSize: '100% 40%', duration: 0.5, ease: 'power2.inOut', stagger: 0.12 }, t);
+      tl.fromTo('#fi', { scale: 1 }, { scale: 1.14, duration: 4.0, ease: 'none' }, 0);
+      tl.fromTo('#fv', { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0);
+      wIn('#cap .w', 0.6, 0.09);
+      mark('#cap em', 1.4);
+      tl.to(['#fv', '#cap'], { opacity: 0, filter: 'blur(8px)', duration: 0.25, ease: 'power2.in' }, 3.78);
+      tl.set({}, {}, 4.04);
+      window.__timelines['feast'] = tl;
+    })();
+  </script>
+</template>

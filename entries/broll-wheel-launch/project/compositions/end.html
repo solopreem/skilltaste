@@ -1,0 +1,63 @@
+<template>
+  <style>
+    @font-face { font-family: 'Bricolage'; src: url('assets/fonts/dm-sans.woff2') format('woff2'); font-weight: 200 800; }
+    @font-face { font-family: 'DM Sans'; src: url('assets/fonts/dm-sans.woff2') format('woff2'); font-weight: 100 1000; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'DM Sans', sans-serif; font-weight: 500; }
+    #root .abs { position: absolute; }
+    .st { left: 0; width: 1920px; text-align: center; font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 84px; line-height: 1.12;
+      letter-spacing: -0.03em; white-space: nowrap; }
+    .st .w, .hl .w { display: inline-block; margin: 0 0.1em; }
+    .hl { font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 76px; line-height: 1.08; letter-spacing: -0.03em; }
+    .hl .w { margin: 0 0.22em 0 0; }
+    .mono { font-family: 'JetBrains Mono', monospace; font-weight: 500; }
+    .lab { font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 28px; letter-spacing: .02em; color: #5d6c7b; }
+    .sub { font-size: 36px; line-height: 1.35; color: #5d6c7b; }
+    .card { border-radius: 28px; overflow: hidden; background: #ffffff; border: 2px solid #d5dde7; box-shadow: 0 30px 70px -30px rgba(25,34,25,.35); }
+    .card img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+    .bar { left: 0; top: 0; width: 100%; height: 44px; background: #f2efdd; border-bottom: 2px solid #e2e0cc; z-index: 3; }
+    .bar i { position: absolute; top: 15px; width: 12px; height: 12px; border-radius: 6px; background: #d5dde7; }
+    .chip { right: 16px; top: 8px; height: 28px; padding: 0 14px; border-radius: 14px; background: #e9ecd8; font-family: 'JetBrains Mono', monospace;
+      font-size: 19px; line-height: 28px; color: #49513f; white-space: nowrap; }
+    .scr { left: 0; top: 44px; width: 100%; overflow: hidden; }
+    .ring { border: 6px solid #0a1317; border-radius: 14px; z-index: 4; box-shadow: 0 0 0 6px #a9d4ff; }
+    .tile { border-radius: 26%; overflow: hidden; background: #f5f0d9; }
+    .tile img { width: 100%; height: 100%; object-fit: cover; }
+    #root .bg { left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+    #root { background: #0457cb; color: #f4f7fb; }
+    #root em { font-style: normal; color: #0a1317; background: #a9d4ff; padding: 0 0.12em; border-radius: 0.12em; }
+
+    #dt { left: 948px; top: 418px; width: 24px; height: 24px; border-radius: 12px; background: #a9d4ff; }
+    #lk { left: 0; top: 360px; width: 1920px; height: 140px; display: flex; justify-content: center; align-items: center; gap: 30px; }
+    #lk .tile { width: 132px; height: 132px; }
+    #lk span { font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 100px; letter-spacing: -0.03em; }
+    #tg { top: 560px; font-size: 60px; }
+    #dc { top: 960px; left: 0; width: 1920px; text-align: center; color: #e3eaf3; }
+    #url { left: 699px; top: 720px; width: 522px; height: 96px; border-radius: 48px; background: #a9d4ff; color: #0a1317; text-align: center;
+      line-height: 96px; font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 48px; letter-spacing: -0.02em; }
+    #cm, #nm { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="end" data-width="1920" data-height="1080">
+    <div id="dt" class="abs"></div>
+    <div id="lk" class="abs"><div id="cm" class="tile"><img src="assets/muse-logo.png" alt="Muse app icon" /></div><span id="nm">Muse</span></div>
+    <div id="tg" class="abs st"><span class="w">Your</span><span class="w">personal</span><span class="w">AI</span><span class="w">agent.</span></div>
+    <div id="url" class="abs">ai.meta.com/muse</div>
+    <div id="dc" class="abs lab">UNOFFICIAL SPEC FILM · NOT AFFILIATED WITH META · MUSE IS A TRADEMARK OF META</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const wIn = (s, t, st) => tl.fromTo(s, { opacity: 0, x: 26, filter: 'blur(10px)' }, { opacity: 1, x: 0, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out', stagger: st === undefined ? 0.08 : st }, t);
+      const wOut = (s, t) => tl.to(s, { opacity: 0, filter: 'blur(8px)', duration: 0.24, ease: 'power2.in', stagger: 0.015 }, t);
+      const mark = (s, t) => tl.fromTo(s, { backgroundSize: '0% 40%' }, { backgroundSize: '100% 40%', duration: 0.5, ease: 'power2.inOut', stagger: 0.12 }, t);
+      tl.fromTo('#dt', { scale: 0 }, { scale: 1, duration: 0.35, ease: 'back.out(2.5)' }, 0.05);
+      tl.to('#dt', { scale: 6, opacity: 0, duration: 0.4, ease: 'power3.in' }, 0.55);
+      tl.fromTo('#cm', { opacity: 0, scale: 0.4, rotation: -14 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.8, ease: 'back.out(1.6)' }, 0.75);
+      tl.fromTo('#nm', { opacity: 0, x: -30, filter: 'blur(10px)' }, { opacity: 1, x: 0, filter: 'blur(0px)', duration: 0.7, ease: 'expo.out' }, 1.1);
+      wIn('#tg .w', 1.6, 0.07);
+      tl.fromTo('#url', { opacity: 0, y: 24, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'back.out(1.8)' }, 2.3);
+      tl.fromTo('#dc', { opacity: 0 }, { opacity: 1, duration: 0.4 }, 2.6);
+      tl.set({}, {}, 5.94);
+      window.__timelines['end'] = tl;
+    })();
+  </script>
+</template>

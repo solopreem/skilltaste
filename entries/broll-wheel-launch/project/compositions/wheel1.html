@@ -1,0 +1,61 @@
+<template>
+  <style>
+    @font-face { font-family: 'Bricolage'; src: url('assets/fonts/dm-sans.woff2') format('woff2'); font-weight: 200 800; }
+    @font-face { font-family: 'DM Sans'; src: url('assets/fonts/dm-sans.woff2') format('woff2'); font-weight: 100 1000; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'DM Sans', sans-serif; font-weight: 500; }
+    #root .abs { position: absolute; }
+    .st { left: 0; width: 1920px; text-align: center; font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 84px; line-height: 1.12;
+      letter-spacing: -0.03em; white-space: nowrap; }
+    .st .w, .hl .w { display: inline-block; margin: 0 0.1em; }
+    .hl { font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 76px; line-height: 1.08; letter-spacing: -0.03em; }
+    .hl .w { margin: 0 0.22em 0 0; }
+    .mono { font-family: 'JetBrains Mono', monospace; font-weight: 500; }
+    .lab { font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 28px; letter-spacing: .02em; color: #5d6c7b; }
+    .sub { font-size: 36px; line-height: 1.35; color: #5d6c7b; }
+    .card { border-radius: 28px; overflow: hidden; background: #ffffff; border: 2px solid #d5dde7; box-shadow: 0 30px 70px -30px rgba(25,34,25,.35); }
+    .card img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+    .bar { left: 0; top: 0; width: 100%; height: 44px; background: #f2efdd; border-bottom: 2px solid #e2e0cc; z-index: 3; }
+    .bar i { position: absolute; top: 15px; width: 12px; height: 12px; border-radius: 6px; background: #d5dde7; }
+    .chip { right: 16px; top: 8px; height: 28px; padding: 0 14px; border-radius: 14px; background: #e9ecd8; font-family: 'JetBrains Mono', monospace;
+      font-size: 19px; line-height: 28px; color: #49513f; white-space: nowrap; }
+    .scr { left: 0; top: 44px; width: 100%; overflow: hidden; }
+    .ring { border: 6px solid #0a1317; border-radius: 14px; z-index: 4; box-shadow: 0 0 0 6px #a9d4ff; }
+    .tile { border-radius: 26%; overflow: hidden; background: #f5f0d9; }
+    .tile img { width: 100%; height: 100%; object-fit: cover; }
+    #root .bg { left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+    #root { background: #0a1317; color: #f4f7fb; }
+    #root .st, #root .hl, #root .wi, #root .sub { text-shadow: 0 2px 30px rgba(10,16,10,.55); }
+    #root em { font-style: normal; color: #0a1317; background: #a9d4ff; padding: 0 0.12em; border-radius: 0.12em; text-shadow: none; }
+
+    #yr { left: 0; top: 470px; width: 880px; text-align: right; }
+    #yr span { display: inline-block; font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 110px; line-height: 136px; letter-spacing: -0.03em;
+      color: #0a1317; background: #a9d4ff; padding: 0 22px; border-radius: 14px; }
+    #col { left: 930px; top: 470px; }
+    .wi { height: 136px; font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 110px; line-height: 136px; letter-spacing: -0.03em; white-space: nowrap; }
+  </style>
+  <div id="root" data-composition-id="wheel1" data-width="1920" data-height="1080" data-layout-allow-overflow>
+    <video id="v" class="abs bg clip" src="assets/cuts/wheel1.mp4" data-start="0" data-duration="2.04" data-track-index="0" muted playsinline></video>
+    <div id="yr" class="abs"><span>Your</span></div>
+    <div id="col" class="abs"><div class="wi" id="wi0">Busywork</div><div class="wi" id="wi1">Computer</div><div class="wi" id="wi2">Logins</div><div class="wi" id="wi3">Approval</div><div class="wi" id="wi4">Goals</div><div class="wi" id="wi5">Mac</div></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const wIn = (s, t, st) => tl.fromTo(s, { opacity: 0, x: 26, filter: 'blur(10px)' }, { opacity: 1, x: 0, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out', stagger: st === undefined ? 0.08 : st }, t);
+      const wOut = (s, t) => tl.to(s, { opacity: 0, filter: 'blur(8px)', duration: 0.24, ease: 'power2.in', stagger: 0.015 }, t);
+      const mark = (s, t) => tl.fromTo(s, { backgroundSize: '0% 40%' }, { backgroundSize: '100% 40%', duration: 0.5, ease: 'power2.inOut', stagger: 0.12 }, t);
+      const N = 6;
+      tl.fromTo('#v', { scale: 1.1 }, { scale: 1, duration: 2.04, ease: 'power1.out' }, 0);
+      const st = (i, f) => { const d = Math.abs(i - f); return { color: '#f4f7fb', opacity: d < 0.5 ? 1 : Math.max(0.06, 0.45 - d * 0.14) }; };
+      for (let i = 0; i < N; i++) tl.set('#wi' + i, st(i, -0.8), 0);
+      tl.set('#col', { y: 108.80000000000001 }, 0);
+      tl.fromTo(['#yr', '#col'], { opacity: 0 }, { opacity: 1, duration: 0.25 }, 0);
+      // the wheel rolls one word on the next beat
+      tl.to('#col', { y: 0, duration: 0.7, ease: 'expo.inOut' }, 0.32);
+      for (let i = 0; i < N; i++) tl.to('#wi' + i, { ...st(i, 0), duration: 0.5, ease: 'power2.out' }, 0.42);
+      tl.to(['#yr', '#col'], { opacity: 0, filter: 'blur(8px)', duration: 0.22, ease: 'power2.in' }, 1.8);
+      tl.set({}, {}, 2.04);
+      window.__timelines['wheel1'] = tl;
+    })();
+  </script>
+</template>

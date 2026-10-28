@@ -1,0 +1,66 @@
+<template>
+  <style>
+    @font-face { font-family: 'Bricolage'; src: url('assets/fonts/dm-sans.woff2') format('woff2'); font-weight: 200 800; }
+    @font-face { font-family: 'DM Sans'; src: url('assets/fonts/dm-sans.woff2') format('woff2'); font-weight: 100 1000; }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: 'DM Sans', sans-serif; font-weight: 500; }
+    #root .abs { position: absolute; }
+    .st { left: 0; width: 1920px; text-align: center; font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 84px; line-height: 1.12;
+      letter-spacing: -0.03em; white-space: nowrap; }
+    .st .w, .hl .w { display: inline-block; margin: 0 0.1em; }
+    .hl { font-family: 'Bricolage', sans-serif; font-weight: 700; font-size: 76px; line-height: 1.08; letter-spacing: -0.03em; }
+    .hl .w { margin: 0 0.22em 0 0; }
+    .mono { font-family: 'JetBrains Mono', monospace; font-weight: 500; }
+    .lab { font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 28px; letter-spacing: .02em; color: #5d6c7b; }
+    .sub { font-size: 36px; line-height: 1.35; color: #5d6c7b; }
+    .card { border-radius: 28px; overflow: hidden; background: #ffffff; border: 2px solid #d5dde7; box-shadow: 0 30px 70px -30px rgba(25,34,25,.35); }
+    .card img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+    .bar { left: 0; top: 0; width: 100%; height: 44px; background: #f2efdd; border-bottom: 2px solid #e2e0cc; z-index: 3; }
+    .bar i { position: absolute; top: 15px; width: 12px; height: 12px; border-radius: 6px; background: #d5dde7; }
+    .chip { right: 16px; top: 8px; height: 28px; padding: 0 14px; border-radius: 14px; background: #e9ecd8; font-family: 'JetBrains Mono', monospace;
+      font-size: 19px; line-height: 28px; color: #49513f; white-space: nowrap; }
+    .scr { left: 0; top: 44px; width: 100%; overflow: hidden; }
+    .ring { border: 6px solid #0a1317; border-radius: 14px; z-index: 4; box-shadow: 0 0 0 6px #a9d4ff; }
+    .tile { border-radius: 26%; overflow: hidden; background: #f5f0d9; }
+    .tile img { width: 100%; height: 100%; object-fit: cover; }
+    #root .bg { left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+    #root { background: #0a1317; color: #f4f7fb; }
+    #root .st, #root .hl, #root .wi, #root .sub { text-shadow: 0 2px 30px rgba(10,16,10,.55); }
+    #root em { font-style: normal; color: #0a1317; background: #a9d4ff; padding: 0 0.12em; border-radius: 0.12em; text-shadow: none; }
+
+    #hd { left: 120px; top: 300px; width: 700px; }
+    #root .lab { color: #f4f7fb; }
+    #root .sub { color: #f4f7fb; }
+    #cd { box-shadow: 0 50px 120px -30px rgba(10,16,10,.6); }
+    #sb { left: 120px; top: 640px; width: 640px; }
+    #cd { left: 800px; top: 300px; width: 1021px; height: 420px; }
+    #lb { left: 800px; top: 746px; }
+  </style>
+  <div id="root" data-composition-id="terms" data-width="1920" data-height="1080">
+    <video id="v" class="abs bg clip" src="assets/cuts/terms.mp4" data-start="0" data-duration="6.04" data-track-index="0" muted playsinline></video>
+    <div id="hd" class="abs hl"><span class="w">Approve</span><em class="w">critical actions.</em></div>
+    <div id="sb" class="abs sub">Emails and purchases wait for your OK.</div>
+    <div id="cd" class="abs card"><img src="assets/img/muse-approve.png" alt="Muse site card: Approve critical actions from your agent" /><div id="r0" class="abs ring" style="left:10px;top:193px;width:977px;height:69px"></div><div id="r1" class="abs ring" style="left:10px;top:239px;width:977px;height:104px"></div></div>
+    <div id="lb" class="abs lab">AI.META.COM/MUSE · SECURE AND IN CONTROL</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const wIn = (s, t, st) => tl.fromTo(s, { opacity: 0, x: 26, filter: 'blur(10px)' }, { opacity: 1, x: 0, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out', stagger: st === undefined ? 0.08 : st }, t);
+      const wOut = (s, t) => tl.to(s, { opacity: 0, filter: 'blur(8px)', duration: 0.24, ease: 'power2.in', stagger: 0.015 }, t);
+      const mark = (s, t) => tl.fromTo(s, { backgroundSize: '0% 40%' }, { backgroundSize: '100% 40%', duration: 0.5, ease: 'power2.inOut', stagger: 0.12 }, t);
+      wIn('#hd .w', 0.04, 0.08);
+      mark('#hd em', 0.8);
+      tl.fromTo('#cd', { opacity: 0, scale: 0.7, x: 120 }, { opacity: 1, scale: 1, x: 0, duration: 0.9, ease: 'expo.out' }, 0.2);
+      tl.fromTo('#sb', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: 'expo.out' }, 1.2);
+      tl.fromTo('#lb', { opacity: 0 }, { opacity: 1, duration: 0.3 }, 1.0);
+      tl.fromTo('#r0', { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.4, ease: 'expo.out' }, 1.94);
+      tl.to('#r0', { opacity: 0, duration: 0.15 }, 2.96);
+      tl.fromTo('#r1', { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.4, ease: 'expo.out' }, 3.06);
+      tl.to('#cd', { scale: 1.06, duration: 1.4, ease: 'power2.inOut' }, 3.2);
+      tl.fromTo('#v', { scale: 1.0, x: 0 }, { scale: 1.1, x: -40, duration: 6.04, ease: 'none' }, 0);
+      tl.to(['#hd', '#sb', '#cd', '#lb'], { opacity: 0, filter: 'blur(8px)', duration: 0.24, ease: 'power2.in' }, 5.78);
+      tl.set({}, {}, 6.04);
+      window.__timelines['terms'] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,19 @@
+.DS_Store
+.env
+node_modules/
+**/project/assets/cuts/
+**/project/renders/
+**/project/.hyperframes/
+**/project/.media/
+**/project/.thumbnails/
+**/project/.waveform-cache/
+**/project/snapshots/
+**/project/assets/broll/*.mp4
+**/project/film.mp4
+# third-party product assets for the example film: not redistributed, see each entry's project/assets/THIRD_PARTY.md
+entries/broll-wheel-launch/project/assets/muse-logo.png
+entries/broll-wheel-launch/project/assets/img/muse-mac.png
+entries/broll-wheel-launch/project/assets/img/muse-features.png
+entries/broll-wheel-launch/project/assets/img/muse-approve.png
+entries/broll-wheel-launch/project/assets/img/muse-props.jpg
+entries/broll-wheel-launch/project/assets/img/muse-mascot.png

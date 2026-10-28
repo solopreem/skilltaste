@@ -1,0 +1,75 @@
+<div align="center">
+
+# video-skills
+
+[English](README.md) | **中文**
+
+**一个给编程 agent 用的、完全平铺的开源参考片库。每个条目就是一支做好的片子，加上重做它所需的一切。**
+
+加载一个条目，你的 agent 就能给你的产品做出同样的片子。
+
+</div>
+
+```bash
+npx skills add solopreem/video-skills                            # 整个库（agent 帮你挑条目）
+npx skills add solopreem/video-skills/entries/broll-wheel-launch   # 只要这一支
+```
+
+然后在 Claude Code 或 Codex 里说：
+
+```text
+用 broll-wheel-launch 给 https://your-product.com 做一支发布片。
+```
+
+## 为什么做这个
+
+现在的视频 skill 大致两种。一种是闭源整包：一个风格一个价，快，但看不到里面，也没法混用。另一种是很深的开源工具箱，各自一套格式，彼此对不上。
+
+video-skills 是前一种的开源平铺版：
+
+- **一个条目就是一支片。** 每条都带着它做出来的 `result.mp4`，用眼睛挑。
+- **可复现。** 每条都带完整工程，原样渲染就得到那支片；实拍素材附来源 ID，生成类素材附提示词，不需要任何 API key。
+- **格式完全一致。** 每条文件相同、`taste.json` 卡片相同，可以横向比较，agent 也能组合（见 [spec/ENTRY.md](spec/ENTRY.md)）。
+- **产品集中在一个文件。** 换产品只改 `film.json` 和素材，不改生成器。
+
+## 片库
+
+<!-- CATALOG -->
+| Preview | Entry | Category · method | Length | Events / 10 s |
+|---|---|---|---|---|
+| <img src="entries/broll-wheel-launch/result/preview.gif" width="240"> | [**broll-wheel-launch**](entries/broll-wheel-launch/) B-roll wheel launch | launch-film · broll-under-type | 90 s 16:9 | 6.3 |
+<!-- /CATALOG -->
+
+## 一个条目长什么样
+
+```
+entries/<id>/
+├── SKILL.md       加载它就能做片
+├── taste.json     卡片：依赖、七层归属、规格、实测数据、需要什么、适合什么
+├── references/    floor.md（共享底线）、RECIPE.md（逐镜头配方）、SWAP.md（换产品）、REFERENCE.md（参考拆解）
+├── scripts/       测量脚本
+├── result/        成片、封面、联系表、预览、metrics.json
+└── project/       可直接渲染的工程：film.json、tools/、assets/
+```
+
+每个条目都按同样七层归档：
+
+| 层 | 回答什么 |
+|---|---|
+| 底线 floor | 什么不能商量（只用真实产品、示意内容要标注、客户品牌） |
+| 品类 category | 拍什么片（发布片、讲解、教程、数据故事、社媒短切、片头） |
+| 做法 method | 画面怎么做、主干怎么走（实拍加字卡、单形状不切、卡拍快切、3D 界面……） |
+| 招式 moves | 填进去的具体镜头（转轮分章、荧光笔划线、锚点快切、胶囊变形……） |
+| 手艺 craft | 怎么做得高级（3 秒内钩子、35% 附近爆发、落点有音效、-14 LUFS） |
+| 风格 style | 长什么样（调色、字体、配色角色） |
+| 工具 tool | 用什么渲染（HyperFrames、Remotion……） |
+
+不同层之间不冲突；同层冲突时：底线 > 品类 > 做法 > 招式 > 手艺 > 风格。
+
+每个条目完全自足：我们自己的共享文件（底线、测量脚本）复制进每个条目；外部工具（HyperFrames、ffmpeg）只在 `taste.json` 的 `requires` 里声明；审美规则从不共享。详见 [spec/ENTRY.md](spec/ENTRY.md)。
+
+## 工具、要求、贡献、许可
+
+见 [README.md](README.md) 对应章节。代码 MIT；成片和生成素材 CC BY 4.0；示例产品素材归原主所有。
+
+broll-wheel-launch 的示例片是给 Meta 的 Muse 做的非官方提案片，与 Meta 无关，未获其认可或赞助；Muse 及其素材归 Meta 所有，不在本仓库中。

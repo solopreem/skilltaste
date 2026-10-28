@@ -1,0 +1,150 @@
+{
+  "id": "broll-wheel-launch",
+  "title": "B-roll wheel launch",
+  "summary": "A 90 s keynote-style launch: real-world b-roll under kinetic type, a 'Your [ ]' wheel between chapters, the product's real screens floating over footage, a beat montage at 35 %, One More Thing, dot-to-logo end.",
+  "version": "1.0.0",
+  "requires": {
+    "renderer": "hyperframes@0.8.191",
+    "skills": [
+      "hyperframes",
+      "hyperframes-cli"
+    ],
+    "bins": [
+      "node>=20",
+      "ffmpeg",
+      "python3"
+    ],
+    "optional": {
+      "fal ElevenLabs Music": "regenerate music"
+    }
+  },
+  "layers": {
+    "floor": "references/floor.md",
+    "category": "launch-film",
+    "method": "broll-under-type",
+    "moves": [
+      "word-blur-in",
+      "marker-sweep",
+      "wheel-divider",
+      "anchor-chips-over-cuts",
+      "card-push-in",
+      "cursor-tab-walk",
+      "floating-card-over-footage",
+      "focus-rings-in-order",
+      "anchor-montage",
+      "hash-reveal",
+      "stage-walk-ring",
+      "one-more-thing",
+      "pill-morph-counter",
+      "floating-mascots",
+      "circle-draw",
+      "dot-to-logo"
+    ],
+    "craft": [
+      "frame 0 is the poster (a person already in frame)",
+      "hook within 3 s",
+      "every scene starts on a beat (0.06 + 2k s)",
+      "burst at 32-35 s, 8 shots, beat then half-beat",
+      "chips and captions stay locked while the world cuts",
+      "music ducks for One More Thing",
+      "hit on every landing",
+      "-14 LUFS, true peak under -1 dBTP"
+    ],
+    "style": {
+      "ground": "light paper with a soft radial ground, alternating with graded b-roll",
+      "type": "geometric grotesque headlines (700), humanist sans body, mono labels",
+      "accent": "one light accent: swept behind ink on paper, a block behind ink on footage",
+      "grade": "warm, slightly desaturated; darker under type",
+      "banned": [
+        "grain",
+        "glow",
+        "vignette",
+        "lens flare",
+        "chime or ding SFX"
+      ],
+      "motion_under_type": "footage keeps moving under type; type holds still once landed"
+    },
+    "tool": {
+      "renderer": "hyperframes@0.8.191",
+      "generators": [
+        "ElevenLabs Music via fal, 90 s"
+      ],
+      "footage": "Pexels stock, 9 clips, graded and cut in project/tools/cuts.py"
+    }
+  },
+  "spec": {
+    "duration_s": 90,
+    "ratio": "16:9",
+    "size": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "bpm": 120,
+    "scenes": 23,
+    "loudness_lufs": -14
+  },
+  "reference": {
+    "name": "A consumer AI assistant's 94 s launch film (user-supplied)",
+    "metrics": {
+      "events_per_10s": 6.1,
+      "still_share": 0.71,
+      "lufs": -15.4,
+      "shots": 20
+    },
+    "see": "references/REFERENCE.md"
+  },
+  "result": {
+    "video": "result/result.mp4",
+    "poster": "result/poster.jpg",
+    "sheet": "result/sheet.jpg",
+    "preview": "result/preview.gif",
+    "metrics": "result/metrics.json",
+    "example_product": "Muse, Meta's personal AI agent (unofficial spec film, not affiliated with Meta)"
+  },
+  "needs": {
+    "from_product": [
+      "logo (square tile)",
+      "brand palette (9 roles) and two fonts",
+      "one wide illustration or hero image",
+      "one mascot or object image (square)",
+      "one full app screenshot (1500x844)",
+      "two crops of real site/app cards with their key rows",
+      "one flow diagram (5 stages)",
+      "site copy for ~20 lines"
+    ],
+    "generated": [
+      "one 90 s 120 BPM music track (prompt in project/tools/music.md)"
+    ],
+    "footage": [
+      "9 b-roll clips: stock or generated (slots in project/tools/broll-prompts.md)"
+    ]
+  },
+  "fits": [
+    "software with a real UI and a clear before/after",
+    "brands with an illustration or mascot",
+    "launches that need warmth as well as product"
+  ],
+  "avoid": [
+    "products with no screens to show",
+    "under 30 s (use a cut-down: open, one chapter, montage, end)",
+    "brands that ban real-world imagery"
+  ],
+  "combines_with": [],
+  "conflicts_with": [
+    "one-shape-never-cut methods across the whole film (this film cuts on purpose)"
+  ],
+  "cost": {
+    "stock_clips": 9,
+    "music_tracks": 1,
+    "render_minutes": 2
+  },
+  "licence": {
+    "code": "MIT",
+    "result_and_generated_media": "CC BY 4.0 (the stock footage inside stays under the Pexels licence)",
+    "example_product_assets": "Muse, its logo, screenshots and mascot © Meta; not included in this repo and not covered by CC BY (see project/assets/THIRD_PARTY.md). The film shows them as an unofficial spec film",
+    "sfx": "see project/assets/sfx/CREDITS.md",
+    "footage": "Pexels licence; see project/assets/broll/CREDITS.md. Only graded segments ship",
+    "fonts": "DM Sans, SIL Open Font License 1.1"
+  }
+}
