@@ -1,0 +1,53 @@
+<template>
+  <style>
+    @font-face { font-family: 'Geist'; src: url('assets/fonts/Geist-normal.woff2') format('woff2'); font-weight: 100 900; }
+    @font-face { font-family: 'Geist Mono'; src: url('assets/fonts/GeistMono-normal.woff2') format('woff2'); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #000000; color: #ffffff;
+      font-family: 'Geist', sans-serif; font-weight: 500; }
+    #root .abs { position: absolute; }
+    .hl { left: 0; width: 1920px; text-align: center; font-weight: 600; font-size: 92px; line-height: 1.1; letter-spacing: -0.035em; }
+    .hl .w { display: inline-block; margin: 0 0.11em; }
+    .hl em { font-style: normal; background: linear-gradient(#ffffff, #ffffff) no-repeat 0 96% / 0% 0.07em; }
+    .mut { color: #a1a1aa; }
+    .sub { left: 0; width: 1920px; text-align: center; font-size: 42px; line-height: 1.3; color: #a1a1aa; font-weight: 400; }
+    .lab { font-family: 'Geist Mono', monospace; font-weight: 500; font-size: 26px; letter-spacing: .06em; color: #a1a1aa; }
+    .av { width: 130px; height: 130px; }
+    .av img { width: 100%; height: 100%; object-fit: contain; }
+
+    #mk { left: 905.0px; top: 230px; width: 110px; height: 110px; }
+    #mk img { width: 100%; height: 100%; }
+    #t { top: 390px; }
+    #s { top: 520px; }
+  </style>
+  <div id="root" data-composition-id="meet" data-width="1920" data-height="1080">
+
+    <div id="mk" class="abs"><img src="assets/img/logo-mark.png" alt="Grok Bot" /></div>
+    <div id="t" class="abs hl"><span class="w">Meet</span><span class="w">Grok</span><span class="w">Bot.</span></div>
+    <div id="s" class="abs sub">AI teammates you can give real work to.</div>
+    <div id="r0" class="abs av" style="left:495.0px;top:725.0px"><img src="assets/img/av-inbox.png" alt="Inbox Manager" /></div>
+    <div id="r1" class="abs av" style="left:695.0px;top:725.0px"><img src="assets/img/av-sales.png" alt="Sales Outbound" /></div>
+    <div id="r2" class="abs av" style="left:895.0px;top:725.0px"><img src="assets/img/av-talent.png" alt="Talent Scout" /></div>
+    <div id="r3" class="abs av" style="left:1095.0px;top:725.0px"><img src="assets/img/av-support.png" alt="Customer Support" /></div>
+    <div id="r4" class="abs av" style="left:1295.0px;top:725.0px"><img src="assets/img/av-chief.png" alt="Chief of Staff" /></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const wIn = (s, t, st) => tl.fromTo(s, { opacity: 0, y: 24, filter: 'blur(8px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out', stagger: st === undefined ? 0.06 : st }, t);
+      const wOut = (s, t) => tl.to(s, { opacity: 0, filter: 'blur(8px)', duration: 0.22, ease: 'power2.in', stagger: 0.012 }, t);
+
+      tl.fromTo('#mk', { opacity: 0, scale: 0.4, rotation: -20 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.6, ease: 'back.out(2)' }, 0.04);
+      wIn('#t .w', 0.2, 0.08);
+      tl.fromTo('#s', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: 'expo.out' }, 0.6);
+      for (let i = 0; i < 5; i++) tl.fromTo('#r' + i, { opacity: 0, scale: 0.3, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: 'back.out(2)' }, 1.06 + i * 0.125);
+      wOut(['#mk', '#t .w', '#s'], 2.4);
+      tl.to('#r0', { x: 192.0, y: -694, scale: 0.71, opacity: 1, duration: 0.5, ease: 'expo.inOut' }, 2.5);
+      tl.to('#r1', { x: 96.0, y: -694, scale: 0.49, opacity: 0.4, duration: 0.5, ease: 'expo.inOut' }, 2.5);
+      tl.to('#r2', { x: 0.0, y: -694, scale: 0.49, opacity: 0.4, duration: 0.5, ease: 'expo.inOut' }, 2.5);
+      tl.to('#r3', { x: -96.0, y: -694, scale: 0.49, opacity: 0.4, duration: 0.5, ease: 'expo.inOut' }, 2.5);
+      tl.to('#r4', { x: -192.0, y: -694, scale: 0.49, opacity: 0.4, duration: 0.5, ease: 'expo.inOut' }, 2.5);
+      tl.set({}, {}, 3.0);
+      window.__timelines['meet'] = tl;
+    })();
+  </script>
+</template>

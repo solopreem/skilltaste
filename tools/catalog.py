@@ -1,4 +1,4 @@
-"""Write catalog.json (one record per entry, from taste.json + metrics.json) and the table between the CATALOG markers in both READMEs."""
+"""Write catalog.json (one record per entry, from taste.json + metrics.json) and the table between the CATALOG markers in every README*.md."""
 import json, re
 from pathlib import Path
 
@@ -15,10 +15,8 @@ for e in sorted(p.parent for p in ROOT.glob("*/*/taste.json")):  # <category>/<i
 (ROOT / "catalog.json").write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n")
 
 table = "| Preview | Entry | Category · method | Length | Events / 10 s |\n|---|---|---|---|---|\n" + "".join(
-    f"| <img src=\"{r['preview']}\" width=\"240\"> | [**{r['id']}**]({r['path']}/) {r['title']} | {r['category']} · {r['method']} | {r['duration_s']} s {r['ratio']} | {r['events_per_10s']} |\n"
+    f"| <img src=\"{r['preview']}\" width=\"240\"> | [**{r['id']}**]({r['path']}/) {r['title']} | {r['category']} · {r['method']} | {r['duration_s']} s {' + '.join(r['ratio']) if isinstance(r['ratio'], list) else r['ratio']} | {r['events_per_10s']} |\n"
     for r in rows)
-for name in ["README.md", "README_CN.md"]:
-    p = ROOT / name
-    if p.exists():
-        p.write_text(re.sub(r"(<!-- CATALOG -->\n).*?(<!-- /CATALOG -->)", lambda mm: mm.group(1) + table + mm.group(2), p.read_text(), flags=re.S))
+for p in sorted(ROOT.glob("README*.md")):
+    p.write_text(re.sub(r"(<!-- CATALOG -->\n).*?(<!-- /CATALOG -->)", lambda mm: mm.group(1) + table + mm.group(2), p.read_text(), flags=re.S))
 print(len(rows), "entries")

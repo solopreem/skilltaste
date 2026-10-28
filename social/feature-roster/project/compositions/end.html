@@ -1,0 +1,54 @@
+<template>
+  <style>
+    @font-face { font-family: 'Geist'; src: url('assets/fonts/Geist-normal.woff2') format('woff2'); font-weight: 100 900; }
+    @font-face { font-family: 'Geist Mono'; src: url('assets/fonts/GeistMono-normal.woff2') format('woff2'); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #000000; color: #ffffff;
+      font-family: 'Geist', sans-serif; font-weight: 500; }
+    #root .abs { position: absolute; }
+    .hl { left: 0; width: 1920px; text-align: center; font-weight: 600; font-size: 92px; line-height: 1.1; letter-spacing: -0.035em; }
+    .hl .w { display: inline-block; margin: 0 0.11em; }
+    .hl em { font-style: normal; background: linear-gradient(#ffffff, #ffffff) no-repeat 0 96% / 0% 0.07em; }
+    .mut { color: #a1a1aa; }
+    .sub { left: 0; width: 1920px; text-align: center; font-size: 42px; line-height: 1.3; color: #a1a1aa; font-weight: 400; }
+    .lab { font-family: 'Geist Mono', monospace; font-weight: 500; font-size: 26px; letter-spacing: .06em; color: #a1a1aa; }
+    .av { width: 130px; height: 130px; }
+    .av img { width: 100%; height: 100%; object-fit: contain; }
+
+    .ea { width: 72px; height: 72px; }
+    .ea img { width: 100%; height: 100%; object-fit: contain; }
+    #lk { left: 700.0px; top: 400.0px; width: 520px; }
+    #lk img { width: 100%; }
+    #e { top: 570.0px; font-size: 76px; }
+    #url { left: 810.0px; top: 700.0px; width: 300px; height: 64px; border-radius: 32px; background: #ffffff; color: #000000;
+      text-align: center; font-size: 28px; line-height: 64px; font-weight: 600; }
+    #dc { left: 60px; width: 1800px; top: 1010px; text-align: center; font-size: 18px; line-height: 1.5; }
+  </style>
+  <div id="root" data-composition-id="end" data-width="1920" data-height="1080">
+
+    <div id="e0" class="abs ea" style="left:724.0px;top:270.0px"><img src="assets/img/av-inbox.png" alt="Inbox Manager" /></div>
+    <div id="e1" class="abs ea" style="left:824.0px;top:270.0px"><img src="assets/img/av-sales.png" alt="Sales Outbound" /></div>
+    <div id="e2" class="abs ea" style="left:924.0px;top:270.0px"><img src="assets/img/av-talent.png" alt="Talent Scout" /></div>
+    <div id="e3" class="abs ea" style="left:1024.0px;top:270.0px"><img src="assets/img/av-support.png" alt="Customer Support" /></div>
+    <div id="e4" class="abs ea" style="left:1124.0px;top:270.0px"><img src="assets/img/av-chief.png" alt="Chief of Staff" /></div>
+    <div id="lk" class="abs"><img src="assets/img/logo-lockup.png" alt="Grok Bot" /></div>
+    <div id="e" class="abs hl"><span class="w">Your</span><span class="w">team</span><span class="w">of</span><em class="w">always-on</em><em class="w">agents.</em></div>
+    <div id="url" class="abs">x.ai/bot</div>
+    <div id="dc" class="abs lab">UNOFFICIAL SPEC FILM · NOT AFFILIATED WITH THE MAKERS OF GROK BOT · GROK IS A TRADEMARK OF ITS OWNER</div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const wIn = (s, t, st) => tl.fromTo(s, { opacity: 0, y: 24, filter: 'blur(8px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out', stagger: st === undefined ? 0.06 : st }, t);
+      const wOut = (s, t) => tl.to(s, { opacity: 0, filter: 'blur(8px)', duration: 0.22, ease: 'power2.in', stagger: 0.012 }, t);
+
+      for (let i = 0; i < 5; i++) tl.fromTo('#e' + i, { opacity: 0, scale: 0.3, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: 'back.out(2)' }, 0.04 + i * 0.06);
+      tl.fromTo('#lk', { opacity: 0, scale: 0.9, filter: 'blur(10px)' }, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.6, ease: 'expo.out' }, 0.2);
+      wIn('#e .w', 0.6, 0.06);
+      tl.to('#e em', { backgroundSize: '100% 0.07em', duration: 0.5, ease: 'power2.inOut', stagger: 0.1 }, 1.2);
+      tl.fromTo('#url', { opacity: 0, y: 20, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'back.out(1.8)' }, 1.1);
+      tl.fromTo('#dc', { opacity: 0 }, { opacity: 1, duration: 0.4 }, 1.4);
+      tl.set({}, {}, 3.44);
+      window.__timelines['end'] = tl;
+    })();
+  </script>
+</template>

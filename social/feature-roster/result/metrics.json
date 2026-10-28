@@ -1,0 +1,26 @@
+{
+ "duration": 26.7,
+ "size": "1920x1080",
+ "fps": 30.0,
+ "cuts": [],
+ "shots": 1,
+ "avg_shot_s": 26.7,
+ "sheet_rate_fps": 2,
+ "has_audio": true,
+ "lufs": -14.1,
+ "true_peak_dbfs": -2.5,
+ "bpm": 117.5,
+ "change_events": [
+  1.4,
+  8.0,
+  8.37,
+  11.23,
+  14.37,
+  17.3,
+  20.27,
+  23.17
+ ],
+ "events_per_10s": 3.0,
+ "avg_s_between_events": 3.34,
+ "still_share": 0.83
+}

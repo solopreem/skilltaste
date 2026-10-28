@@ -1,6 +1,6 @@
 # Recipe: broll-wheel
 
-90 s · 1920×1080 · 30 fps · 120 BPM (beats at 0.056 + 0.5k s) · every scene starts on 0.06 + 2k s · 23 scenes.
+90 s · 1920×1080 · 30 fps · 120 BPM (beats at 0.056 + 0.5k s) · every scene starts on 0.06 + 2k s · 23 scenes. With `copy.credit` set, a 1.2 s credit card plays first and the whole film (scenes, music, SFX) starts 1.2 s later: 91.2 s total.
 Source of truth: `project/tools/build.py`. This file is its readable form. Times are film seconds.
 
 ## Energy

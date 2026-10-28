@@ -1,0 +1,55 @@
+<template>
+  <style>
+    @font-face { font-family: 'Geist'; src: url('assets/fonts/Geist-normal.woff2') format('woff2'); font-weight: 100 900; }
+    @font-face { font-family: 'Geist Mono'; src: url('assets/fonts/GeistMono-normal.woff2') format('woff2'); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #000000; color: #ffffff;
+      font-family: 'Geist', sans-serif; font-weight: 500; }
+    #root .abs { position: absolute; }
+    .hl { left: 0; width: 1920px; text-align: center; font-weight: 600; font-size: 92px; line-height: 1.1; letter-spacing: -0.035em; }
+    .hl .w { display: inline-block; margin: 0 0.11em; }
+    .hl em { font-style: normal; background: linear-gradient(#ffffff, #ffffff) no-repeat 0 96% / 0% 0.07em; }
+    .mut { color: #a1a1aa; }
+    .sub { left: 0; width: 1920px; text-align: center; font-size: 42px; line-height: 1.3; color: #a1a1aa; font-weight: 400; }
+    .lab { font-family: 'Geist Mono', monospace; font-weight: 500; font-size: 26px; letter-spacing: .06em; color: #a1a1aa; }
+    .av { width: 130px; height: 130px; }
+    .av img { width: 100%; height: 100%; object-fit: contain; }
+
+    #lb { left: 120px; top: 392px; }
+    #lb b { display: inline-block; width: 14px; height: 14px; border-radius: 7px; background: #2ec866; margin-right: 14px; vertical-align: 1px; }
+    #nm { left: 120px; top: 432px; width: 1680px; text-align: left; font-size: 72px; }
+    #nm .w { margin: 0 0.22em 0 0; }
+    #ln { left: 120px; top: 524px; width: 640px; font-size: 46px; line-height: 1.3; color: #a1a1aa; font-weight: 400; }
+    #ln .w { display: inline-block; margin-right: 0.26em; }
+    #pn { left: 860px; top: 190px; width: 940px; height: 760px; border-radius: 28px; overflow: hidden;
+      background: #0f0f10; box-shadow: 0 0 0 2px #27272a, 0 40px 90px -30px rgba(0,0,0,.8); }
+    #cam { left: 0; top: 0; width: 2048px; height: 1152px; transform-origin: 0 0; }
+    #cam > img { position: absolute; left: 0; top: 0; width: 2048px; height: 1152px; }
+    #rg { left: 106px; top: 366px; width: 346px; height: 58px; border: 3.88px solid #2ec866; border-radius: 9.32px;
+      box-shadow: 0 0 0 6.21px #2ec86633; }
+  </style>
+  <div id="root" data-composition-id="m0" data-width="1920" data-height="1080">
+
+    <div id="lb" class="abs lab"><b></b>01 / 05</div>
+    <div id="nm" class="abs hl"><span class="w">Inbox</span><span class="w">Manager</span></div>
+    <div id="ln" class="abs"><span class="w">Inbox</span><span class="w">at</span><span class="w">zero.</span><span class="w">2</span><span class="w">replies</span><span class="w">ready.</span></div>
+    <div id="pn" class="abs"><div id="cam" class="abs"><img src="assets/src/grokbot-app.jpg" alt="Grok Bot: Inbox Manager" /><div id="rg" class="abs"></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const wIn = (s, t, st) => tl.fromTo(s, { opacity: 0, y: 24, filter: 'blur(8px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out', stagger: st === undefined ? 0.06 : st }, t);
+      const wOut = (s, t) => tl.to(s, { opacity: 0, filter: 'blur(8px)', duration: 0.22, ease: 'power2.in', stagger: 0.012 }, t);
+
+      tl.fromTo('#pn', { opacity: 0, y: 60, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: 'expo.out' }, 0);
+      tl.fromTo('#cam', {"x": -0.0, "y": -60.43, "scale": 0.9472}, { ...{"x": -81.32, "y": -218.98, "scale": 1.2881}, duration: 2.9, ease: 'power2.inOut' }, 0);
+      tl.fromTo('#lb', { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.4, ease: 'expo.out' }, 0.04);
+      wIn('#nm .w', 0.1, 0.07);
+      wIn('#ln .w', 0.42, 0.04);
+      tl.fromTo('#rg', { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: 0.4, ease: 'expo.out' }, 1.3);
+      wOut(['#lb', '#nm .w', '#ln .w'], 2.74);
+      tl.to('#pn', { opacity: 0, y: -30, duration: 0.24, ease: 'power2.in' }, 2.76);
+      tl.set({}, {}, 3.0);
+      window.__timelines['m0'] = tl;
+    })();
+  </script>
+</template>

@@ -2,16 +2,16 @@
 
 # video-skills
 
-[English](README.md) | **中文**
+[English](README.md) | **简体中文** | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Português](README.pt.md)
 
-**一个给编程 agent 用的、完全平铺的开源参考片库。每个条目就是一支做好的片子，加上重做它所需的一切。**
+**一支支做好的视频，你的 AI 能照着给你的产品重做一支。**
 
-加载一个条目，你的 agent 就能给你的产品做出同样的片子。
+挑一支喜欢的，告诉 agent 你的产品，就得到同样的片子。
 
 </div>
 
 ```bash
-npx skills add sonnyproto/video-skills                            # 整个库（agent 帮你挑条目）
+npx skills add sonnyproto/video-skills                       # 整个库（agent 帮你挑条目）
 npx skills add sonnyproto/video-skills/launch/broll-wheel   # 只要这一支
 ```
 
@@ -39,7 +39,8 @@ video-skills 是前一种的开源平铺版：
 <!-- CATALOG -->
 | Preview | Entry | Category · method | Length | Events / 10 s |
 |---|---|---|---|---|
-| <img src="launch/broll-wheel/result/preview.gif" width="240"> | [**broll-wheel**](launch/broll-wheel/) B-roll wheel launch | launch · broll-under-type | 90 s 16:9 | 8.8 |
+| <img src="launch/broll-wheel/result/preview.gif" width="240"> | [**broll-wheel**](launch/broll-wheel/) B-roll wheel launch | launch · broll-under-type | 90 s 16:9 | 8.7 |
+| <img src="social/feature-roster/result/preview.gif" width="240"> | [**feature-roster**](social/feature-roster/) Feature roster | social · rebuilt-ui-roster | 26.7 s 16:9 + 9:16 | 3.0 |
 <!-- /CATALOG -->
 
 ## 一个条目长什么样
@@ -49,7 +50,7 @@ video-skills 是前一种的开源平铺版：
 ├── SKILL.md       加载它就能做片
 ├── taste.json     卡片：依赖、七层归属、规格、实测数据、需要什么、适合什么
 ├── references/    floor.md（共享底线）、RECIPE.md（逐镜头配方）、SWAP.md（换产品）、REFERENCE.md（参考拆解）
-├── scripts/       测量脚本
+├── scripts/       setup.sh（缺什么装什么）和测量脚本
 ├── result/        成片、封面、联系表、预览、metrics.json
 └── project/       可直接渲染的工程：film.json、tools/、assets/
 ```
@@ -70,8 +71,33 @@ video-skills 是前一种的开源平铺版：
 
 每个条目完全自足：我们自己的共享文件（底线、测量脚本）复制进每个条目；外部工具（HyperFrames、ffmpeg）只在 `taste.json` 的 `requires` 里声明；审美规则从不共享。详见 [spec/ENTRY.md](spec/ENTRY.md)。
 
-## 工具、要求、贡献、许可
+## 工具
 
-见 [README.md](README.md) 对应章节。代码 MIT；成片和生成素材 CC BY 4.0；示例产品素材归原主所有。
+| | |
+|---|---|
+| `tools/floor.md` | 共享底线规则（复制进每个条目的 `references/`） |
+| `tools/validate.py` | 按格式检查每个条目，并确认条目里的共享文件副本和 `tools/` 一致 |
+| `tools/catalog.py` | 重建 `catalog.json` 和上面的片库表 |
+| `tools/analyze.py <video> <out>` | 剪辑点、镜头、联系表、LUFS、真峰值、BPM、卡拍比例 |
+| `tools/events.py <video> <out>` | 每 10 秒的画面变化事件数和静止占比 |
 
-broll-wheel 的示例片是给 Meta 的 Muse 做的非官方提案片，与 Meta 无关，未获其认可或赞助；Muse 及其素材归 Meta 所有，不在本仓库中。
+## 要求
+
+Node 20+、ffmpeg、Python 3。条目会写明还需要什么（渲染器版本、生成空镜的视频模型、音乐模型）。
+
+## 贡献
+
+欢迎提交新条目，见 [CONTRIBUTING.md](CONTRIBUTING.md)。门槛：工程原样渲染出它的成片，产品内容都在 `film.json` 里，成片有实测数据，参考片的任何内容都不再分发。
+
+## 致谢
+
+以下项目的想法和规则给了我们很多帮助：[HyperFrames](https://hyperframes.heygen.com)、
+[huashu-motion](https://github.com/alchaincyf/huashu-motion)（节奏和导演笔记）、
+[video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft)（配方卡和换产品指南）、
+[product-launch-motion](https://github.com/AbubakrChan/product-launch-motion)（手艺细节）。
+
+## 许可
+
+broll-wheel 的示例片是给 Meta 的个人 AI agent Muse 做的非官方提案片，与 Meta 无关，未获其认可或赞助；Muse 及其素材归 Meta 所有，不在本仓库中。
+
+代码：MIT。成片和生成素材：CC BY 4.0。示例产品素材归各自所有者；每个条目的 `taste.json` 写明哪些可以复用。

@@ -1,0 +1,96 @@
+{
+  "brand": {
+    "name": "Grok Bot",
+    "logo_alt": "Grok Bot",
+    "logo_src": {
+      "file": "assets/src/grokbot-logo.png",
+      "mark": [85, 170, 215, 300],
+      "lockup": [85, 170, 730, 300]
+    },
+    "url": "x.ai/bot"
+  },
+  "copy": {
+    "credit": "BUILT BY SONNYPROTO AND OPUS 5.5",
+    "hook_a": "There is a huge difference between",
+    "hook_b": "90% done and *100% done.*",
+    "meet": "Meet Grok Bot.",
+    "meet_sub": "AI teammates you can give real work to.",
+    "end": "Your team of *always-on agents.*",
+    "disclaimer": "UNOFFICIAL SPEC FILM · NOT AFFILIATED WITH THE MAKERS OF GROK BOT · GROK IS A TRADEMARK OF ITS OWNER"
+  },
+  "shots": {
+    "app": {
+      "file": "assets/src/grokbot-app.jpg",
+      "size": [2048, 1152]
+    },
+    "home": {
+      "file": "assets/src/grokbot-home.png",
+      "size": [3786, 2118]
+    }
+  },
+  "members": [
+    {
+      "id": "inbox",
+      "name": "Inbox Manager",
+      "line": "Inbox at zero. 2 replies ready.",
+      "color": "#2ec866",
+      "avatar": ["assets/src/grokbot-app.jpg", 144, 393, 64],
+      "shot": "app",
+      "focus": [96, 170, 760, 760],
+      "ring": [106, 366, 452, 424]
+    },
+    {
+      "id": "sales",
+      "name": "Sales Outbound",
+      "line": "Outreach drafts queued for approval.",
+      "color": "#2fc1b4",
+      "avatar": ["assets/src/grokbot-app.jpg", 144, 474, 72],
+      "shot": "home",
+      "focus": [1500, 1214, 2640, 2066],
+      "ring": [2098, 1370, 2324, 1402]
+    },
+    {
+      "id": "talent",
+      "name": "Talent Scout",
+      "line": "Shortlist of 6 candidates ready.",
+      "color": "#8a5a3c",
+      "avatar": ["assets/src/grokbot-app.jpg", 144, 548, 72],
+      "shot": "app",
+      "focus": [1560, 300, 2000, 760],
+      "ring": [1572, 520, 1940, 568],
+      "push": 1.08
+    },
+    {
+      "id": "support",
+      "name": "Customer Support",
+      "line": "12 tickets resolved, 2 escalated.",
+      "color": "#f0384f",
+      "avatar": ["assets/src/grokbot-app.jpg", 144, 700, 64],
+      "shot": "app",
+      "focus": [96, 440, 760, 900],
+      "ring": [106, 674, 452, 730]
+    },
+    {
+      "id": "chief",
+      "name": "Chief of Staff",
+      "line": "Got it! Product updates shared.",
+      "color": "#8e5cf2",
+      "avatar": ["assets/src/grokbot-app.jpg", 1631, 337, 96],
+      "shot": "app",
+      "focus": [480, 380, 1480, 830],
+      "ring": [498, 730, 908, 810]
+    }
+  ],
+  "palette": {
+    "ground": "#000000",
+    "ink": "#ffffff",
+    "muted": "#a1a1aa",
+    "line": "#27272a",
+    "panel": "#0f0f10"
+  },
+  "fonts": {
+    "sans": "assets/fonts/Geist-normal.woff2",
+    "mono": "assets/fonts/GeistMono-normal.woff2"
+  },
+  "music": "assets/music_mix.mp3"
+}

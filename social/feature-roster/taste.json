@@ -1,0 +1,137 @@
+{
+  "id": "feature-roster",
+  "title": "Feature roster",
+  "summary": "A 25-30 s social film, 16:9 and 9:16 from one project: a hook in the product's own words, the product's agents or features as a roster that flies up into a tab bar, one 3 s beat per member with a push into the real screenshot and a colour ring on the proof, then the team gathers on the logo.",
+  "version": "1.0.0",
+  "requires": {
+    "renderer": "hyperframes@0.8.191",
+    "skills": [
+      "hyperframes",
+      "hyperframes-cli"
+    ],
+    "bins": [
+      "node>=20",
+      "ffmpeg",
+      "python3",
+      "uv (for pillow in tools/prep.py)"
+    ],
+    "optional": {
+      "fal ElevenLabs Music": "regenerate music"
+    }
+  },
+  "layers": {
+    "floor": "references/floor.md",
+    "category": "social",
+    "method": "rebuilt-ui-roster",
+    "moves": [
+      "credit-card",
+      "word-blur-in",
+      "underline-sweep",
+      "roster-pop",
+      "roster-to-tabbar",
+      "panel-rise",
+      "push-and-ring",
+      "roster-gather",
+      "lockup"
+    ],
+    "craft": [
+      "hook in the product's own words within 1 s of the film",
+      "the same beat once per member, so the pattern is learned once",
+      "every scene starts on a beat (0.06 + 0.5k s)",
+      "a click on every ring",
+      "screenshots never past 1.7 screen px per source px",
+      "-14 LUFS, true peak under -1 dBTP"
+    ],
+    "style": {
+      "ground": "one dark ground; the screenshots are the only bright thing",
+      "type": "one grotesque sans (600 headlines), mono labels",
+      "accent": "each member's own colour on its dot, ring and tab only",
+      "banned": [
+        "grain",
+        "glow",
+        "vignette",
+        "invented UI"
+      ],
+      "motion": "one slow push per screenshot; type holds once landed"
+    },
+    "tool": {
+      "renderer": "hyperframes@0.8.191",
+      "generators": [
+        "ElevenLabs Music via fal, 26 s"
+      ],
+      "assets": "tools/prep.py cuts avatars and a white logo out of the product's screenshots"
+    }
+  },
+  "spec": {
+    "duration_s": 26.7,
+    "ratio": [
+      "16:9",
+      "9:16"
+    ],
+    "size": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "bpm": 120,
+    "scenes": 9,
+    "members": 5,
+    "loudness_lufs": -14
+  },
+  "reference": {
+    "name": "Our earlier 20.5 s AI-team film for an AI marketing product",
+    "metrics": {
+      "events_per_10s": 7.8,
+      "still_share": 0.6,
+      "lufs": -13.4,
+      "shots": 4
+    },
+    "see": "references/REFERENCE.md"
+  },
+  "result": {
+    "video": "result/result.mp4",
+    "video_vertical": "result/result-9x16.mp4",
+    "poster": "result/poster.jpg",
+    "sheet": "result/sheet.jpg",
+    "preview": "result/preview.gif",
+    "metrics": "result/metrics.json",
+    "example_product": "Grok Bot (unofficial spec film, not affiliated with its makers)"
+  },
+  "needs": {
+    "from_product": [
+      "1-3 real screenshots that show every member's work",
+      "a small icon or avatar per member (cut from the screenshots)",
+      "a logo, dark on light",
+      "the product's own copy: a two-line problem, a one-line promise, a tagline, one status line per member"
+    ],
+    "generated": [
+      "one 120 BPM music track, film length (prompt in project/tools/music.md)"
+    ]
+  },
+  "fits": [
+    "AI agents or assistants with named roles",
+    "products with 3-6 distinct features, modules or plans that each have a screen",
+    "feed posts and launch threads that need 16:9 and 9:16"
+  ],
+  "avoid": [
+    "products with no screens to show",
+    "one-feature products (use a single-feature film instead)",
+    "more than 6 members (the tab bar and the length stop working)"
+  ],
+  "combines_with": [
+    "launch/broll-wheel (as the product chapter of a longer launch)"
+  ],
+  "conflicts_with": [],
+  "cost": {
+    "stock_clips": 0,
+    "music_tracks": 1,
+    "render_minutes": 2
+  },
+  "licence": {
+    "code": "MIT",
+    "result_and_generated_media": "CC BY 4.0",
+    "example_product_assets": "Grok Bot screenshots and logo belong to their owner; not included in this repo and not covered by CC BY (see project/assets/THIRD_PARTY.md). The film shows them as an unofficial spec film",
+    "sfx": "see project/assets/sfx/CREDITS.md",
+    "fonts": "Geist and Geist Mono, SIL Open Font License 1.1"
+  }
+}

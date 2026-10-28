@@ -53,6 +53,9 @@ BASE = """
     #root .bg { left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }"""
 
 MODE = {
+    # overlay: no ground of its own, sits on top of the scenes
+    "overlay": """
+    #root { background: transparent; }""",
     # light: the accent is a marker swept behind ink
     "light": """
     #root { background: radial-gradient(ellipse 75% 70% at 50% 42%, #fffdf3 0%, #f7f4e5 55%, #ece7d2 100%); color: #192219; }
@@ -135,13 +138,11 @@ def video(cut, dur, start=0, vid="v", z=0):
 add("open", 0, 6.06, "film", """
     #mk { left: 120px; top: 110px; width: 92px; height: 92px; }
     #a { left: 120px; top: 640px; text-align: left; width: auto; font-size: 92px; }
-    #b { left: 120px; top: 640px; text-align: left; width: auto; font-size: 92px; }
-    #cr { left: 0; top: 140px; width: 1800px; text-align: right; color: #f7f4e5; }""",
+    #b { left: 120px; top: 640px; text-align: left; width: auto; font-size: 92px; }""",
     video("open", 6.06) + f"""
     <div id="mk" class="abs tile"><img src="{LOGO}" alt="{B['logo_alt']}" /></div>
     <div id="a" class="abs st"><span class="w ast">✳</span>{words(C['open_a'])}</div>
-    <div id="b" class="abs st">{words(C['open_b'])}</div>""" + (f"""
-    <div id="cr" class="abs lab">{C['credit']}</div>""" if C.get('credit') else ""),
+    <div id="b" class="abs st">{words(C['open_b'])}</div>""",
     """      // footage is already moving at frame 0; the first words land on the first beat
       tl.fromTo('#v', { scale: 1.12 }, { scale: 1, duration: 6.06, ease: 'power1.out' }, 0);
       tl.fromTo('#mk', { opacity: 0, scale: 0.6, rotation: -12 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.6, ease: 'back.out(2)' }, 0.06);
@@ -150,10 +151,7 @@ add("open", 0, 6.06, "film", """
       wOut('#a .w', 2.82);
       wIn('#b .w', 3.06, 0.08);
       mark('#b em', 3.6);
-      wOut(['#b .w', '#mk'], 5.82);""" + ("""
-      // the maker's credit, opposite the logo, for the length of the open
-      tl.fromTo('#cr', { opacity: 0, y: -8 }, { opacity: 1, y: 0, duration: 0.5, ease: 'expo.out' }, 0.3);
-      tl.to('#cr', { opacity: 0, duration: 0.24, ease: 'power2.in' }, 5.82);""" if C.get('credit') else ""))
+      wOut(['#b .w', '#mk'], 5.82);""")
 
 WHEEL = C["wheel"]
 
@@ -573,11 +571,31 @@ add("end", 84.06, 5.94, "dark", """
       tl.fromTo('#url', { opacity: 0, y: 24, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'back.out(1.8)' }, 2.3);""" + ("""
       tl.fromTo('#dc', { opacity: 0 }, { opacity: 1, duration: 0.4 }, 2.6);""" if C.get('disclaimer') else ""))
 
+# ---------- credit card: the maker's credit holds centred on paper before the film, then flies to the top right of the open ----------
+PRE = 1.2 if C.get('credit') else 0  # the whole film starts this much later
+if PRE:
+    CR_W = len(C['credit']) * 0.62 * 28  # monospace advance + letter-spacing at the 28px corner size
+    add("credit", 0, round(PRE + 6.06, 2), "overlay", """
+    #pc { left: 0; top: 0; width: 1920px; height: 1080px; background: #f7f4e5; }
+    #cr { left: 0; top: 0; width: 1920px; height: 1080px; display: flex; align-items: center; justify-content: center; }
+    #crt { display: inline-block; font-size: 28px; color: #192219; white-space: nowrap; }""", f"""
+    <div id="pc" class="abs"></div>
+    <div id="cr" class="abs"><span id="crt" class="lab">{C['credit']}</span></div>""", f"""
+      tl.fromTo('#crt', {{ opacity: 0, scale: 2.2, filter: 'blur(10px)' }}, {{ opacity: 1, scale: 2.2, filter: 'blur(0px)', duration: 0.35, ease: 'expo.out' }}, 0);
+      tl.set('#pc', {{ opacity: 0 }}, {PRE});
+      tl.to('#crt', {{ x: {round(1800 - CR_W / 2 - 960)}, y: -383, scale: 1, color: '#f7f4e5', duration: 0.7, ease: 'expo.inOut' }}, {round(PRE - 0.1, 2)});
+      tl.to('#crt', {{ opacity: 0, duration: 0.24, ease: 'power2.in' }}, {round(PRE + 5.82, 2)});""")
+    SCENES.pop()
+TOTAL = round(90 + PRE, 2)
+
 # ---------- index ----------
 hosts = []
 for z, (cid, start, dur) in enumerate(SCENES, 1):
     hosts.append(f'      <div id="{cid}" class="clip" data-composition-id="{cid}" data-composition-src="compositions/{cid}.html"\n'
-                 f'        data-start="{start}" data-duration="{dur}" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:{z}"></div>')
+                 f'        data-start="{round(start + PRE, 2)}" data-duration="{dur}" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:{z}"></div>')
+if PRE:
+    hosts.append(f'      <div id="credit" class="clip" data-composition-id="credit" data-composition-src="compositions/credit.html"\n'
+                 f'        data-start="0" data-duration="{round(PRE + 6.06, 2)}" data-track-index="9" data-track-kind="graphics" data-width="1920" data-height="1080" style="z-index:99"></div>')
 
 SFX = [  # (id, file, start, dur, track, volume)
     *[(f"sx-m{i}", "key-press.mp3", round(32.06 + t, 2), 0.3, 8, 0.35) for i, t in enumerate([0.5, 1.0, 1.5, 2.0, 2.25, 2.5, 2.75])],
@@ -592,9 +610,9 @@ SFX = [  # (id, file, start, dur, track, volume)
     ("sx-morph", "whoosh.mp3", 67.95, 0.57, 4, 0.3),
     ("sx-end", "impact-bass-1.mp3", 84.06, 2.0, 3, 0.35),
 ]
-audio = [f'      <audio id="music" src="{FILM["music"]}" data-start="0" data-duration="90" data-track-index="2" data-volume="0.8"></audio>']
+audio = [f'      <audio id="music" src="{FILM["music"]}" data-start="{PRE}" data-duration="90" data-track-index="2" data-volume="0.8"></audio>']
 for sid, f, s, d, tr, v in SFX:
-    audio.append(f'      <audio id="{sid}" src="assets/sfx/{f}" data-start="{s}" data-duration="{d}" data-track-index="{tr}" data-volume="{v}"></audio>')
+    audio.append(f'      <audio id="{sid}" src="assets/sfx/{f}" data-start="{round(s + PRE, 2)}" data-duration="{d}" data-track-index="{tr}" data-volume="{v}"></audio>')
 
 (ROOT / "index.html").write_text(recolour(f"""<!doctype html>
 <html lang="en" data-resolution="landscape">
@@ -610,7 +628,7 @@ for sid, f, s, d, tr, v in SFX:
   </head>
   <body>
     <!-- generated by tools/build.py; 120 BPM, scenes cut on 0.06 + 2k s -->
-    <div id="root" data-composition-id="main" data-start="0" data-duration="90" data-width="1920" data-height="1080">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="{TOTAL}" data-width="1920" data-height="1080">
 {chr(10).join(hosts)}
 
 {chr(10).join(audio)}

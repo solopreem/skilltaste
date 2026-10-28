@@ -7,9 +7,9 @@
     "method": "broll-under-type",
     "duration_s": 90,
     "ratio": "16:9",
-    "events_per_10s": 8.8,
+    "events_per_10s": 8.7,
     "still_share": 0.54,
-    "shots": 26,
+    "shots": 27,
     "needs": {
       "from_product": [
         "logo (square tile)",
@@ -42,5 +42,45 @@
     "poster": "launch/broll-wheel/result/poster.jpg",
     "preview": "launch/broll-wheel/result/preview.gif",
     "video": "launch/broll-wheel/result/result.mp4"
+  },
+  {
+    "id": "feature-roster",
+    "title": "Feature roster",
+    "summary": "A 25-30 s social film, 16:9 and 9:16 from one project: a hook in the product's own words, the product's agents or features as a roster that flies up into a tab bar, one 3 s beat per member with a push into the real screenshot and a colour ring on the proof, then the team gathers on the logo.",
+    "category": "social",
+    "method": "rebuilt-ui-roster",
+    "duration_s": 26.7,
+    "ratio": [
+      "16:9",
+      "9:16"
+    ],
+    "events_per_10s": 3.0,
+    "still_share": 0.83,
+    "shots": 1,
+    "needs": {
+      "from_product": [
+        "1-3 real screenshots that show every member's work",
+        "a small icon or avatar per member (cut from the screenshots)",
+        "a logo, dark on light",
+        "the product's own copy: a two-line problem, a one-line promise, a tagline, one status line per member"
+      ],
+      "generated": [
+        "one 120 BPM music track, film length (prompt in project/tools/music.md)"
+      ]
+    },
+    "fits": [
+      "AI agents or assistants with named roles",
+      "products with 3-6 distinct features, modules or plans that each have a screen",
+      "feed posts and launch threads that need 16:9 and 9:16"
+    ],
+    "avoid": [
+      "products with no screens to show",
+      "one-feature products (use a single-feature film instead)",
+      "more than 6 members (the tab bar and the length stop working)"
+    ],
+    "path": "social/feature-roster",
+    "poster": "social/feature-roster/result/poster.jpg",
+    "preview": "social/feature-roster/result/preview.gif",
+    "video": "social/feature-roster/result/result.mp4"
   }
 ]

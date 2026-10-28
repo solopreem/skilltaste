@@ -5,7 +5,7 @@ description: Pick and reproduce a reference film from the video-skills library. 
 
 # video-skills
 
-A library of films, one folder per category (`launch/`, later `explainer/`, `social/`...). Each entry under `<category>/<id>/` is one film you can reproduce almost exactly. Entries share one
+A library of films, one folder per category (`launch/`, `social/`, later `explainer/`...). Each entry under `<category>/<id>/` is one film you can reproduce almost exactly. Entries share one
 format (`spec/ENTRY.md`) and one card (`taste.json`), so they can be compared and combined.
 
 ## Choosing an entry
