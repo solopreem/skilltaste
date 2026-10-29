@@ -4,7 +4,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | **한국어** | [Español](README.es.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Português](README.pt.md)
 
-감각 있는 영상을 몇 분 만에 다시 만드세요.
+**감각 있는 영상을 몇 분 만에 다시 만드세요.**
 
 </div>
 

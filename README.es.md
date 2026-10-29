@@ -4,7 +4,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | **Español** | [Deutsch](README.de.md) | [Français](README.fr.md) | [Português](README.pt.md)
 
-Rehaz un vídeo con buen gusto en minutos.
+**Rehaz un vídeo con buen gusto en minutos.**
 
 </div>
 

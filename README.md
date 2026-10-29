@@ -4,7 +4,7 @@
 
 **English** | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Português](README.pt.md)
 
-Remake a video with good taste in minutes.
+**Remake a video with good taste in minutes.**
 
 </div>
 

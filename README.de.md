@@ -4,7 +4,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | **Deutsch** | [Français](README.fr.md) | [Português](README.pt.md)
 
-Bau ein Video mit gutem Geschmack in Minuten nach.
+**Bau ein Video mit gutem Geschmack in Minuten nach.**
 
 </div>
 

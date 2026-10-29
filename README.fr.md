@@ -4,7 +4,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Deutsch](README.de.md) | **Français** | [Português](README.pt.md)
 
-Refaites une vidéo de bon goût en quelques minutes.
+**Refaites une vidéo de bon goût en quelques minutes.**
 
 </div>
 
