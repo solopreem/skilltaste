@@ -6,8 +6,6 @@
 
 **Fertige Videos, die dein Coding-Agent für dein Produkt nachbauen kann.**
 
-Such dir einen Film aus, nenn deinem Agent dein Produkt, und du bekommst denselben Film.
-
 Bau ein Video mit gutem Geschmack in Minuten nach.
 
 </div>

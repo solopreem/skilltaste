@@ -6,8 +6,6 @@
 
 **Finished videos your coding agent can remake for your product.**
 
-Pick a film you like, point your agent at your product, get the same film.
-
 Remake a video with good taste in minutes.
 
 </div>

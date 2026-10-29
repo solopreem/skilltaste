@@ -6,8 +6,6 @@
 
 **Des vidéos terminées que votre agent de code peut refaire pour votre produit.**
 
-Choisissez un film qui vous plaît, indiquez votre produit à l'agent, et obtenez le même film.
-
 Refaites une vidéo de bon goût en quelques minutes.
 
 </div>
