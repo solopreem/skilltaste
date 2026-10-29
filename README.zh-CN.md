@@ -13,13 +13,13 @@ npx skills add sonnyproto/video-skills                       # 整个库（agent
 npx skills add sonnyproto/video-skills/launch/broll-wheel   # 只要这一支
 ```
 
-然后在 Claude Code 或 Codex 里说：
+然后跟你的 agent 说：
 
 ```text
-用 broll-wheel 给 https://your-product.com 做一支发布片。
+用 broll-wheel 给 https://your-product.com 重做一支
 ```
 
-不用手动装别的：agent 会自己运行条目里的 `scripts/setup.sh`，检查 Node 20+、ffmpeg 和 Python 3，缺 HyperFrames skill 就自动装上。渲染器由 `npx` 按固定版本自动下载。
+不用另外安装：缺什么 agent 会自己装。
 
 ## 为什么做这个
 

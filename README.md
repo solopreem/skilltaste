@@ -13,14 +13,13 @@ npx skills add sonnyproto/video-skills                       # the whole library
 npx skills add sonnyproto/video-skills/launch/broll-wheel   # just one film
 ```
 
-Then, in Claude Code or Codex:
+Then tell your agent:
 
 ```text
-Make a launch film for https://your-product.com with broll-wheel.
+Remake broll-wheel for https://your-product.com
 ```
 
-Nothing else to install by hand: the agent runs the entry's `scripts/setup.sh`, which checks Node 20+, ffmpeg and Python 3
-and installs the HyperFrames skills if they are missing. The renderer is fetched by `npx` at a pinned version.
+No other setup: the agent installs anything missing.
 
 ## Why this exists
 

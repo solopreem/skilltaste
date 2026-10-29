@@ -13,14 +13,13 @@ npx skills add sonnyproto/video-skills                       # toute la biblioth
 npx skills add sonnyproto/video-skills/launch/broll-wheel   # seulement ce film
 ```
 
-Puis, dans Claude Code ou Codex :
+Puis dites à votre agent :
 
 ```text
-Fais un film de lancement pour https://your-product.com avec broll-wheel.
+Refais broll-wheel pour https://your-product.com
 ```
 
-Rien d'autre à installer à la main : l'agent lance le `scripts/setup.sh` de l'entrée, qui vérifie Node 20+, ffmpeg et Python 3
-et installe les skills HyperFrames s'ils manquent. `npx` récupère le moteur de rendu dans une version figée.
+Rien d'autre à installer : l'agent installe ce qui manque.
 
 ## Pourquoi ce projet
 

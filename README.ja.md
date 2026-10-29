@@ -13,14 +13,13 @@ npx skills add sonnyproto/video-skills                       # ライブラリ�
 npx skills add sonnyproto/video-skills/launch/broll-wheel   # この 1 本だけ
 ```
 
-あとは Claude Code か Codex で：
+あとはエージェントに：
 
 ```text
-broll-wheel で https://your-product.com のローンチ映像を作って。
+broll-wheel を https://your-product.com 用に作り直して
 ```
 
-手動で入れるものはありません。エージェントがエントリの `scripts/setup.sh` を実行し、Node 20+、ffmpeg、Python 3 を確認して、
-HyperFrames のスキルがなければインストールします。レンダラーは `npx` が固定バージョンで取得します。
+ほかの準備は不要です。足りないものはエージェントが入れます。
 
 ## なぜ作ったか
 

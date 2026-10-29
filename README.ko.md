@@ -13,14 +13,13 @@ npx skills add sonnyproto/video-skills                       # 라이브러리 �
 npx skills add sonnyproto/video-skills/launch/broll-wheel   # 이 한 편만
 ```
 
-그다음 Claude Code나 Codex에서:
+그다음 에이전트에게:
 
 ```text
-broll-wheel로 https://your-product.com 런칭 영상을 만들어 줘.
+broll-wheel을 https://your-product.com 용으로 다시 만들어 줘
 ```
 
-직접 설치할 것은 없습니다. 에이전트가 항목의 `scripts/setup.sh`를 실행해 Node 20+, ffmpeg, Python 3을 확인하고,
-HyperFrames 스킬이 없으면 설치합니다. 렌더러는 `npx`가 고정된 버전으로 받아옵니다.
+따로 설치할 것은 없습니다. 빠진 것은 에이전트가 설치합니다.
 
 ## 왜 만들었나
 

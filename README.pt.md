@@ -13,14 +13,13 @@ npx skills add sonnyproto/video-skills                       # a biblioteca inte
 npx skills add sonnyproto/video-skills/launch/broll-wheel   # só este vídeo
 ```
 
-Depois, no Claude Code ou no Codex:
+Depois diga ao seu agente:
 
 ```text
-Faça um vídeo de lançamento para https://your-product.com com broll-wheel.
+Refaça o broll-wheel para https://your-product.com
 ```
 
-Não há nada para instalar à mão: o agente roda o `scripts/setup.sh` da entrada, que verifica Node 20+, ffmpeg e Python 3
-e instala as skills do HyperFrames se estiverem faltando. O `npx` baixa o renderizador numa versão fixa.
+Nada mais para configurar: o agente instala o que faltar.
 
 ## Por que isto existe
 
