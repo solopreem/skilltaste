@@ -37,3 +37,18 @@ its product page, each member's line from the status text in its screenshots. Th
 The reference is denser because each member swaps two or three images on the beat; this entry holds one screenshot and
 pushes into it. It reads calmer and more premium, but it is less punchy. To raise the energy for a feed, shorten `MEM_DUR` in
 `tools/build.py` to 2.0 s, or (not built yet) give each member a second focus box and cut to it on the beat at 1.5 s.
+
+## A faster cut of the same product
+
+`references/reference-punchy.mp4` (20.5 s, 16:9, video only) is the same Grok Bot roster made another way: an agent rebuilt
+the reference's own project around these screenshots. Each member gets two or three shots cut on the beat, the copy is
+shorter and more like an ad, and the ground switches between paper and black. It is not rendered by `project/` and has no
+project of its own; watch it as a second reference when the user wants a punchier film for a feed.
+
+| | reference-punchy.mp4 | This entry (result.mp4) |
+|---|---|---|
+| Duration | 20.5 s | 26.7 s |
+| Events per 10 s | 8.8 | 3.0 |
+| Still share | 0.54 | 0.83 |
+| Loudness | -14.2 LUFS | -14.1 LUFS |
+| True peak | -2.3 dBTP | -2.5 dBTP |

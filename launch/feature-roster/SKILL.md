@@ -53,6 +53,8 @@ of sources when a site blocks you, and write down where each came from. Do not m
 - Never mock up the subject or rename its parts. Label anything invented for the story.
 
 Then follow `references/SWAP.md`: fill every slot in `film.json`, run `prep.py`, build both ratios. The generator handles 3-6 members; each member adds 3 s, and the music must match the new length.
+If the user wants a punchier cut for a feed, watch `references/reference-punchy.mp4` first: the same product with two or
+three shots per member on the beat (`references/REFERENCE.md`, last section).
 
 Ask the user only for what you cannot get yourself: a demo account for screenshots, the logo file if the site does not
 expose one, permission to show customer data. Write your other choices down and list them at hand-over.
