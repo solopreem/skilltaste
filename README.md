@@ -52,7 +52,7 @@ video-skills is the flat version of the first, done in the open:
 <category>/<id>/
 ├── SKILL.md       load this and make the film
 ├── taste.json     the card: requirements, seven layers, specs, metrics, what it needs, what it fits
-├── references/    floor.md (shared rules), RECIPE.md (shot by shot), SWAP.md (your product in), REFERENCE.md
+├── references/    floor.md (shared rules), sourcing.md (launch: real material), RECIPE.md (shot by shot), SWAP.md (your product in), REFERENCE.md
 ├── scripts/       setup.sh (installs what is missing) and the measuring scripts
 ├── result/        result.mp4, poster, contact sheet, preview, metrics.json
 └── project/       a renderable project: film.json, tools/, assets/
@@ -80,6 +80,7 @@ Each entry is self-contained: our shared files (the floor rules, the measuring s
 | | |
 |---|---|
 | `tools/floor.md` | the shared floor rules (copied into every entry's `references/`) |
+| `launch/sourcing.md` | how launch films collect the product's real screens, logo and copy (copied into every launch entry's `references/`) |
 | `tools/validate.py` | checks every entry against the format, and that its copies of the shared files match `tools/` |
 | `tools/catalog.py` | rebuilds `catalog.json` and the table above |
 | `tools/analyze.py <video> <out>` | cuts, shots, contact sheet, LUFS, true peak, BPM, cuts on the beat |

@@ -51,7 +51,7 @@ video-skills は前者のフラット版を、オープンに作ったもので�
 <category>/<id>/
 ├── SKILL.md       これを読み込んで映像を作る
 ├── taste.json     カード：依存関係、7 つのレイヤー、仕様、計測値、必要なもの、向いている用途
-├── references/    floor.md（共通ルール）、RECIPE.md（ショットごと）、SWAP.md（プロダクト差し替え）、REFERENCE.md
+├── references/    floor.md（共通ルール）、sourcing.md（launch：本物の素材集め）、RECIPE.md（ショットごと）、SWAP.md（プロダクト差し替え）、REFERENCE.md
 ├── scripts/       setup.sh（足りないものを入れる）と計測スクリプト
 ├── result/        result.mp4、ポスター、コンタクトシート、プレビュー、metrics.json
 └── project/       レンダリング可能なプロジェクト：film.json、tools/、assets/
@@ -79,6 +79,7 @@ video-skills は前者のフラット版を、オープンに作ったもので�
 | | |
 |---|---|
 | `tools/floor.md` | 共通の floor ルール（各エントリの `references/` にコピー） |
+| `launch/sourcing.md` | launch 用：プロダクトの本物の画面・ロゴ・コピーの集め方（各 launch エントリの `references/` にコピー） |
 | `tools/validate.py` | 全エントリを形式に照らして検査し、共通ファイルのコピーが `tools/` と一致するか確認 |
 | `tools/catalog.py` | `catalog.json` と上の表を再生成 |
 | `tools/analyze.py <video> <out>` | カット、ショット、コンタクトシート、LUFS、トゥルーピーク、BPM、ビート上のカット |

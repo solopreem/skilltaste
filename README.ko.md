@@ -51,7 +51,7 @@ video-skills는 앞의 것을 평평하게, 그리고 공개적으로 만든 버
 <category>/<id>/
 ├── SKILL.md       이것을 불러와 영상을 만든다
 ├── taste.json     카드: 요구 사항, 일곱 레이어, 사양, 측정값, 필요한 것, 어울리는 용도
-├── references/    floor.md (공통 규칙), RECIPE.md (샷별 구성), SWAP.md (제품 교체), REFERENCE.md
+├── references/    floor.md (공통 규칙), sourcing.md (launch: 실제 소재 수집), RECIPE.md (샷별 구성), SWAP.md (제품 교체), REFERENCE.md
 ├── scripts/       setup.sh (없는 것을 설치)와 측정 스크립트
 ├── result/        result.mp4, 포스터, 콘택트 시트, 미리보기, metrics.json
 └── project/       렌더링 가능한 프로젝트: film.json, tools/, assets/
@@ -79,6 +79,7 @@ video-skills는 앞의 것을 평평하게, 그리고 공개적으로 만든 버
 | | |
 |---|---|
 | `tools/floor.md` | 공통 floor 규칙 (각 항목의 `references/`에 복사됨) |
+| `launch/sourcing.md` | launch용: 제품의 실제 화면, 로고, 문구를 모으는 방법 (각 launch 항목의 `references/`에 복사됨) |
 | `tools/validate.py` | 모든 항목을 형식에 맞춰 검사하고, 공통 파일 사본이 `tools/`와 같은지 확인 |
 | `tools/catalog.py` | `catalog.json`과 위의 표를 다시 만듦 |
 | `tools/analyze.py <video> <out>` | 컷, 샷, 콘택트 시트, LUFS, 트루 피크, BPM, 비트에 맞은 컷 |

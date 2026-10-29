@@ -52,7 +52,7 @@ video-skills é a versão plana do primeiro, feita em aberto:
 <category>/<id>/
 ├── SKILL.md       carregue e faça o vídeo
 ├── taste.json     o cartão: requisitos, sete camadas, especificações, métricas, do que precisa, para que serve
-├── references/    floor.md (regras comuns), RECIPE.md (plano a plano), SWAP.md (seu produto), REFERENCE.md
+├── references/    floor.md (regras comuns), sourcing.md (launch: material real), RECIPE.md (plano a plano), SWAP.md (seu produto), REFERENCE.md
 ├── scripts/       setup.sh (instala o que falta) e os scripts de medição
 ├── result/        result.mp4, pôster, folha de contato, prévia, metrics.json
 └── project/       um projeto renderizável: film.json, tools/, assets/
@@ -80,6 +80,7 @@ Cada entrada é autossuficiente: nossos arquivos comuns (as regras do floor, os 
 | | |
 |---|---|
 | `tools/floor.md` | as regras comuns do floor (copiadas em `references/` de cada entrada) |
+| `launch/sourcing.md` | como os filmes de launch reúnem as telas, o logo e os textos reais do produto (copiado em `references/` de cada entrada de launch) |
 | `tools/validate.py` | confere cada entrada contra o formato e se as cópias dos arquivos comuns batem com `tools/` |
 | `tools/catalog.py` | refaz o `catalog.json` e a tabela acima |
 | `tools/analyze.py <video> <out>` | cortes, planos, folha de contato, LUFS, pico real, BPM, cortes na batida |

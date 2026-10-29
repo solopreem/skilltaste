@@ -49,7 +49,7 @@ video-skills 是前一种的开源平铺版：
 <category>/<id>/
 ├── SKILL.md       加载它就能做片
 ├── taste.json     卡片：依赖、七层归属、规格、实测数据、需要什么、适合什么
-├── references/    floor.md（共享底线）、RECIPE.md（逐镜头配方）、SWAP.md（换产品）、REFERENCE.md（参考拆解）
+├── references/    floor.md（共享底线）、sourcing.md（launch：找真实素材）、RECIPE.md（逐镜头配方）、SWAP.md（换产品）、REFERENCE.md（参考拆解）
 ├── scripts/       setup.sh（缺什么装什么）和测量脚本
 ├── result/        成片、封面、联系表、预览、metrics.json
 └── project/       可直接渲染的工程：film.json、tools/、assets/
@@ -76,6 +76,7 @@ video-skills 是前一种的开源平铺版：
 | | |
 |---|---|
 | `tools/floor.md` | 共享底线规则（复制进每个条目的 `references/`） |
+| `launch/sourcing.md` | launch 赛道的素材规则：怎么找产品真实的截图、logo 和文案（复制进每个 launch 条目的 `references/`） |
 | `tools/validate.py` | 按格式检查每个条目，并确认条目里的共享文件副本和 `tools/` 一致 |
 | `tools/catalog.py` | 重建 `catalog.json` 和上面的片库表 |
 | `tools/analyze.py <video> <out>` | 剪辑点、镜头、联系表、LUFS、真峰值、BPM、卡拍比例 |

@@ -52,7 +52,7 @@ video-skills est la version plate de la première forme, faite en ouvert :
 <category>/<id>/
 ├── SKILL.md       à charger pour faire le film
 ├── taste.json     la fiche : prérequis, sept couches, spécifications, mesures, ce qu'il faut, à quoi elle convient
-├── references/    floor.md (règles communes), RECIPE.md (plan par plan), SWAP.md (votre produit), REFERENCE.md
+├── references/    floor.md (règles communes), sourcing.md (launch : matériel réel), RECIPE.md (plan par plan), SWAP.md (votre produit), REFERENCE.md
 ├── scripts/       setup.sh (installe ce qui manque) et les scripts de mesure
 ├── result/        result.mp4, affiche, planche contact, aperçu, metrics.json
 └── project/       un projet prêt à rendre : film.json, tools/, assets/
@@ -80,6 +80,7 @@ Chaque entrée est autonome : nos fichiers communs (les règles du floor, les sc
 | | |
 |---|---|
 | `tools/floor.md` | les règles communes du floor (copiées dans `references/` de chaque entrée) |
+| `launch/sourcing.md` | comment les films de launch réunissent les vrais écrans, logo et textes du produit (copié dans `references/` de chaque entrée launch) |
 | `tools/validate.py` | vérifie chaque entrée par rapport au format, et que ses copies des fichiers communs correspondent à `tools/` |
 | `tools/catalog.py` | régénère `catalog.json` et le tableau ci-dessus |
 | `tools/analyze.py <video> <out>` | coupes, plans, planche contact, LUFS, crête réelle, BPM, coupes sur le temps |
