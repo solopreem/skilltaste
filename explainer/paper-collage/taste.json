@@ -1,0 +1,148 @@
+{
+  "id": "paper-collage",
+  "title": "Paper collage",
+  "summary": "A 40-45 s narrated explainer, 16:9 and 9:16 from one project, in the Vox-style paper-collage look: a true story one sentence per scene, real photos cut out as white-border stickers, torn paper, clippings, stamps and typed labels landing on their words, over halftone b-roll, with captions and a sources end card.",
+  "version": "1.0.0",
+  "requires": {
+    "renderer": "hyperframes@0.8.191",
+    "skills": [
+      "hyperframes",
+      "hyperframes-cli"
+    ],
+    "bins": [
+      "node>=20",
+      "ffmpeg",
+      "python3",
+      "uv (for pillow in tools/cutout.py)"
+    ],
+    "optional": {
+      "FAL_KEY (ElevenLabs via fal)": "narration with word timings, music, SFX, photo cut-outs (BiRefNet)",
+      "BYTEPLUS_API_KEY (Seedance 2.0)": "generate b-roll; stock or your own footage works too"
+    }
+  },
+  "layers": {
+    "floor": "references/floor.md",
+    "category": "explainer",
+    "method": "narrated-paper-collage",
+    "moves": [
+      "credit-card",
+      "stamp",
+      "sticker-rise",
+      "typewriter-label",
+      "card-slap",
+      "highlighter",
+      "logo-slap",
+      "name-strip",
+      "rip",
+      "clipping-tape",
+      "marker-ring",
+      "box-stamp",
+      "ticker-tape",
+      "counter",
+      "print-drop",
+      "spoken-headline",
+      "sources-note",
+      "captions"
+    ],
+    "craft": [
+      "a year, a person and a number in the first sentence",
+      "every piece lands on the word it belongs to",
+      "paper scenes alternate with b-roll scenes",
+      "the turn at about a quarter, the reveal at about three quarters",
+      "captions always on",
+      "the last line spoken and shown word for word",
+      "-14 LUFS, true peak under -1 dBTP"
+    ],
+    "style": {
+      "ground": "paper texture; b-roll desaturated under an 8 px halftone screen, paper grain and a vignette",
+      "type": "Anton capitals for names and numbers, Special Elite for typed labels, Inter for captions",
+      "accent": "one red, one yellow, on strips, stamps and highlighter only",
+      "banned": [
+        "generated people",
+        "redrawn or AI-altered photos of real people",
+        "clean unprocessed b-roll",
+        "glides and fades (pieces land)"
+      ],
+      "motion": "slaps, rises, drops and stamps at small tilts; a slow push on every scene"
+    },
+    "tool": {
+      "renderer": "hyperframes@0.8.191",
+      "generators": [
+        "Seedance 2.0 (BytePlus) b-roll, 5 shots of 5 s, no people",
+        "ElevenLabs multilingual v2 narration with word timings via fal",
+        "ElevenLabs Music and Sound Effects via fal",
+        "BiRefNet background removal via fal"
+      ],
+      "assets": "tools/cutout.py makes white-border stickers from licensed photos; tools/voice.py writes words.json"
+    }
+  },
+  "spec": {
+    "duration_s": 43.8,
+    "ratio": [
+      "16:9",
+      "9:16"
+    ],
+    "size": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "scenes": 9,
+    "narration_words": 106,
+    "loudness_lufs": -14
+  },
+  "reference": {
+    "name": "Vox-style paper-collage explainers; prompted by a frame from an AI-agent-made narrated biography shared on LinkedIn",
+    "metrics": {},
+    "see": "references/REFERENCE.md"
+  },
+  "result": {
+    "video": "result/result.mp4",
+    "video_vertical": "result/result-9x16.mp4",
+    "poster": "result/poster.jpg",
+    "sheet": "result/sheet.jpg",
+    "preview": "result/preview.gif",
+    "metrics": "result/metrics.json",
+    "example_story": "Sam Bankman-Fried and his 2022 Anthropic stake, the week Anthropic filed to go public (unofficial explainer)"
+  },
+  "needs": {
+    "from_story": [
+      "a true story that fits in eight sentences, with a source for every fact",
+      "2-3 licensed photos of the people in it (Wikimedia Commons first)",
+      "logos, a chart or a document if the story has them",
+      "one number or turn worth stamping"
+    ],
+    "generated": [
+      "narration with word timings (tools/voice.py)",
+      "one b-roll shot per b-roll scene, no people (tools/footage.md)",
+      "one music track, film length (tools/music.md)"
+    ]
+  },
+  "fits": [
+    "news explainers: an IPO, a collapse, a verdict, a deal",
+    "short biographies of founders and public figures",
+    "company histories and 'how did we get here' stories",
+    "feed posts that need 16:9 and 9:16 and play muted"
+  ],
+  "avoid": [
+    "product launches (use launch/ entries)",
+    "stories without licensed photos of the people in them",
+    "rumours or anything a source cannot back",
+    "stories that need more than about 60 s"
+  ],
+  "combines_with": [],
+  "conflicts_with": [],
+  "cost": {
+    "stock_clips": 0,
+    "generated_clips": 5,
+    "music_tracks": 1,
+    "render_minutes": 2
+  },
+  "licence": {
+    "code": "MIT",
+    "result_and_generated_media": "CC BY 4.0",
+    "photos": "Cointelegraph and MIT Bitcoin Club photos CC BY 3.0, detention photo public domain, FTT chart CC0, via Wikimedia Commons (see project/assets/THIRD_PARTY.md)",
+    "logos": "Anthropic and FTX logos are trademarks of their owners; shown as part of reporting",
+    "fonts": "Anton, Special Elite, Inter: SIL Open Font License 1.1"
+  }
+}

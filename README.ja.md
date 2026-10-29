@@ -38,6 +38,7 @@ video-skills は前者のフラット版を、オープンに作ったもので�
 <!-- CATALOG -->
 | Preview | Entry | Category · method | Length | Events / 10 s |
 |---|---|---|---|---|
+| <img src="explainer/paper-collage/result/preview.gif" width="240"> | [**paper-collage**](explainer/paper-collage/) Paper collage | explainer · narrated-paper-collage | 43.8 s 16:9 + 9:16 | 9.8 |
 | <img src="launch/broll-wheel/result/preview.gif" width="240"> | [**broll-wheel**](launch/broll-wheel/) B-roll wheel launch | launch · broll-under-type | 90 s 16:9 | 8.7 |
 | <img src="launch/feature-roster/result/preview.gif" width="240"> | [**feature-roster**](launch/feature-roster/) Feature roster | launch · rebuilt-ui-roster | 26.7 s 16:9 + 9:16 | 3.0 |
 <!-- /CATALOG -->
@@ -48,7 +49,7 @@ video-skills は前者のフラット版を、オープンに作ったもので�
 <category>/<id>/
 ├── SKILL.md       これを読み込んで映像を作る
 ├── taste.json     カード：依存関係、7 つのレイヤー、仕様、計測値、必要なもの、向いている用途
-├── references/    floor.md（共通ルール）、sourcing.md（launch：本物の素材集め）、RECIPE.md（ショットごと）、SWAP.md（プロダクト差し替え）、REFERENCE.md
+├── references/    floor.md（共通ルール）、sourcing.md（launch・explainer：本物の素材集め）、RECIPE.md（ショットごと）、SWAP.md（プロダクト差し替え）、REFERENCE.md
 ├── scripts/       setup.sh（足りないものを入れる）と計測スクリプト
 ├── result/        result.mp4、ポスター、コンタクトシート、プレビュー、metrics.json
 └── project/       レンダリング可能なプロジェクト：film.json、tools/、assets/

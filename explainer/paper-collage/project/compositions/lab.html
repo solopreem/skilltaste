@@ -1,0 +1,58 @@
+<template>
+  <style>
+    @font-face { font-family: 'Anton'; src: url('assets/fonts/anton-latin-400-normal.woff2') format('woff2'); }
+    @font-face { font-family: 'Elite'; src: url('assets/fonts/special-elite-latin-400-normal.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; src: url('assets/fonts/inter-latin-700-normal.woff2') format('woff2'); font-weight: 700; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #efe9dc url('assets/tex/paper.jpg') center / cover; color: #141311; }
+    #root .abs { position: absolute; }
+    .stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
+    .vid { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.35) contrast(1.18) brightness(.7); }
+    .dots { position: absolute; inset: 0; background: url('assets/tex/dot.png') repeat; background-size: 8px 8px; opacity: .28; mix-blend-mode: multiply; }
+    .grain { position: absolute; inset: 0; background: url('assets/tex/paper.jpg') center / cover; opacity: .32; mix-blend-mode: multiply; }
+    .vign { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(0,0,0,.45)); }
+    .stk { filter: drop-shadow(3px 8px 10px rgba(0,0,0,.35)); }
+    .stk img { display: block; width: 100%; }
+    .shadow { filter: drop-shadow(4px 10px 12px rgba(0,0,0,.4)); }
+    .strip { padding: .12em .45em .08em; background: #efe9dc url('assets/tex/paper.jpg') center / 900px; filter: drop-shadow(2px 5px 6px rgba(0,0,0,.3)); white-space: nowrap; }
+    .anton { font-family: 'Anton', sans-serif; text-transform: uppercase; letter-spacing: .01em; line-height: 1; }
+    .elite { font-family: 'Elite', monospace; }
+    .red { background: #d8402c; color: #efe9dc; }
+    .yellow { background: #f1d23a; color: #141311; }
+    .ink { background: #141311; color: #efe9dc; }
+    .tape { position: absolute; width: 150px; height: 42px; background: rgba(236,226,196,.82); box-shadow: 0 1px 3px rgba(0,0,0,.15); }
+    .row { position: absolute; left: 0; width: 1920px; text-align: center; }
+    .row > * { display: inline-block; position: relative; vertical-align: top; }
+    .hi { background: linear-gradient(transparent 52%, #f1d23a 52%, #f1d23a 92%, transparent 92%) no-repeat 0 0 / 0% 100%; }
+    #r_lab0 { top: 300px; }
+    #lab0 .lp { padding: 34px 56px; background: #f7f2e6 url('assets/tex/paper.jpg') center / 1200px; clip-path: polygon(0.0% 1.2%,3.8% 1.5%,7.7% 2.4%,11.5% 1.2%,15.4% 1.3%,19.2% 1.6%,23.1% 0.5%,26.9% 1.4%,30.8% 1.7%,34.6% 2.1%,38.5% 0.2%,42.3% 0.8%,46.2% 0.2%,50.0% 2.1%,53.8% 1.8%,57.7% 0.1%,61.5% 2.6%,65.4% 2.5%,69.2% 1.7%,73.1% 1.6%,76.9% 0.4%,80.8% 0.0%,84.6% 1.4%,88.5% 0.2%,92.3% 0.5%,96.2% 0.6%,100.0% 0.1%,100.0% 98.8%,96.2% 98.8%,92.3% 97.8%,88.5% 98.6%,84.6% 98.3%,80.8% 98.7%,76.9% 98.3%,73.1% 98.8%,69.2% 99.3%,65.4% 97.4%,61.5% 97.4%,57.7% 97.8%,53.8% 98.1%,50.0% 99.2%,46.2% 99.4%,42.3% 99.2%,38.5% 99.8%,34.6% 98.0%,30.8% 98.9%,26.9% 97.8%,23.1% 99.0%,19.2% 97.5%,15.4% 97.8%,11.5% 100.0%,7.7% 99.4%,3.8% 97.6%,0.0% 98.8%); }
+    #lab0 img { display: block; width: 860px; }
+    #lab1 { left: 580px; top: 470px; }
+    #lab1 { width: 760px; }
+    #r_lab2 { top: 780px; }
+    #lab2 { font-size: 104px;  }
+
+  </style>
+  <div id="root" data-composition-id="lab" data-width="1920" data-height="1080">
+    <video id="v-lab" class="vid clip" src="assets/footage/servers.mp4" data-start="0" data-duration="4.6" data-track-index="0" muted playsinline></video><div class="dots"></div><div class="grain"></div><div class="vign"></div>
+    <div class="stage" id="st">
+      <div id="r_lab0" class="row"><div id="lab0" class="shadow"><div class="lp"><img src="assets/img/anthropic-logo.svg" alt="Anthropic" /></div></div></div>
+      <div id="lab1" class="abs stk"><img src="assets/img/sbf-mit-sticker.png" alt="Sam Bankman-Fried" /></div>
+      <div id="r_lab2" class="row"><div id="lab2" class="strip anton red">Sam Bankman-Fried</div></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const slap = (s, t, rot, from) => tl.fromTo(s, { opacity: 0, scale: from || 1.3, rotation: (rot || 0) + 7 }, { opacity: 1, scale: 1, rotation: rot || 0, duration: 0.32, ease: 'back.out(2.2)' }, t);
+      const rise = (s, t, rot, dy) => tl.fromTo(s, { opacity: 0, y: dy || 160, rotation: (rot || 0) - 6 }, { opacity: 1, y: 0, rotation: rot || 0, duration: 0.5, ease: 'expo.out' }, t);
+      const type = (s, t, per) => tl.fromTo(s, { opacity: 0 }, { opacity: 1, duration: 0.01, stagger: per || 0.035 }, t);
+      const push = (s, d, a) => tl.fromTo(s, { scale: 1 }, { scale: a || 1.05, duration: d, ease: 'none' }, 0);
+      push('#st', 4.6, 1.03);
+      slap('#lab0', 0.7, -1.5, 1.4); tl.to('#lab0', { y: -150, scale: 0.62, duration: 0.45, ease: 'expo.inOut' }, 1.85);
+      rise('#lab1', 2.0, 2, 648);
+      slap('#lab2', 3.1, -2, 1.35);
+      tl.set({}, {}, 4.6);
+      window.__timelines['lab'] = tl;
+    })();
+  </script>
+</template>

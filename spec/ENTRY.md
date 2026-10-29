@@ -11,7 +11,7 @@ Entries follow the Agent Skills layout (`SKILL.md` plus `references/`, `scripts/
 ├── taste.json        # machine-readable card: requirements, the seven layers, specs, metrics, what it needs (spec/taste.schema.json)
 ├── references/
 │   ├── floor.md      # the rules every film keeps (a copy of tools/floor.md)
-│   ├── sourcing.md   # how to collect the product's real screens, logo and copy (launch only: a copy of launch/sourcing.md)
+│   ├── sourcing.md   # how to collect the product's real screens, logo and copy (per category: a copy of launch/sourcing.md or explainer/sourcing.md)
 │   ├── RECIPE.md     # the film shot by shot: time, scene, move, sound. The part you do not change
 │   ├── SWAP.md       # how to put another product in: the slots, what never changes
 │   └── REFERENCE.md  # what it reproduces: the reference's moves and measured numbers (never the reference footage)

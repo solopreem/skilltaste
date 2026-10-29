@@ -1,0 +1,100 @@
+{
+  "title": "Sam Bankman-Fried's best trade (unofficial explainer)",
+  "copy": {
+    "credit": "BUILT BY SONNYPROTO AND OPUS 5.5"
+  },
+  "audio": {
+    "vo": "assets/audio/vo.mp3",
+    "words": "assets/audio/words.json",
+    "vo_length": 40.26,
+    "music": "assets/audio/music.mp3",
+    "music_volume": 0.32,
+    "length": 42.6
+  },
+  "caption_fixes": { "customer s": "customers" },
+  "palette": { "paper": "#efe9dc", "ink": "#141311", "red": "#d8402c", "yellow": "#f1d23a" },
+  "scenes": [
+    {
+      "id": "open", "start": 0, "bg": "paper", "push": 1.04,
+      "items": [
+        { "type": "stamp", "text": "2022", "at": 0.15, "x": { "16:9": 110, "9:16": 70 }, "y": { "16:9": 80, "9:16": 120 }, "size": { "16:9": 250, "9:16": 230 }, "rot": -4, "color": "red" },
+        { "type": "sticker", "src": "assets/img/sbf-portrait-sticker.png", "alt": "Sam Bankman-Fried", "at": 0.9, "x": { "16:9": 980, "9:16": 280 }, "y": { "16:9": 238, "9:16": 543 }, "w": { "16:9": 820, "9:16": 760 }, "rot": -3 },
+        { "type": "label", "text": "a 30-year-old crypto billionaire", "at": 1.3, "bar": true, "x": { "16:9": 110, "9:16": 70 }, "y": { "16:9": 400, "9:16": 470 }, "size": { "16:9": 40, "9:16": 44 } },
+        { "type": "card", "at": 3.0, "x": { "16:9": 110, "9:16": 60 }, "y": { "16:9": 630, "9:16": 1200 }, "w": { "16:9": 900, "9:16": 960 }, "rot": 3, "seed": 3,
+          "lines": [
+            { "style": "small", "text": "PAY TO THE ORDER OF" },
+            { "style": "line", "text": "a little-known AI lab", "hi": 5.1 },
+            { "style": "big", "text": "$500,000,000" },
+            { "style": "sign", "text": "S. B-F." }
+          ] }
+      ]
+    },
+    {
+      "id": "lab", "start": 6.7, "bg": "assets/footage/servers.mp4", "push": 1.03,
+      "items": [
+        { "type": "logo", "src": "assets/img/anthropic-logo.svg", "alt": "Anthropic", "at": 7.4, "y": { "16:9": 300, "9:16": 560 }, "w": { "16:9": 860, "9:16": 760 }, "rot": -1.5, "seed": 11,
+          "then": { "at": 8.55, "dy": { "16:9": -150, "9:16": -200 }, "scale": 0.62 } },
+        { "type": "sticker", "src": "assets/img/sbf-mit-sticker.png", "alt": "Sam Bankman-Fried", "at": 8.7, "x": { "16:9": 580, "9:16": 130 }, "y": { "16:9": 470, "9:16": 940 }, "w": { "16:9": 760, "9:16": 820 }, "rot": 2, "dy": { "16:9": 648, "9:16": 1152 } },
+        { "type": "strip", "text": "Sam Bankman-Fried", "color": "red", "at": 9.8, "y": { "16:9": 780, "9:16": 1440 }, "size": { "16:9": 104, "9:16": 92 }, "rot": -2 }
+      ]
+    },
+    {
+      "id": "collapse", "start": 11.3, "bg": "assets/footage/chart.mp4", "push": 1.03,
+      "items": [
+        { "type": "rip", "src": "assets/img/ftx-logo.svg", "alt": "FTX", "at": 11.55, "tear": 12.55, "out": 13.45, "y": { "16:9": 170, "9:16": 420 }, "w": { "16:9": 760, "9:16": 820 }, "rot": -2, "seed": 5 },
+        { "type": "clipping", "src": "assets/img/ftt-chart.png", "alt": "FTT price 2021-2023", "at": 13.5, "x": { "16:9": 1060, "9:16": 110 }, "y": { "16:9": 150, "9:16": 900 }, "w": { "16:9": 680, "9:16": 860 }, "rot": 2.5,
+          "ring": [78, 62, 12, 30], "ring_at": 14.0 },
+        { "type": "strip", "text": "Customers' money", "color": "yellow", "at": 14.6, "y": { "16:9": 810, "9:16": 1460 }, "size": { "16:9": 78, "9:16": 80 }, "rot": 1.5, "from": 1.3, "vol": 0.5 }
+      ]
+    },
+    {
+      "id": "sentence", "start": 17.4, "bg": "assets/footage/court.mp4", "push": 1.04,
+      "items": [
+        { "type": "label", "text": "2024 · SENTENCED", "at": 17.55, "y": { "16:9": 250, "9:16": 600 }, "size": { "16:9": 38, "9:16": 40 }, "rot": -1, "per": 0.04 },
+        { "type": "strip", "text": "25 years", "color": "ink", "at": 19.4, "y": { "16:9": 360, "9:16": 760 }, "size": { "16:9": 330, "9:16": 200 }, "rot": -3, "from": 1.7, "vol": 0.8, "css": "padding: .06em .3em .02em;" }
+      ]
+    },
+    {
+      "id": "sold", "start": 21.4, "bg": "paper", "push": 1.04,
+      "items": [
+        { "type": "news", "at": 21.7, "x": { "16:9": 260, "9:16": 60 }, "y": { "16:9": 150, "9:16": 460 }, "w": { "16:9": 1100, "9:16": 960 }, "size": { "16:9": 96, "9:16": 86 }, "rot": -1.5, "seed": 21,
+          "mast": "THE ESTATE · 2024", "head": "FTX estate sells its Anthropic stake", "dek": "Proceeds go to repaying creditors." },
+        { "type": "stamp", "text": "$1.3 billion", "box": true, "color": "red", "at": 23.3, "x": { "16:9": 840, "9:16": 200 }, "y": { "16:9": 660, "9:16": 1200 }, "size": { "16:9": 160, "9:16": 150 }, "rot": -9 },
+        { "type": "label", "text": "to repay creditors", "at": 25.15, "y": { "16:9": 860, "9:16": 1480 }, "size": { "16:9": 42, "9:16": 44 } }
+      ]
+    },
+    {
+      "id": "ipo", "start": 26.7, "bg": "assets/footage/ticker.mp4", "push": 1.03,
+      "items": [
+        { "type": "strip", "text": "This week", "color": "yellow", "at": 26.82, "y": { "16:9": 170, "9:16": 520 }, "size": { "16:9": 104, "9:16": 96 }, "rot": -2, "from": 1.4, "vol": 0.5 },
+        { "type": "ticker", "text": "ANT ▲ NASDAQ · S-1 FILED OCT 26, 2026 · ", "at": 27.5, "y": { "16:9": 490, "9:16": 910 }, "size": 64, "rot": -4 },
+        { "type": "logo", "src": "assets/img/anthropic-logo.svg", "alt": "Anthropic", "at": 28.6, "y": { "16:9": 750, "9:16": 1300 }, "w": { "16:9": 620, "9:16": 640 }, "pad": "26px 46px", "rot": 1.5, "from": 1.3, "seed": 31 }
+      ]
+    },
+    {
+      "id": "worth", "start": 31.7, "bg": "paper", "push": 1.04,
+      "items": [
+        { "type": "label", "text": "at its last private price", "at": 31.7, "y": { "16:9": 220, "9:16": 640 }, "size": 40, "rot": -1, "per": 0.025 },
+        { "type": "bar", "at": 33.25, "y": { "16:9": 760, "9:16": 1120 }, "w": { "16:9": 840, "9:16": 760 }, "rot": -1.5 },
+        { "type": "counter", "values": [1.3, 2.1, 3.4, 5.2, 7.9, 11, 15, 20, 26, 32, 38, 43, 47], "format": "${v}B", "at": 32.15, "step": 0.075, "y": { "16:9": 330, "9:16": 760 }, "size": { "16:9": 380, "9:16": 330 } },
+        { "type": "label", "text": "445 million shares × $105.71", "at": 33.4, "y": { "16:9": 850, "9:16": 1460 }, "size": { "16:9": 38, "9:16": 40 } }
+      ]
+    },
+    {
+      "id": "prison", "start": 34.1, "bg": "assets/footage/prison.mp4", "push": 1.05,
+      "items": [
+        { "type": "print", "src": "assets/img/sbf-mdc-print.jpg", "alt": "Bankman-Fried in federal detention", "at": 34.25, "x": { "16:9": 783, "9:16": 348 }, "y": { "16:9": 110, "9:16": 460 }, "w": { "16:9": 354, "9:16": 384 }, "rot": -3, "tape": [28, 5] },
+        { "type": "strip", "text": "Federal prison · California", "color": "ink", "at": 35.45, "y": { "16:9": 820, "9:16": 1450 }, "size": { "16:9": 70, "9:16": 76 }, "rot": -1.5, "from": 1.3 }
+      ]
+    },
+    {
+      "id": "end", "start": 37.1, "bg": "paper", "push": 1.03,
+      "items": [
+        { "type": "headline", "from": 37.0, "to": 38.8, "y": { "16:9": 220, "9:16": 560 }, "w": { "16:9": 1520, "9:16": 940 }, "size": { "16:9": 150, "9:16": 140 } },
+        { "type": "strip", "text": "He'll never cash it.", "color": "red", "at": 38.9, "y": { "16:9": 640, "9:16": 1060 }, "size": { "16:9": 120, "9:16": 110 }, "rot": -2.5, "from": 1.4, "vol": 0.7 },
+        { "type": "note", "at": 40.3, "size": { "16:9": 20, "9:16": 22 }, "bottom": { "16:9": 46, "9:16": 70 },
+          "text": "Unofficial explainer. Sources: Anthropic S-1 (Oct 26, 2026), CNBC, Benzinga, Al Jazeera. Stake value: S-1 pre-IPO price × 445.4M shares.<br>Photos: Cointelegraph, MIT Bitcoin Club (CC BY 3.0), public-domain detention photo, via Wikimedia Commons. B-roll generated with Seedance." }
+      ]
+    }
+  ]
+}

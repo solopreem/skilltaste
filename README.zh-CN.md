@@ -37,6 +37,7 @@ video-skills 是前一种的开源平铺版：
 <!-- CATALOG -->
 | Preview | Entry | Category · method | Length | Events / 10 s |
 |---|---|---|---|---|
+| <img src="explainer/paper-collage/result/preview.gif" width="240"> | [**paper-collage**](explainer/paper-collage/) Paper collage | explainer · narrated-paper-collage | 43.8 s 16:9 + 9:16 | 9.8 |
 | <img src="launch/broll-wheel/result/preview.gif" width="240"> | [**broll-wheel**](launch/broll-wheel/) B-roll wheel launch | launch · broll-under-type | 90 s 16:9 | 8.7 |
 | <img src="launch/feature-roster/result/preview.gif" width="240"> | [**feature-roster**](launch/feature-roster/) Feature roster | launch · rebuilt-ui-roster | 26.7 s 16:9 + 9:16 | 3.0 |
 <!-- /CATALOG -->
@@ -47,7 +48,7 @@ video-skills 是前一种的开源平铺版：
 <category>/<id>/
 ├── SKILL.md       加载它就能做片
 ├── taste.json     卡片：依赖、七层归属、规格、实测数据、需要什么、适合什么
-├── references/    floor.md（共享底线）、sourcing.md（launch：找真实素材）、RECIPE.md（逐镜头配方）、SWAP.md（换产品）、REFERENCE.md（参考拆解）
+├── references/    floor.md（共享底线）、sourcing.md（launch、explainer：找真实素材）、RECIPE.md（逐镜头配方）、SWAP.md（换产品）、REFERENCE.md（参考拆解）
 ├── scripts/       setup.sh（缺什么装什么）和测量脚本
 ├── result/        成片、封面、联系表、预览、metrics.json
 └── project/       可直接渲染的工程：film.json、tools/、assets/

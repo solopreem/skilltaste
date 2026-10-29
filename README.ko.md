@@ -38,6 +38,7 @@ video-skills는 앞의 것을 평평하게, 그리고 공개적으로 만든 버
 <!-- CATALOG -->
 | Preview | Entry | Category · method | Length | Events / 10 s |
 |---|---|---|---|---|
+| <img src="explainer/paper-collage/result/preview.gif" width="240"> | [**paper-collage**](explainer/paper-collage/) Paper collage | explainer · narrated-paper-collage | 43.8 s 16:9 + 9:16 | 9.8 |
 | <img src="launch/broll-wheel/result/preview.gif" width="240"> | [**broll-wheel**](launch/broll-wheel/) B-roll wheel launch | launch · broll-under-type | 90 s 16:9 | 8.7 |
 | <img src="launch/feature-roster/result/preview.gif" width="240"> | [**feature-roster**](launch/feature-roster/) Feature roster | launch · rebuilt-ui-roster | 26.7 s 16:9 + 9:16 | 3.0 |
 <!-- /CATALOG -->
@@ -48,7 +49,7 @@ video-skills는 앞의 것을 평평하게, 그리고 공개적으로 만든 버
 <category>/<id>/
 ├── SKILL.md       이것을 불러와 영상을 만든다
 ├── taste.json     카드: 요구 사항, 일곱 레이어, 사양, 측정값, 필요한 것, 어울리는 용도
-├── references/    floor.md (공통 규칙), sourcing.md (launch: 실제 소재 수집), RECIPE.md (샷별 구성), SWAP.md (제품 교체), REFERENCE.md
+├── references/    floor.md (공통 규칙), sourcing.md (launch, explainer: 실제 소재 수집), RECIPE.md (샷별 구성), SWAP.md (제품 교체), REFERENCE.md
 ├── scripts/       setup.sh (없는 것을 설치)와 측정 스크립트
 ├── result/        result.mp4, 포스터, 콘택트 시트, 미리보기, metrics.json
 └── project/       렌더링 가능한 프로젝트: film.json, tools/, assets/

@@ -1,0 +1,60 @@
+<template>
+  <style>
+    @font-face { font-family: 'Anton'; src: url('assets/fonts/anton-latin-400-normal.woff2') format('woff2'); }
+    @font-face { font-family: 'Elite'; src: url('assets/fonts/special-elite-latin-400-normal.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; src: url('assets/fonts/inter-latin-700-normal.woff2') format('woff2'); font-weight: 700; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #efe9dc url('assets/tex/paper.jpg') center / cover; color: #141311; }
+    #root .abs { position: absolute; }
+    .stage { position: absolute; inset: 0; transform-origin: 50% 50%; }
+    .vid { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.35) contrast(1.18) brightness(.7); }
+    .dots { position: absolute; inset: 0; background: url('assets/tex/dot.png') repeat; background-size: 8px 8px; opacity: .28; mix-blend-mode: multiply; }
+    .grain { position: absolute; inset: 0; background: url('assets/tex/paper.jpg') center / cover; opacity: .32; mix-blend-mode: multiply; }
+    .vign { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(0,0,0,.45)); }
+    .stk { filter: drop-shadow(3px 8px 10px rgba(0,0,0,.35)); }
+    .stk img { display: block; width: 100%; }
+    .shadow { filter: drop-shadow(4px 10px 12px rgba(0,0,0,.4)); }
+    .strip { padding: .12em .45em .08em; background: #efe9dc url('assets/tex/paper.jpg') center / 900px; filter: drop-shadow(2px 5px 6px rgba(0,0,0,.3)); white-space: nowrap; }
+    .anton { font-family: 'Anton', sans-serif; text-transform: uppercase; letter-spacing: .01em; line-height: 1; }
+    .elite { font-family: 'Elite', monospace; }
+    .red { background: #d8402c; color: #efe9dc; }
+    .yellow { background: #f1d23a; color: #141311; }
+    .ink { background: #141311; color: #efe9dc; }
+    .tape { position: absolute; width: 150px; height: 42px; background: rgba(236,226,196,.82); box-shadow: 0 1px 3px rgba(0,0,0,.15); }
+    .row { position: absolute; left: 0; width: 1920px; text-align: center; }
+    .row > * { display: inline-block; position: relative; vertical-align: top; }
+    .hi { background: linear-gradient(transparent 52%, #f1d23a 52%, #f1d23a 92%, transparent 92%) no-repeat 0 0 / 0% 100%; }
+    #collapse0 .half { left: 580.0px; top: 170px; width: 760px; padding: 70px 0; background: #f7f2e6 url('assets/tex/paper.jpg') center / 1200px; text-align: center; }
+    #collapse0 .half img { width: 72%; }
+    #collapse0l { clip-path: polygon(0.0% 0.0%,50.7% 0.0%,51.5% 5.6%,51.8% 11.1%,52.7% 16.7%,51.4% 22.2%,52.5% 27.8%,47.2% 33.3%,49.8% 38.9%,52.7% 44.4%,50.9% 50.0%,52.4% 55.6%,47.7% 61.1%,49.8% 66.7%,48.5% 72.2%,50.3% 77.8%,50.4% 83.3%,47.1% 88.9%,48.3% 94.4%,48.7% 100.0%,0.0% 100.0%); } #collapse0r { clip-path: polygon(100.0% 0.0%,50.7% 0.0%,51.5% 5.6%,51.8% 11.1%,52.7% 16.7%,51.4% 22.2%,52.5% 27.8%,47.2% 33.3%,49.8% 38.9%,52.7% 44.4%,50.9% 50.0%,52.4% 55.6%,47.7% 61.1%,49.8% 66.7%,48.5% 72.2%,50.3% 77.8%,50.4% 83.3%,47.1% 88.9%,48.3% 94.4%,48.7% 100.0%,100.0% 100.0%); }
+    #collapse1 { left: 1060px; top: 150px; }
+    #collapse1 .pp { position: relative; width: 680px; padding: 14px; background: #fbf8f1; }
+    #collapse1 .pp img { display: block; width: 100%;  }
+    #collapse1 .ring { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    #r_collapse2 { top: 810px; }
+    #collapse2 { font-size: 78px;  }
+
+  </style>
+  <div id="root" data-composition-id="collapse" data-width="1920" data-height="1080">
+    <video id="v-collapse" class="vid clip" src="assets/footage/chart.mp4" data-start="0" data-duration="6.1" data-track-index="0" muted playsinline></video><div class="dots"></div><div class="grain"></div><div class="vign"></div>
+    <div class="stage" id="st">
+      <div id="collapse0" class="abs shadow" style="inset:0"><div id="collapse0l" class="abs half"><img src="assets/img/ftx-logo.svg" alt="FTX" /></div><div id="collapse0r" class="abs half"><img src="assets/img/ftx-logo.svg" alt="" /></div></div>
+      <div id="collapse1" class="abs shadow"><div class="pp"><img src="assets/img/ftt-chart.png" alt="FTT price 2021-2023" /><svg class="ring" viewBox="0 0 100 100" preserveAspectRatio="none"><ellipse id="collapse1e" cx="78" cy="62" rx="12" ry="30" fill="none" stroke="#d8402c" vector-effect="non-scaling-stroke" style="stroke-width:7px" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" /></svg><div class="tape" style="left:42%;top:-20px;transform:rotate(-4deg)"></div></div></div>
+      <div id="r_collapse2" class="row"><div id="collapse2" class="strip anton yellow">Customers' money</div></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const slap = (s, t, rot, from) => tl.fromTo(s, { opacity: 0, scale: from || 1.3, rotation: (rot || 0) + 7 }, { opacity: 1, scale: 1, rotation: rot || 0, duration: 0.32, ease: 'back.out(2.2)' }, t);
+      const rise = (s, t, rot, dy) => tl.fromTo(s, { opacity: 0, y: dy || 160, rotation: (rot || 0) - 6 }, { opacity: 1, y: 0, rotation: rot || 0, duration: 0.5, ease: 'expo.out' }, t);
+      const type = (s, t, per) => tl.fromTo(s, { opacity: 0 }, { opacity: 1, duration: 0.01, stagger: per || 0.035 }, t);
+      const push = (s, d, a) => tl.fromTo(s, { scale: 1 }, { scale: a || 1.05, duration: d, ease: 'none' }, 0);
+      push('#st', 6.1, 1.03);
+      slap('#collapse0', 0.25, -2, 1.3); tl.to('#collapse0l', { x: -90, y: 40, rotation: -9, duration: 0.45, ease: 'power3.out' }, 1.25); tl.to('#collapse0r', { x: 90, y: 70, rotation: 11, duration: 0.45, ease: 'power3.out' }, 1.25); tl.to('#collapse0', { opacity: 0, duration: 0.25 }, 2.15);
+      tl.fromTo('#collapse1', { opacity: 0, y: -120, rotation: -6 }, { opacity: 1, y: 0, rotation: 2.5, duration: 0.5, ease: 'back.out(1.5)' }, 2.2); tl.to('#collapse1e', { strokeDashoffset: 0, duration: 0.6, ease: 'power2.inOut' }, 2.7);
+      slap('#collapse2', 3.3, 1.5, 1.3);
+      tl.set({}, {}, 6.1);
+      window.__timelines['collapse'] = tl;
+    })();
+  </script>
+</template>

@@ -39,6 +39,7 @@ video-skills est la version plate de la première forme, faite en ouvert :
 <!-- CATALOG -->
 | Preview | Entry | Category · method | Length | Events / 10 s |
 |---|---|---|---|---|
+| <img src="explainer/paper-collage/result/preview.gif" width="240"> | [**paper-collage**](explainer/paper-collage/) Paper collage | explainer · narrated-paper-collage | 43.8 s 16:9 + 9:16 | 9.8 |
 | <img src="launch/broll-wheel/result/preview.gif" width="240"> | [**broll-wheel**](launch/broll-wheel/) B-roll wheel launch | launch · broll-under-type | 90 s 16:9 | 8.7 |
 | <img src="launch/feature-roster/result/preview.gif" width="240"> | [**feature-roster**](launch/feature-roster/) Feature roster | launch · rebuilt-ui-roster | 26.7 s 16:9 + 9:16 | 3.0 |
 <!-- /CATALOG -->
@@ -49,7 +50,7 @@ video-skills est la version plate de la première forme, faite en ouvert :
 <category>/<id>/
 ├── SKILL.md       à charger pour faire le film
 ├── taste.json     la fiche : prérequis, sept couches, spécifications, mesures, ce qu'il faut, à quoi elle convient
-├── references/    floor.md (règles communes), sourcing.md (launch : matériel réel), RECIPE.md (plan par plan), SWAP.md (votre produit), REFERENCE.md
+├── references/    floor.md (règles communes), sourcing.md (launch, explainer : matériel réel), RECIPE.md (plan par plan), SWAP.md (votre produit), REFERENCE.md
 ├── scripts/       setup.sh (installe ce qui manque) et les scripts de mesure
 ├── result/        result.mp4, affiche, planche contact, aperçu, metrics.json
 └── project/       un projet prêt à rendre : film.json, tools/, assets/

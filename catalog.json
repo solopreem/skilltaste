@@ -1,5 +1,49 @@
 [
   {
+    "id": "paper-collage",
+    "title": "Paper collage",
+    "summary": "A 40-45 s narrated explainer, 16:9 and 9:16 from one project, in the Vox-style paper-collage look: a true story one sentence per scene, real photos cut out as white-border stickers, torn paper, clippings, stamps and typed labels landing on their words, over halftone b-roll, with captions and a sources end card.",
+    "category": "explainer",
+    "method": "narrated-paper-collage",
+    "duration_s": 43.8,
+    "ratio": [
+      "16:9",
+      "9:16"
+    ],
+    "events_per_10s": 9.8,
+    "still_share": 0.52,
+    "shots": 9,
+    "needs": {
+      "from_story": [
+        "a true story that fits in eight sentences, with a source for every fact",
+        "2-3 licensed photos of the people in it (Wikimedia Commons first)",
+        "logos, a chart or a document if the story has them",
+        "one number or turn worth stamping"
+      ],
+      "generated": [
+        "narration with word timings (tools/voice.py)",
+        "one b-roll shot per b-roll scene, no people (tools/footage.md)",
+        "one music track, film length (tools/music.md)"
+      ]
+    },
+    "fits": [
+      "news explainers: an IPO, a collapse, a verdict, a deal",
+      "short biographies of founders and public figures",
+      "company histories and 'how did we get here' stories",
+      "feed posts that need 16:9 and 9:16 and play muted"
+    ],
+    "avoid": [
+      "product launches (use launch/ entries)",
+      "stories without licensed photos of the people in them",
+      "rumours or anything a source cannot back",
+      "stories that need more than about 60 s"
+    ],
+    "path": "explainer/paper-collage",
+    "poster": "explainer/paper-collage/result/poster.jpg",
+    "preview": "explainer/paper-collage/result/preview.gif",
+    "video": "explainer/paper-collage/result/result.mp4"
+  },
+  {
     "id": "broll-wheel",
     "title": "B-roll wheel launch",
     "summary": "A 90 s keynote-style launch: real-world b-roll under kinetic type, a 'Your [ ]' wheel between chapters, the product's real screens floating over footage, a beat montage at 35 %, One More Thing, dot-to-logo end.",

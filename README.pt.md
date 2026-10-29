@@ -39,6 +39,7 @@ video-skills é a versão plana do primeiro, feita em aberto:
 <!-- CATALOG -->
 | Preview | Entry | Category · method | Length | Events / 10 s |
 |---|---|---|---|---|
+| <img src="explainer/paper-collage/result/preview.gif" width="240"> | [**paper-collage**](explainer/paper-collage/) Paper collage | explainer · narrated-paper-collage | 43.8 s 16:9 + 9:16 | 9.8 |
 | <img src="launch/broll-wheel/result/preview.gif" width="240"> | [**broll-wheel**](launch/broll-wheel/) B-roll wheel launch | launch · broll-under-type | 90 s 16:9 | 8.7 |
 | <img src="launch/feature-roster/result/preview.gif" width="240"> | [**feature-roster**](launch/feature-roster/) Feature roster | launch · rebuilt-ui-roster | 26.7 s 16:9 + 9:16 | 3.0 |
 <!-- /CATALOG -->
@@ -49,7 +50,7 @@ video-skills é a versão plana do primeiro, feita em aberto:
 <category>/<id>/
 ├── SKILL.md       carregue e faça o vídeo
 ├── taste.json     o cartão: requisitos, sete camadas, especificações, métricas, do que precisa, para que serve
-├── references/    floor.md (regras comuns), sourcing.md (launch: material real), RECIPE.md (plano a plano), SWAP.md (seu produto), REFERENCE.md
+├── references/    floor.md (regras comuns), sourcing.md (launch, explainer: material real), RECIPE.md (plano a plano), SWAP.md (seu produto), REFERENCE.md
 ├── scripts/       setup.sh (instala o que falta) e os scripts de medição
 ├── result/        result.mp4, pôster, folha de contato, prévia, metrics.json
 └── project/       um projeto renderizável: film.json, tools/, assets/
