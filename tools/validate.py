@@ -31,6 +31,13 @@ for eid in ids:
                          ("tools/events.py", "scripts/events.py"), ("tools/setup.sh", "scripts/setup.sh")]:
         if (e / copy).exists() and (e / copy).read_bytes() != (ROOT / shared).read_bytes():
             bad(f"{copy} differs from {shared}: copy it again")
+    # category files (<category>/*.md, e.g. launch/sourcing.md) hold rules for that category only; every entry in it carries a copy
+    for shared in sorted(e.parent.glob("*.md")):
+        copy = e / "references" / shared.name
+        if not copy.exists():
+            bad(f"missing references/{shared.name} (copy of {shared.relative_to(ROOT)})")
+        elif copy.read_bytes() != shared.read_bytes():
+            bad(f"references/{shared.name} differs from {shared.relative_to(ROOT)}: copy it again")
     if t.get("layers", {}).get("category") != e.parent.name:
         bad(f"taste.json layers.category '{t.get('layers', {}).get('category')}' != category folder '{e.parent.name}'")
     if t.get("id") != eid:

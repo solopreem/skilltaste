@@ -11,6 +11,7 @@ Entries follow the Agent Skills layout (`SKILL.md` plus `references/`, `scripts/
 ├── taste.json        # machine-readable card: requirements, the seven layers, specs, metrics, what it needs (spec/taste.schema.json)
 ├── references/
 │   ├── floor.md      # the rules every film keeps (a copy of tools/floor.md)
+│   ├── sourcing.md   # how to collect the product's real screens, logo and copy (launch only: a copy of launch/sourcing.md)
 │   ├── RECIPE.md     # the film shot by shot: time, scene, move, sound. The part you do not change
 │   ├── SWAP.md       # how to put another product in: the slots, what never changes
 │   └── REFERENCE.md  # what it reproduces: the reference's moves and measured numbers (never the reference footage)
@@ -49,6 +50,8 @@ the order is floor > category > method > moves > craft > style.
 Each entry must work when it is installed on its own, so nothing in it points outside its folder (no `../../`, no symlinks).
 Our own shared files (`tools/floor.md`, `tools/analyze.py`, `tools/events.py`, `tools/setup.sh`) are copied into every
 entry; `tools/validate.py` fails when a copy drifts from `tools/`. Edit the file in `tools/`, then copy it again.
+Rules that hold for one category only live in that category's folder (`launch/sourcing.md`: collect the real product
+material) and are copied into `references/` of every entry in it; validate checks those copies the same way.
 Anthropic's own skills repo does the same: docx, pptx and xlsx each carry an identical `scripts/office/`.
 
 External tools are never copied, only declared in `taste.json` `requires`: the renderer at a pinned version

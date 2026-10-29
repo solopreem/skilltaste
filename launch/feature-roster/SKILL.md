@@ -1,6 +1,6 @@
 ---
 name: feature-roster
-description: Make a 25-30 s social film (16:9 and 9:16 from one project, 120 BPM) in the "feature roster" style - a hook in the product's own words, the product's agents, features or modules introduced as a roster that flies up into a tab bar, then one 3 s beat per member with its name, its real status line and a camera push into the real screenshot with a colour ring on the proof, ending on the logo lockup. Use when the user asks for this entry by name, picks it from the video-skills gallery, or wants a film that looks like its result/result.mp4. Ships a complete HyperFrames project that renders the example film as is.
+description: Make a 25-30 s launch film for social feeds (16:9 and 9:16 from one project, 120 BPM) in the "feature roster" style - a hook in the product's own words, the product's agents, features or modules introduced as a roster that flies up into a tab bar, then one 3 s beat per member with its name, its real status line and a camera push into the real screenshot with a colour ring on the proof, ending on the logo lockup. Use when the user asks for this entry by name, picks it from the video-skills gallery, or wants a film that looks like its result/result.mp4. Ships a complete HyperFrames project that renders the example film as is.
 ---
 
 # feature-roster
@@ -11,6 +11,7 @@ renders them unchanged. To make it for another product you change `project/film.
 Read before you start, in this order:
 - `taste.json`: what it needs, what it fits, what it requires
 - `references/floor.md`: the rules every film keeps
+- `references/sourcing.md`: how to collect the real screens, logo and copy
 - `references/RECIPE.md`: this film beat by beat
 - `references/SWAP.md`: the slots to fill, and what never changes
 
@@ -41,10 +42,17 @@ tools/master.sh renders/film.mp4 film.mp4   # -14 LUFS, peaks under -1 dBTP
 It should match `result/result.mp4`. The example product's screenshots and logo (Grok Bot) are not shipped; to render the
 example as is, download them first (`project/assets/THIRD_PARTY.md`), or skip straight to step 2 with your own product.
 
-## 2. Swap the product
+## 2. Collect the real material, then swap the product
 
-Follow `references/SWAP.md`: take the screenshots from the real product, fill every slot in `film.json`, run `prep.py`,
-build both ratios. The generator handles 3-6 members; each member adds 3 s, and the music must match the new length.
+First follow `references/sourcing.md` yourself: find the product's real screenshots, logo and copy, working down its list
+of sources when a site blocks you, and write down where each came from. Do not mock up a screen or rename a feature.
+
+- Must be real: the subject itself, its logo, names and every claim. Only atmosphere (generic b-roll, music) may be borrowed.
+- Look in order: its site → press kit, docs, launch post → official social accounts → press coverage → store and listing
+    pages it controls → only then the user. Blocked (Cloudflare, 403)? Do not get around it; take the next source.
+- Never mock up the subject or rename its parts. Label anything invented for the story.
+
+Then follow `references/SWAP.md`: fill every slot in `film.json`, run `prep.py`, build both ratios. The generator handles 3-6 members; each member adds 3 s, and the music must match the new length.
 
 Ask the user only for what you cannot get yourself: a demo account for screenshots, the logo file if the site does not
 expose one, permission to show customer data. Write your other choices down and list them at hand-over.

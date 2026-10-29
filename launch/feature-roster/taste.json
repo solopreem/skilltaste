@@ -1,7 +1,7 @@
 {
   "id": "feature-roster",
   "title": "Feature roster",
-  "summary": "A 25-30 s social film, 16:9 and 9:16 from one project: a hook in the product's own words, the product's agents or features as a roster that flies up into a tab bar, one 3 s beat per member with a push into the real screenshot and a colour ring on the proof, then the team gathers on the logo.",
+  "summary": "A 25-30 s launch film for social feeds, 16:9 and 9:16 from one project: a hook in the product's own words, the product's agents or features as a roster that flies up into a tab bar, one 3 s beat per member with a push into the real screenshot and a colour ring on the proof, then the team gathers on the logo.",
   "version": "1.0.0",
   "requires": {
     "renderer": "hyperframes@0.8.191",
@@ -21,7 +21,7 @@
   },
   "layers": {
     "floor": "references/floor.md",
-    "category": "social",
+    "category": "launch",
     "method": "rebuilt-ui-roster",
     "moves": [
       "credit-card",

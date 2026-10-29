@@ -46,8 +46,8 @@
   {
     "id": "feature-roster",
     "title": "Feature roster",
-    "summary": "A 25-30 s social film, 16:9 and 9:16 from one project: a hook in the product's own words, the product's agents or features as a roster that flies up into a tab bar, one 3 s beat per member with a push into the real screenshot and a colour ring on the proof, then the team gathers on the logo.",
-    "category": "social",
+    "summary": "A 25-30 s launch film for social feeds, 16:9 and 9:16 from one project: a hook in the product's own words, the product's agents or features as a roster that flies up into a tab bar, one 3 s beat per member with a push into the real screenshot and a colour ring on the proof, then the team gathers on the logo.",
+    "category": "launch",
     "method": "rebuilt-ui-roster",
     "duration_s": 26.7,
     "ratio": [
@@ -78,9 +78,9 @@
       "one-feature products (use a single-feature film instead)",
       "more than 6 members (the tab bar and the length stop working)"
     ],
-    "path": "social/feature-roster",
-    "poster": "social/feature-roster/result/poster.jpg",
-    "preview": "social/feature-roster/result/preview.gif",
-    "video": "social/feature-roster/result/result.mp4"
+    "path": "launch/feature-roster",
+    "poster": "launch/feature-roster/result/poster.jpg",
+    "preview": "launch/feature-roster/result/preview.gif",
+    "video": "launch/feature-roster/result/result.mp4"
   }
 ]

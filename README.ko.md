@@ -42,7 +42,7 @@ video-skills는 앞의 것을 평평하게, 그리고 공개적으로 만든 버
 | Preview | Entry | Category · method | Length | Events / 10 s |
 |---|---|---|---|---|
 | <img src="launch/broll-wheel/result/preview.gif" width="240"> | [**broll-wheel**](launch/broll-wheel/) B-roll wheel launch | launch · broll-under-type | 90 s 16:9 | 8.7 |
-| <img src="social/feature-roster/result/preview.gif" width="240"> | [**feature-roster**](social/feature-roster/) Feature roster | social · rebuilt-ui-roster | 26.7 s 16:9 + 9:16 | 3.0 |
+| <img src="launch/feature-roster/result/preview.gif" width="240"> | [**feature-roster**](launch/feature-roster/) Feature roster | launch · rebuilt-ui-roster | 26.7 s 16:9 + 9:16 | 3.0 |
 <!-- /CATALOG -->
 
 ## 항목의 구성

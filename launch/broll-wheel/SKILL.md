@@ -11,6 +11,7 @@ another product you change `project/film.json`, the assets and the b-roll subjec
 Read before you start, in this order:
 - `taste.json`: what it needs, what it fits, what it requires
 - `references/floor.md`: the rules every film keeps
+- `references/sourcing.md`: how to collect the real screens, logo and copy
 - `references/RECIPE.md`: this film shot by shot
 - `references/SWAP.md`: the slots to fill, and what never changes
 
@@ -44,9 +45,17 @@ It should match `result/result.mp4`. The example product's assets (Muse, © Meta
 recreate them first (`project/assets/THIRD_PARTY.md`), or skip straight to step 2 with your own product.
 If the example does not match, fix the environment before swapping anything.
 
-## 2. Swap the product
+## 2. Collect the real material, then swap the product
 
-Follow `references/SWAP.md` §1-3: fill every slot in `film.json` from the real product, replace the nine b-roll clips with the
+First follow `references/sourcing.md` yourself: find the product's real screens, cards, logo, illustration and copy,
+working down its list of sources when a site blocks you, and write down where each came from. Do not mock up a screen.
+
+- Must be real: the subject itself, its logo, names and every claim. Only atmosphere (generic b-roll, music) may be borrowed.
+- Look in order: its site → press kit, docs, launch post → official social accounts → press coverage → store and listing
+    pages it controls → only then the user. Blocked (Cloudflare, 403)? Do not get around it; take the next source.
+- Never mock up the subject or rename its parts. Label anything invented for the story.
+
+Then follow `references/SWAP.md` §1-3: fill every slot in `film.json` from the real product, replace the nine b-roll clips with the
 product's people and places (stock or any video model; the slots are in `project/tools/broll-prompts.md`), regrade, build.
 
 Ask the user only for what you cannot get yourself: the logo file if the site does not expose one, a demo account for
