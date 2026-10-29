@@ -8,6 +8,8 @@
 
 Choisissez un film qui vous plaît, indiquez votre produit à l'agent, et obtenez le même film.
 
+Refaites un excellent film pour votre produit en quelques minutes, avec le bon goût intégré.
+
 </div>
 
 ```bash

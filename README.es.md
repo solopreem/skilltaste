@@ -8,6 +8,8 @@
 
 Elige un vídeo que te guste, indícale tu producto al agente y obtén el mismo vídeo.
 
+Rehaz un gran vídeo para tu producto en minutos, con el buen gusto ya incluido.
+
 </div>
 
 ```bash

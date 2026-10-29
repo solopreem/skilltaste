@@ -8,6 +8,8 @@
 
 Such dir einen Film aus, nenn deinem Agent dein Produkt, und du bekommst denselben Film.
 
+Bau einen starken Film in Minuten für dein Produkt nach, guter Geschmack inklusive.
+
 </div>
 
 ```bash
