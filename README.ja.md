@@ -4,8 +4,6 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md) | **日本語** | [한국어](README.ko.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Português](README.pt.md)
 
-**完成した映像を、あなたのコーディングエージェントがあなたのプロダクトで作り直します。**
-
 センスのいい映像を、数分で作り直せます。
 
 </div>

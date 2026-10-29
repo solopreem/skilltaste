@@ -4,8 +4,6 @@
 
 [English](README.md) | **简体中文** | [日本語](README.ja.md) | [한국어](README.ko.md) | [Español](README.es.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Português](README.pt.md)
 
-**一支支做好的视频，你的 AI 能照着给你的产品重做一支。**
-
 几分钟重做一支有品味的视频。
 
 </div>

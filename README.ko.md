@@ -4,8 +4,6 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md) | **한국어** | [Español](README.es.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Português](README.pt.md)
 
-**완성된 영상을, 당신의 코딩 에이전트가 당신의 제품으로 다시 만들어 줍니다.**
-
 감각 있는 영상을 몇 분 만에 다시 만드세요.
 
 </div>
