@@ -8,7 +8,7 @@
 
 Pick a film you like, point your agent at your product, get the same film.
 
-Remake a great film for your product in minutes, with good taste built in.
+Remake a video with good taste in minutes.
 
 </div>
 

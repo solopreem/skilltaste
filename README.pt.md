@@ -8,7 +8,7 @@
 
 Escolha um vídeo de que goste, indique seu produto ao agente e receba o mesmo vídeo.
 
-Refaça um ótimo vídeo para o seu produto em minutos, com bom gosto já incluído.
+Refaça um vídeo com bom gosto em minutos.
 
 </div>
 
